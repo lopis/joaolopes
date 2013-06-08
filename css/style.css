@@ -1,0 +1,59 @@
+body {
+	font-family: 'Josefin Slab', serif;
+	background-color: #131111;
+	padding: 5px;
+}
+
+.pt{
+	color: #999;
+}
+
+	.en.bio{
+		margin-right: 20%;
+	}
+
+	.pt.bio{
+		margin-left: 20%;
+	}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover { 
+	outline: 0;
+	color: #555555;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	cursor: default;
+}
+
+img {
+	max-width: 100%
+}
+
+#header{
+	padding: 20px;
+	padding-left: 30px;
+}
+
+.container{
+	background-color: #FFFEFE;
+	border-radius: 3px;
+	box-shadow: 0px 10px 10px #000;
+}
+
+.tab-content {
+	padding: 10px;
+}
+
+.copyright{
+	font-size: 10px;
+	padding: 5px;
+}
+
+.tooltip{
+	font-family: sans-serif;
+	font-size: 10px;
+}
+
+.bio {
+	text-indent: 10px;
+}

@@ -6,6 +6,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta content="True" name="HandheldFriendly">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="viewport" content="width=device-width">
 	<title>João Lopes</title>
 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,35 +19,37 @@
 </head>
 <body>
 	<div class="container id">
-		<div class="row" id="header">
-			<div class="span2">
-				<img src="img/joaolopes.png" alt="">
-			</div>
+		<div id="header">
+			<img src="img/joaolopes.png" alt="">
 		</div>
- 		<div class="tabbable tabs-left">
-			<ul class="nav nav-tabs">
+ 		<div class="tabbable tabs-left row">
+			<ul class="nav nav-tabs span2">
 				<li class="active">
-					<a href="#tab1" data-toggle="tab">
+					<a href="#tab1" data-toggle="tab" class="nav-lang">
 						<div class="en">About</div><div class="pt">Sobre</div>
+						<div class="clearfix"></div>
 					</a>
 				</li>
 				<li>
-					<a href="#tab2" data-toggle="tab">
+					<a href="#tab2" data-toggle="tab" class="nav-lang">
 						<div class="en">Portfolio</div><div class="pt">Portólio</div>
+						<div class="clearfix"></div>
 					</a>
 				</li>
 				<li>
-					<a href="#tab3" data-toggle="tab">
+					<a href="#tab3" data-toggle="tab" class="nav-lang">
 						<div class="en">Curriculum</div><div class="pt">Currículo</div>
+						<div class="clearfix"></div>
 					</a>
 				</li>
 				<li>
-					<a href="#tab4" data-toggle="tab">
+					<a href="#tab4" data-toggle="tab" class="nav-lang">
 						<div class="en">Contacts</div><div class="pt">Contacto</div>
+						<div class="clearfix"></div>
 					</a>
 				</li>
 			</ul>
-			<div class="tab-content">
+			<div class="tab-content span7">
 				<div class="tab-pane fade in active" id="tab1">
 					<?php require_once("about.php"); ?>
 				</div>

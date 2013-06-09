@@ -49,7 +49,7 @@
 					</a>
 				</li>
 			</ul>
-			<div class="tab-content span7">
+			<div class="tab-content span9">
 				<div class="tab-pane fade in active" id="tab1">
 					<?php require_once("about.php"); ?>
 				</div>

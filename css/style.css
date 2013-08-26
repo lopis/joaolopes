@@ -1,25 +1,47 @@
 body {
-	font-family: 'Arimo', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	background-color: #247;
 	font-size: 13px;
 	background-image: url("../img/pw_maze_black.png");
 }
 
-p.bio:first-child {
+.logo img{
+	margin-left: 20px;
+}
+
+.flag {
+	width: 16px;
+	height: 11px;
+	background:url(../img/flags2.png) no-repeat;
+	display: inline-block;
+	cursor: pointer;
+}
+
+	.flags {
+		margin: 0 5px 5px 5px;
+	}
+
+	.flag.active {
+		background:url(../img/flags.png) no-repeat;
+	}
+
+	.flag.flag-gb {
+		background-position: -16px 0;
+	}
+	.flag.flag-pt {
+		background-position: 0 -11px;
+	}
+
+
+.bio {
+	font-size: 18px;
+	line-height: 150%;
 	padding-top: 20px;
 }
 
 .pt{
-	color: #999;
+	display: none;
 }
-
-	.en.bio{
-		margin-right: 20%;
-	}
-
-	.pt.bio{
-		margin-left: 20%;
-	}
 
 .nav {
 	font-weight: bold;
@@ -126,15 +148,12 @@ a:hover {
 .p-img {
 	text-align: center;
 	max-width: 400px;
-	max-height: 253px;
 	overflow: hidden;
 	margin: auto;
 }
+
 	.p-img div img {
 		width: 100%;
-		border-color: #ddd;
-		border-width: 1px;
-		border-style: solid;
 	}
 
 	.p-img .btn-group {
@@ -144,6 +163,13 @@ a:hover {
 
 
 @media (max-width: 767px) { 
+
+	.gravatar img{
+		height: 280px;
+		width: auto;
+		margin: 0px;
+		float: right;
+	}
 
 	.content {
 		padding: 2px;
@@ -184,13 +210,13 @@ a:hover {
 				.nav li a{
 					height: 100%;
 					padding: 0px;
+					padding-right: 15px;
 				}
 
 		div.icon {
 			margin-top: 3px;
    			line-height: 0px;
 			text-align: center;
-			float: right;
 		}
 
 	    .nav-lang > .en, .nav-lang > .pt{
@@ -206,5 +232,18 @@ a:hover {
 
     #header img {
 		max-width: 100px;
+	}
+}
+
+
+@media (max-width: 580px) {
+	.gravatar img{
+		height: auto;
+		max-width: 25%;
+	}
+
+	.bio {
+		font-size: 14px;
+		line-height: 120%;
 	}
 }

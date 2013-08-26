@@ -46,6 +46,10 @@
 							<div class="clearfix"></div>
 						</a>
 					</li>
+					<div class="flags">
+						<div id="flag-pt" class="flag active flag-pt"></div>
+						<div id="flag-gb" class="flag flag-gb"></div>
+					</div>
 				</ul>
 			</div>
 			<div class="clearfix"></div>

@@ -40,7 +40,7 @@
 						</a>
 					</li>
 					<li <?php if($at=='contact') echo 'class="active"'; ?>>
-						<a href="contact.php" data-toggle="tab" class="nav-lang">
+						<a href="about.php#contact" data-toggle="tab" class="nav-lang">
 							<div class="icon"><i class="icon-envelope icon-2x"></i></div>
 							<div class="en">Contacts</div><div class="pt">Contacto</div>
 							<div class="clearfix"></div>

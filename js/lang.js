@@ -1,4 +1,7 @@
 $(".pt").hide();
+$(".en").show();
+$("#flag-gb").addClass("active");
+$("#flag-pt").removeClass("active");
 
 
 $("#flag-pt").click(function(){

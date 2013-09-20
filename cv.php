@@ -1,6 +1,6 @@
 
 <?php 
-	$at = "about";
+	$at = "cv";
 	require_once("header.php");
 ?>
 

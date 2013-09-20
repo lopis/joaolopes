@@ -5,6 +5,7 @@
 	<meta content="True" name="HandheldFriendly">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="img/fav.png">
 	<title>João Lopes</title>
 <!-- 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -13,10 +14,10 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="logo span9">
+			<div class="logo span3">
 				<a href="index.php"><img src="img/joaolopes.png" alt=""></a>
 			</div>
-			<div class="menu span3">
+			<div class="menu span9">
 				<ul class="nav">
 					<li <?php if($at=='about') echo 'class="active"'; ?>>
 						<a href="about.php" data-toggle="tab" class="nav-lang">
@@ -32,7 +33,7 @@
 							
 						</a>
 					</li>
-					<li <?php if($at=='cuv') echo 'class="active"'; ?>>
+					<li <?php if($at=='cv') echo 'class="active"'; ?>>
 						<a href="cv.php" data-toggle="tab" class="nav-lang">
 							<div class="icon"><i class="icon-tasks icon-2x"></i></div>
 							<div class="en">Resume</div><div class="pt">Currículo</div>

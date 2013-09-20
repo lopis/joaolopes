@@ -1,7 +1,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	background-color: #247;
-	font-size: 17px;
+	font-size: 15px;
 	background-image: url("../img/pw_maze_black.png");
 }
 
@@ -9,7 +9,8 @@ h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #666;
-	margin: 0;
+	line-height: 25px;
+	margin: 0 0 10px 0;
 }
 
 h2 {
@@ -90,6 +91,33 @@ a:hover {
 	color: #134;
 }
 
+.nav {
+	text-align: right;
+	float: right;
+}
+
+	.nav li {
+		float: left;
+		width: 110px;
+		text-align: left;
+		line-height: 25px;
+
+	}
+
+		.nav li a{
+			padding: 0px;
+			background-color: #ccc;
+		}
+
+			.nav > li > a:hover{
+				background-color: #ddd;
+			}
+
+		.nav .icon {
+			height: 28px;
+			width: 28px;
+		}
+
 .nav > .active > a, .nav > .active > a:hover { 
 	outline: 0;
 	color: #555555;
@@ -99,15 +127,10 @@ a:hover {
 	cursor: default;
 }
 
-	.nav > li > a:hover{
-		background-color: #ddd;
-	}
-
-    .nav-lang > .en, .nav-lang > .pt{
+    .nav-lang{
 		font-size: 90%;
     	display: inline;
     	padding-left: 5px;
-		line-height: 25px;
     }
 
 	div.icon {
@@ -174,17 +197,48 @@ a:hover {
 		color: rgb(75, 24, 13);
 	}
 
-.portfolio {
-
+.proj {
+	font-size: 14px;
 }
+
+	.proj .btn-group {
+		text-align: center;
+		width: 100%;
+		margin: 2px;
+	}
+
+	.proj .btn {
+		font-size: 10px;
+	}
+
+	.proj.span4 {
+	}
+
+		.proj.span4 p{
+			font-size: 12px;
+		}
+
+	.proj.span6 p {
+		padding: 0 40px 50px 40px;
+	}
+
+	.proj.span4 p {
+		padding: 0 10px 50px 10px;
+	}
 
 
 .p-img {
 	text-align: center;
-	width: 100%;
-	overflow: hidden;
 	margin: auto;
+	padding: 10px 50px 10px 50px;
 }
+
+	.p-img img {
+		display: block;
+		margin: auto;
+		max-width: 100%;
+		max-height: 180px;
+	}
 
 .resume {
 	padding-left: 10%;
@@ -206,6 +260,74 @@ img.coursera {
 	padding-right: 10px; 
 }
 
+ul.tags {
+	padding-left: 40px;
+	color: white;
+	font-size: 9px;
+	font-weight: bolder;
+	list-style-position:inside;
+	list-style-type: disc;
+	margin: 0;
+}
+
+li.tag:before {
+ content:'\2022';
+ margin-right:0.5em;
+}
+
+li.tag {
+	height: 18px;
+	margin-top: 5px;
+	background-color: #247;
+	padding-left: 6px;
+	padding-right: 4px;
+	margin-right: 2px;
+	border-radius: 7px 2px 2px 7px;
+	display: inline;
+}
+
+.zoom, .large{
+	cursor: pointer;
+}
+
+.large {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 50;
+	display: table-cell;
+    vertical-align: middle;
+    padding-top: 25px;
+}
+
+.large img {
+	max-width: 75%;
+}
+
+
+/**************************************************************/
+/**************************************************************/
+/************************MEDIA QUERIES*************************/
+/**************************************************************/
+/**************************************************************/
+
+
+@media (max-width: 1200px) { 
+	.proj.span4 .btn {
+		font-size: 0;
+		height: 20px;
+	}
+
+	.proj.span4 .btn i{
+		vertical-align: middle;
+	}
+
+
+}
 
 @media (max-width: 767px) { 
 
@@ -224,17 +346,18 @@ img.coursera {
 		padding: 2px;
 	}
 
-	.p-img div{
-		margin: auto;
-	}
-
 	.p-text {
 		text-align: left;
+	}
+
+	.large img {
+		max-width: 95%;
 	}
 
 	.nav {
 		text-align: right;
 		position: fixed;
+		z-index: 40;
 		right: 20px;
 		top: 0px;
 		opacity: 0.95;
@@ -245,11 +368,6 @@ img.coursera {
 			text-align: left;
 		}
 
-			.nav .en, .nav .pt{
-				visibility: hidden;
-				position: fixed;
-			}
-
 			.nav li a{
 				width: auto;
 				height: auto;
@@ -259,25 +377,9 @@ img.coursera {
 			.nav .icon {
 				height: 28px;
 				width: 28px;
-				padding: 5px;
-				background-color: #ccc;
 
 			}
 
-			.nav .icon:hover{
-				background-color: #eee;
-			}
-
-		.flags {
-			float: right;
-			margin: 0;
-			height: 28px;
-			margin: 0 5px 0 5px;
-		}
-
-			.flag {
-				margin: 10px;
-			}
 
     
 
@@ -294,7 +396,28 @@ img.coursera {
 @media (max-width: 580px) {
 
 	body {
-		margin-top: 30px
+		margin-top: 30px;
+		padding: 0;
+	}
+	
+	.container {
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+	
+	.proj i {
+		display: block;
+		margin: auto;
+	}
+
+	.proj .btn {
+		height: 28px;
+		font-size: 10px;
+		white-space: normal;
+	}
+
+	.tags {
+		visibility: collapse;
 	}
 
 	.nav {
@@ -302,18 +425,34 @@ img.coursera {
 		top: 0px;
 		width: 100%;
 		height: 30px;
+		font-size: 10px;
 	}
 
-	.nav .icon, .flags{
-		height: 100%;
-		padding: 0;
-	}
+		.nav li {
+			width: 20%;
+			min-width: 65px;
+		}
 
-	.gravatar{
+		.nav .icon{
+			height: 25px;
+			padding: 0;
+			margin: -1px 2px 0 2px;
+			width: auto;
+		}
+
+		.flags {
+			display: inline-block;
+		}
+
+	.timeline{
 		display: none;
 	}
 
-	.bio {
+	.gravatar img{
+		float: none;
+	}
+
+	.bio,  p.en, p.pt{
 		font-size: 14px;
 		line-height: 120%;
 	}

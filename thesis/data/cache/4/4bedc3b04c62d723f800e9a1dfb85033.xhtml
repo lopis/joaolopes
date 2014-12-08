@@ -1,0 +1,209 @@
+
+<h2 class="sectionedit1" id="logs">Logs</h2>
+<div class="level2">
+
+<p>
+I&#039;ll be using this section to keep track of the my progress, save relevant links and references, keep meeting reports, etc.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Logs" [1-144] -->
+<h3 class="sectionedit2" id="notes">Notes</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> End of implementation phase: <strong>11th week</strong></div>
+</li>
+<li class="level1"><div class="li"> First complete version of thesis: <strong>18th week</strong></div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h4 id="week_14_19-may">Week 14 | 19-May</h4>
+<div class="level4">
+
+<p>
+As the work load increased greatly, I decided to limit my logs to github&#039;s Issue tracking and commits.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://github.com/lopis/sajas/issues" class="urlextern" title="https://github.com/lopis/sajas/issues"  rel="nofollow">https://github.com/lopis/sajas/issues</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/lopis/MASSim2Dev/issues" class="urlextern" title="https://github.com/lopis/MASSim2Dev/issues"  rel="nofollow">https://github.com/lopis/MASSim2Dev/issues</a> </div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h4 id="week_8_7-apr">Week 8 | 7-Apr</h4>
+<div class="level4">
+
+<p>
+The deadline for the paper submission was finally extended to April 23rd (strict deadline). So I&#039;ll be focusing on that.
+</p>
+
+<p>
+I removed all dependencies of Repacl on Repast. Basically, that means there will be no more conflicts between Repacl and Repast in new projects! This also means that porting the <abbr title="Application Programming Interface">API</abbr> to other frameworks or any Java projects is trivial. But the user has to schedule the behaviors themselves!
+</p>
+
+<p>
+I will now try to recap where I felt the plugin tool, because I had already forgot I had <em>any</em> development done!
+</p>
+<hr />
+
+</div>
+
+<h4 id="week_7_31-mar">Week 7 | 31-Mar</h4>
+<div class="level4">
+
+<p>
+Spent 2 days with conflicts in Repacl because I&#039;m using the same repast JAR from two sources (Repacl and the Repast libraries). The first solution was to remove the references to the class “Context” in Repacl.
+</p>
+
+<p>
+It&#039;s necessary to include the project in the classpath (at least when importing the Repacl project and not a jar).
+</p>
+
+<p>
+This solved the most obvious exception being thrown. However, a more subtle problem appeared. Repast is not scheduling the step method with the @schedule annotation. It should be solved when the step method is <em class="u"><strong><em>public</em></strong></em>.
+</p>
+
+<p>
+Requirements for using RepACL to work:
+ - Add the library/project to the Build Path
+ - Add the library/project to the Class Path (run configurations…)
+ - The step method must be public.
+ - Behaviours MUST have the annotation in the action() method. Turns out annotations are not inherited, contrary to what an earlier test showed me.
+</p>
+
+<p>
+Meeting summary:
+</p>
+<ul>
+<li class="level1"><div class="li"> TODO this week: implement at least one protocol, like <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr>_REQUEST, and create a teste with multiple agents that communicate with each other.</div>
+</li>
+<li class="level1"><div class="li"> In AchieveRE, either assume everyone sends AGREE/REJECT or ignore that step</div>
+</li>
+<li class="level1"><div class="li"> Maintain the @scheduled behaviors and improve the matching in the Mailbox</div>
+<ul>
+<li class="level2"><div class="li"> Using an Hash Table, progressively build a reference table for used templates, therefore minimizing the time needed to search the Mailbox.</div>
+</li>
+<li class="level2"><div class="li"> One get one mail each time. At any time, one behavior will be handling a single message</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Implement a simple state machine. Maybe create a generic state machine behavior?</div>
+</li>
+<li class="level1"><div class="li"> On the course of a protocol, the message template should be updated as needed (depends on the state of the protocol)</div>
+</li>
+<li class="level1"><div class="li"> Responders don&#039;t die. After handling one message, returns to initial state and handles next one.</div>
+</li>
+<li class="level1"><div class="li"> Initiators die after handling all messages.</div>
+</li>
+</ul>
+<hr />
+
+</div>
+
+<h4 id="week_6_24-mar">Week 6 | 24-Mar</h4>
+<div class="level4">
+
+<p>
+This week will be dedicated to code conversion. The goal is to have the basic structure of the eclipse plugin by Friday. The best tutorial I found to quickly get started in developing plugins for Eclipse was <a href="http://www.vogella.com/tutorials/EclipseCommands/article.html" class="urlextern" title="http://www.vogella.com/tutorials/EclipseCommands/article.html"  rel="nofollow">this one</a>
+</p>
+
+<p>
+<a href="/thesis/doku.php?id=wiki:paper" class="wikilink1" title="wiki:paper">Started organizing paper ideas</a>.
+</p>
+
+<p>
+<a href="/thesis/doku.php?id=wiki:masim2dev" class="wikilink1" title="wiki:masim2dev">Started the plugin specification</a>
+</p>
+
+<p>
+<a href="/thesis/doku.php?id=wiki:jade2repast" class="wikilink2" title="wiki:jade2repast" rel="nofollow">Mapping JADE and RepACL features</a>
+</p>
+<hr />
+
+</div>
+
+<h4 id="week_5_17-mar">Week 5 | 17-Mar</h4>
+<div class="level4">
+
+<p>
+Some assertions from this week&#039;s tests:
+</p>
+<ul>
+<li class="level1"><div class="li"> Repast uses a Context object that contains all objects that will be scheduled, i.e. the “agents” of Repast. Agents can contain behaviors that are themselves schedules. They just need to be added to the context as well.</div>
+</li>
+<li class="level1"><div class="li"> <del> If a class or abstract class contains an annotated method, any class that extends that one and overrides the scheduled method will inherit the @Schedule annotation.</del></div>
+</li>
+<li class="level1"><div class="li"> Annotations themselves can be overridden.</div>
+</li>
+</ul>
+
+<p>
+The RepACL library is coming along nicely, but keep being restructured. 
+</p>
+<hr />
+
+</div>
+
+<h4 id="week_4_10-mar">Week 4 | 10-Mar</h4>
+<div class="level4">
+
+<p>
+Proceeding with the development and specification of RepACL.
+The new architecture, and hopefully final-ish, is the following:
+<a href="/thesis/lib/exe/detail.php?id=wiki%3Alogs&amp;media=wiki:repacl_arch_v6.png" class="media" title="wiki:repacl_arch_v6.png"><img src="/thesis/lib/exe/fetch.php?w=300&amp;tok=3ac2bc&amp;media=wiki:repacl_arch_v6.png" class="mediacenter" alt="" width="300" /></a>
+</p>
+<hr />
+
+</div>
+
+<h4 id="week_3_3-mar">Week 3 | 3-Mar</h4>
+<div class="level4">
+
+<p>
+I started to specify the <a href="/thesis/doku.php?id=wiki:repastfipatool" class="wikilink1" title="wiki:repastfipatool">FIPA tools for Repast</a>, namely, I created the UML for its architecture. An architecture similar to <abbr title="Java Agent DEvelopment Framework">JADE</abbr>&#039;s was followed: an interface for all <abbr title="Agent Communication Language">ACL</abbr> initiators and responders, and interfaces that extend this one for each <a href="/thesis/doku.php?id=wiki:jadefipaobjects" class="wikilink1" title="wiki:jadefipaobjects">class of communications</a>. 
+</p>
+<hr />
+
+</div>
+
+<h4 id="week_2_24-feb">Week 2 | 24-Feb</h4>
+<div class="level4">
+
+<p>
+Change in work plan. During this week and the next one, I will also explore Repast Simphony and <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, test a few examples and create a list of functionalities that I want to convert. First task will be to understand which <abbr title="Java Agent DEvelopment Framework">JADE</abbr> objects allow the use of <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> <abbr title="Agent Communication Language">ACL</abbr>.
+</p>
+
+<p>
+<a href="/thesis/doku.php?id=wiki:jadefipaobjects" class="wikilink1" title="wiki:jadefipaobjects">Some interfaces provided by JADE to use FIPA ACL</a>
+</p>
+
+<p>
+<strong><abbr title="(Eclipse) Java Development Tools">JDT</abbr></strong> allows to easily create projects (including classes, methods and fields) using Eclipse plugins. It&#039;s then possible to loop through all projects and access their properties, methods, etc.
+</p>
+<hr />
+
+</div>
+
+<h4 id="week_1_17-feb">Week 1 | 17-Feb</h4>
+<div class="level4">
+
+<p>
+This week was used to read and test code conversion tools. Unfortunately, I only covered some of the functionalities of <abbr title="(Eclipse) Java Development Tools">JDT</abbr>. <abbr title="(Eclipse) Java Development Tools">JDT</abbr> seems to be the best choice for this thesis. However, I decided to change the work plan. Instead of resuming the study of code conversion tools, I found that I should first create the mapping of <abbr title="Java Agent DEvelopment Framework">JADE</abbr>&#039;s and Repast&#039;s functionalities before proceeding. 
+</p>
+
+<p>
+<a href="http://www.programcreek.com/2011/01/best-java-development-tooling-jdt-and-astparser-tutorials/" class="urlextern" title="http://www.programcreek.com/2011/01/best-java-development-tooling-jdt-and-astparser-tutorials/"  rel="nofollow">Includes many tutorials </a> about creating plugin projects in eclipse and about using the java development tools.
+</p>
+
+<p>
+<a href="http://www.vogella.com/tutorials/eclipse.html" class="urlextern" title="http://www.vogella.com/tutorials/eclipse.html"  rel="nofollow">More JDT tutorials</a>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Notes" [145-] -->

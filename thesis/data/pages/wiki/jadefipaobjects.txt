@@ -1,0 +1,29 @@
+===== JADE Classes for FIPA ACL =====
+
+==== AchieveRE ====
+
+[[http://jade.tilab.com/doc/api/jade/proto/AchieveREInitiator.html|AchieveREInitiator]] is a single homogeneous and effective implementation of all the FIPA-Request-like interaction protocols defined by FIPA, that is all those protocols where the initiator sends a single message (i.e. it performs a single communicative act) within the scope of an interaction protocol in order to verify if the RE (Rational Effect) of the communicative act has been achieved or not. This implementation works both for 1:1 and 1:N conversation.
+
+[[http://jade.tilab.com/doc/api/jade/proto/AchieveREResponder.html|AchieveREResponder]] is a single homogeneous and effective implementation of all the FIPA-Request-like interaction protocols defined by FIPA, that is all those protocols where the initiator sends a single message (i.e. it performs a single communicative act) within the scope of an interaction protocol in order to verify if the RE (Rational Effect) of the communicative act has been achieved or not.
+
+==== ContractNet ====
+
+[[http://jade.tilab.com/doc/api/jade/proto/ContractNetInitiator.html|ContractNetInitiator]] class implements the initiator role in a Fipa-Contract-Net or Iterated-Fipa-Contract-Net interaction protocol.
+This implementation works both for 1:1 and 1:N conversation.
+
+The following is a brief description of the protocol. The programmer should however refer to the FIPA Spec for a complete description.
+
+The initiator solicits proposals from other agents by sending a CFP message that specifies the action to be performed and, if needed, conditions upon its execution. The implementation of the callback method prepareCfps must return the Vector of messages to be sent (eventually a single message with multiple receivers).
+
+The responders can then reply by sending a PROPOSE message including the preconditions that they set out for the action, for instance the price or the time. Alternatively, responders may send a REFUSE, to refuse the proposal or, eventually, a NOT-UNDERSTOOD
+
+[[http://jade.tilab.com/doc/api/jade/proto/ContractNetResponder.html|ContractNetResponder]] behaviour class for fipa-contract-net Responder role, implements the fipa-contract-net interaction protocol from the point of view of a responder to a call for proposal (cfp) message.
+The API of this class is similar and homogeneous to the AchieveREResponder. 
+
+==== Propose ====
+
+[[http://jade.tilab.com/doc/api/jade/proto/ProposeInitiator.html|ProposeInitiator]] class implements the Fipa-Propose interaction protocol with an API similar and homogeneous to AchieveREInitiator.
+The initiator sends a PROPOSE message to the Participant indicating that it will perform some action if the Participant agrees. The responders can then reply by sending a ACCEPT-PROPOSAL message, a REJECT-PROPOSAL, or, eventually, a NOT-UNDERSTOOD.
+
+[[http://jade.tilab.com/doc/api/jade/proto/ProposeResponder.html|ProposeResponder]] Behaviour class for fipa-propose Responder role. This behaviour implements the fipa-propose interaction protocol from the point of view of a responder to a propose (propose) message.
+The API of this class is similar and homogeneous to the AchieveREResponder. 

@@ -1,0 +1,11 @@
+package repastTest;
+&nbsp;
+import up.fe.liacc.repacl.Agent;
+&nbsp;
+public class MyAgent extends Agent{
+&nbsp;
+	public MyAgent() {
+		super();
+		addBehavior(new MyBehavior(this));
+	}
+}

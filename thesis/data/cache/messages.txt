@@ -1,0 +1,6 @@
+Security Hotfix 2014-05-05a for <a href="https://github.com/splitbrain/dokuwiki/issues/765">Issue 765</a> available.
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [44.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a>
+%
+New release available: 2014-05-05 "Ponder Stibbons".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [44] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a>
+%

@@ -1,0 +1,29 @@
+==== Reports ====
+
+=== Thesis ===
+  * {{:wiki:joao_lopes_thesis.pdf|Final draft for jury review}}
+  * {{|Final manuscript, post juri review}} (Under production)
+
+=== Other manuscripts ===
+  * Extended abstract: {{:wiki:resumo-pt.pdf|English}} | {{:wiki:resumo-pt.pdf|Português}}
+  * {{:wiki:ei10009.pdf|Interim Report}}
+  * {{:wiki:first_semester_slides.pdf|Interim slides}}
+  * {{:wiki:thesis.pdf|Thesis slides}}
+
+==== Papers ====
+
+  * **Title: SAJaS - Bridging the Gap between MAS Simulation and Development using a JADE-based API for Repast**
+  * Authors: João P. C. Lopes, Henrique Lopes Cardoso, João S. V. Gonçalves 
+  * Status: Submitted to [[http://www.mates2014.de/|MATES]] but Rejected.
+  * {{:wiki:paper_api_joao_lopes.pdf|}}
+
+==== Project GitHub Repositories ====
+
+[[https://github.com/lopis/sajas|SAJaS]] is the core of my project. It consists of an API for use in simulation frameworks that enable MAS features present in JADE to be used on them. 
+
+[[https://github.com/lopis/MASSim2Dev|MASSim2Dev]] is an eclipse plugin that converts Repast simulations based on SAJaS into JADE applications as seamlessly as possible. 
+
+I use a third repository to keep track of my [[https://github.com/lopis/sajas-example|test scenarios]]. 
+
+
+[[http://jlopes.pt/sajas/docs|Project Java docs]] (Under production)

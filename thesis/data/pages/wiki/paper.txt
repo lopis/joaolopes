@@ -1,0 +1,16 @@
+==== Paper brainstorming ====
+
+Some of the possible subjects to include in the paper
+  - Introdution
+    * MAS and MABS uses and framework limitations;
+  - FIPA
+    * Brief introduction and description
+    * FIPA in JADE, interaction behaviors, etc
+  - JRep & MISIA vs MASSim2Dev
+    * The advantages of having dedicated tools for each job
+  - Prototype architecture
+    * Eclipse plugin and class generators
+  - Testing architecture and examples
+  - Conclusions
+    * Early results
+    * Future work

@@ -1,0 +1,164 @@
+
+<h2 class="sectionedit1" id="massim2dev_-_from_simulation_to_development_of_multi_agent_systems">MASSIM2DEV -  From Simulation to Development of Multi Agent Systems</h2>
+<div class="level2">
+
+<p>
+My name is <a href="http://jlopes.pt" class="urlextern" title="http://jlopes.pt"  rel="nofollow">João Lopes</a> and I will be updating this wiki throughout this semester (2013/2014 S2) with all information about my MSc thesis. Some pages of this wiki have temporary restricted access to the public. This thesis is being developed in the <a href="http://fe.up.pt" class="urlextern" title="http://fe.up.pt"  rel="nofollow">Faculty of Engineering of University of Porto (FEUP)</a>, at the <a href="http://www.liacc.up.pt/" class="urlextern" title="http://www.liacc.up.pt/"  rel="nofollow">Artificial Intelligence and Computer Science Laboratory (LIACC)</a>. The following is the most up-to-date abstract of my thesis.
+</p>
+
+<p>
+All documentation, including manuscripts are available in the <a href="/thesis/doku.php?id=wiki:docs" class="wikilink1" title="wiki:docs">Documentation</a> page.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="/thesis/lib/exe/fetch.php?media=wiki:thesis.pdf" class="media mediafile mf_pdf" title="wiki:thesis.pdf (2.7 MB)">Thesis slides</a></div>
+</li>
+<li class="level1"><div class="li"> Extended abstract: <a href="/thesis/lib/exe/fetch.php?media=wiki:resumo-pt.pdf" class="media mediafile mf_pdf" title="wiki:resumo-pt.pdf (131.7 KB)">English</a> | <a href="/thesis/lib/exe/fetch.php?media=wiki:resumo-pt.pdf" class="media mediafile mf_pdf" title="wiki:resumo-pt.pdf (131.7 KB)">Português</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "MASSIM2DEV -  From Simulation to Development of Multi Agent Systems" [1-814] -->
+<h3 class="sectionedit2" id="original_proposal">Original Proposal</h3>
+<div class="level3">
+<hr />
+<ul>
+<li class="level1"><div class="li"> Supervisor: <a href="https://sigarra.up.pt/feup/en/func_geral.formview?p_codigo=405449" class="urlextern" title="https://sigarra.up.pt/feup/en/func_geral.formview?p_codigo=405449"  rel="nofollow">Henrique Lopes Cardoso</a></div>
+</li>
+<li class="level1"><div class="li"> Author (me): <a href="https://sigarra.up.pt/feup/pt/fest_geral.cursos_list?pv_num_unico=201006444" class="urlextern" title="https://sigarra.up.pt/feup/pt/fest_geral.cursos_list?pv_num_unico=201006444"  rel="nofollow">João Pedro Lopes</a></div>
+</li>
+</ul>
+<table class="columns-plugin" style="width:100%">
+<tr><td class="columns-plugin first" style="width:50%;">
+
+<p>
+<abbr title="Java Agent DEvelopment Framework">JADE</abbr> is a multi-agent development framework, which allows an easy development of distributed multi-agent systems (<abbr title="Multi-Agent System">MAS</abbr>) and their deployment through different machines. <abbr title="Java Agent DEvelopment Framework">JADE</abbr> is particularly taylored for interaction-centered multi-agent systems, including a rich library of <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> interaction protocols. Because of its distributed and asynchronous nature, <abbr title="Java Agent DEvelopment Framework">JADE</abbr> is not well suited for simulation.
+</p>
+
+<p>
+Repast is a simulation tool for multi-agent systems, where agents are treated simply as Java objects. It has no built-in interaction protocol support. This means that when developing simulations that rely on agent interactions, one has to code <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> interaction protocols from scratch, typically via direct method calls. In a latter stage, when developing a multi-agent system using <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, such efforts are lost, and interaction protocols must be re-implemented making use of <abbr title="Java Agent DEvelopment Framework">JADE</abbr>&#039;s <abbr title="Application Programming Interface">API</abbr>.
+This work will aim at developing automatic code-generation approaches to bridge the gap between interaction protocol implementations in Repast and in <abbr title="Java Agent DEvelopment Framework">JADE</abbr>. 
+</p>
+</td><td class="columns-plugin last">
+
+<p>
+ This will allow the programmer to easily migrate from a Repast-based <abbr title="Multi-Agent System">MAS</abbr> simulation experiment to the implementation of a <abbr title="Java Agent DEvelopment Framework">JADE</abbr>-based distributed <abbr title="Multi-Agent System">MAS</abbr>, or from an already tentatively developed <abbr title="Multi-Agent System">MAS</abbr> to a simulation setup for running specific experiments.
+</p>
+
+<p>
+The main goals of this proposal are:
+</p>
+<ul>
+<li class="level1"><div class="li">  A set of guidelines for specifying interaction protocols in Repast</div>
+</li>
+<li class="level1"><div class="li">  A tool for Repast-<abbr title="Java Agent DEvelopment Framework">JADE</abbr> and <abbr title="Java Agent DEvelopment Framework">JADE</abbr>-Repast automatic code generation for interaction protocols</div>
+</li>
+<li class="level1"><div class="li">  Writting of a scientific paper to submit to an international conference or journal</div>
+</li>
+<li class="level1"><div class="li">  Interconnection between multi-agent systems development and multi-agent-based simulation</div>
+</li>
+<li class="level1"><div class="li">  Development of an tool to be made available for the research community </div>
+</li>
+</ul>
+<!-- EDIT2 SECTION "Original Proposal" [815-2872] --></td></tr></table>
+
+</div>
+
+<h3 class="sectionedit3" id="abstract">Abstract</h3>
+<div class="level3">
+<hr />
+<table class="columns-plugin" style="width:100%">
+<tr><td class="columns-plugin first" style="width:50%;">
+
+<p>
+Multi-agent systems (<abbr title="Multi-Agent System">MAS</abbr>) present an interesting approach to the efficient development of modular systems. Frameworks exist that aid the development of this class of systems and they range from mostly general-purpose frameworks to domain-specific in an array of different domains.
+</p>
+
+<p>
+Multi-agent-based simulations (<abbr title="Multi-Agent-Based Simulation">MABS</abbr>) are sometimes used on the course of development of a full-featured <abbr title="Multi-Agent System">MAS</abbr> – for instance, for testing purposes – for the potential gains in performance when simulating <abbr title="Multi-Agent System">MAS</abbr>. 
+However, most platforms for <abbr title="Multi-Agent System">MAS</abbr> development are not well suited for <abbr title="Multi-Agent-Based Simulation">MABS</abbr> development due to scalability limitations. Furthermore, an opportunity exists to partially automate the development of robust <abbr title="Multi-Agent System">MAS</abbr> from a previously tested simulation.
+</p>
+
+<p>
+<abbr title="Java Agent DEvelopment Framework">JADE</abbr>, a very popular <abbr title="Multi-Agent System">MAS</abbr> development framework allows the creation of seamless distributed agent systems and complies with <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> standards for agent interaction. Unfortunately, its multi-threaded architecture falls short in delivering the necessary performance to run a local simulation with a large number of agents. Repast \cite{collier2003repast} is an agent-based simulation toolkit that allows creating simulations using rich <abbr title="Graphical User Interface">GUI</abbr> elements and real time agent statistics. It can easily handle large numbers of agents in a single simulation. Unlike <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, though, Repast lacks much of the infrastructure for agent creation and interaction.
+</p>
+
+<p>
+Some works propose, as a solution for bridging the gap between <abbr title="Multi-Agent System">MAS</abbr> development and simulation, an integration of <abbr title="Java Agent DEvelopment Framework">JADE</abbr> and simulation features by extending this framework with a simulation layer created from scratch, or by integrating another framework, such as Repast.
+</p>
+</td><td class="columns-plugin last">
+
+<p>
+This thesis proposes an integrated solution which combines an <abbr title="Application Programming Interface">API</abbr> that enables the creation of <abbr title="Java Agent DEvelopment Framework">JADE</abbr>-like simulations using a framework like Repast with a code conversion tool, that automatically converts that simulation into an equivalent <abbr title="Java Agent DEvelopment Framework">JADE</abbr> <abbr title="Multi-Agent System">MAS</abbr>. That <abbr title="Application Programming Interface">API</abbr> does so by reimplementing from scratch many <abbr title="Java Agent DEvelopment Framework">JADE</abbr> features, including its implementation of <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> specifications for agent interaction and management. Since the <abbr title="Application Programming Interface">API</abbr>&#039;s architecture is very close to <abbr title="Java Agent DEvelopment Framework">JADE</abbr>&#039;s, conversion becomes more straightforward.
+</p>
+
+<p>
+The main user for such a system would be <abbr title="Java Agent DEvelopment Framework">JADE</abbr> developers who need to create a simulation of their already-developed <abbr title="Multi-Agent System">MAS</abbr>. By converting their code, the developer can perform tests and simulation and later convert the simulation back to a <abbr title="Multi-Agent System">MAS</abbr>, preserving all changes. <abbr title="Java Agent DEvelopment Framework">JADE</abbr> developers can also create simulations from scratch using frameworks like Repast using familiar <abbr title="Java Agent DEvelopment Framework">JADE</abbr>-like features. Finally, this system can be interesting for Repast developers who desire to expand their knowledge of <abbr title="Multi-Agent System">MAS</abbr> development with more complex frameworks.
+</p>
+
+<p>
+Validation tests demonstrate that the behaviour of the currently implemented <abbr title="Java Agent DEvelopment Framework">JADE</abbr> features in the <abbr title="Application Programming Interface">API</abbr> display the same behaviour as the analogous <abbr title="Java Agent DEvelopment Framework">JADE</abbr> ones. Furthermore, using the <abbr title="Application Programming Interface">API</abbr> it is possible to achieve very significant performance gains.
+</p>
+<!-- EDIT3 SECTION "Abstract" [2873-5873] --></td></tr></table>
+
+</div>
+
+<h3 class="sectionedit4" id="resumo">Resumo</h3>
+<div class="level3">
+<hr />
+<table class="columns-plugin" style="width:100%">
+<tr><td class="columns-plugin first" style="width:50%;">
+
+<p>
+Os sistemas multi-agente (<abbr title="Multi-Agent System">MAS</abbr>, Multi-Agent Systems) exprimem uma abordagem interessante no desenvolvimento de sistemas modulares e eficientes. Os <abbr title="Multi-Agent System">MAS</abbr> são compostos por elementos computacionais autónomos – chamados agentes - que são programados para competir ou colaborar de modo a, por exemplo, resolver problemas computacionais, iniciar negociação automática ou participar em jogos de computador. Existem ferramentas de software que facilitam o desenvolvimento desta classe de sistemas que podem variar entre ferramentas de âmbito geral até ferramentas focadas num domínio específico.
+</p>
+
+<p>
+As simulações baseadas em agente (<abbr title="Multi-Agent-Based Simulation">MABS</abbr> Multi-Agent-Based Simulations) são frequentemente utilizadas durante o desenvolvimento de <abbr title="Multi-Agent System">MAS</abbr> completos – por exemplo, afim de testar o sistema – para beneficiar do seu desempenho mais elevado. No entanto, a maior parte das plataformas para desenvolvimento de <abbr title="Multi-Agent System">MAS</abbr> não são apropriadas para a criação de <abbr title="Multi-Agent-Based Simulation">MABS</abbr>
+</p>
+
+<p>
+O <abbr title="Java Agent DEvelopment Framework">JADE</abbr> é um exemplo de uma plataforma de desenvolvimento de <abbr title="Multi-Agent System">MAS</abbr> que permite a criação de sistemas de agents distribuídos de forma simplificada cumprindo, ainda, os standards da <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> (Foundation for Intelligent Physical Agents) sobre protocolos de interação entre agentes. No entanto, a sua arquitetura em multi-thread não garante a performance necessária para a execução de simulações com um elevado número de agentes. O Repast é uma plataforma de criação de simulações baseadas em agentes que permite criar simulações ricas em interfaces gráficas para visualização de dados históricos e em tempo real sobre os agentes. Consegue facilmente lidar com um grande número de agentes numa única simulação. Ao contrário do <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, o Repast não dispõe de uma infraestrutura para criação de agentes e interação entre eles.
+</p>
+</td><td class="columns-plugin last">
+
+<p>
+Alguns trabalhos estudados  propõem uma integração com o <abbr title="Java Agent DEvelopment Framework">JADE</abbr> de ferramentas de simulação, extendendo o <abbr title="Java Agent DEvelopment Framework">JADE</abbr> com ferramentas criadas de raiz ou integrado-o com outras frameworks, como o Repast.
+</p>
+
+<p>
+Esta dissertação propõe uma solução integrada que combina uma <abbr title="Application Programming Interface">API</abbr> que permite a criação de simulações baseadas no <abbr title="Java Agent DEvelopment Framework">JADE</abbr> utilizando como base uma framework como o Repast, juntamente com uma ferramenta de conversão de código que converte automaticamente uma simulação numa applicação <abbr title="Java Agent DEvelopment Framework">JADE</abbr>. Esta <abbr title="Application Programming Interface">API</abbr> foi criada reimplementando de raiz várias características do <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, includindo a sua implementação das especificações <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> para a interação entre agentes e sua gestão. Como a arquitectura da <abbr title="Application Programming Interface">API</abbr> é muito próxima da do <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, a conversão de código torna-se mais direta.
+</p>
+
+<p>
+Os principais utilizadores esperados serão programadores de <abbr title="Java Agent DEvelopment Framework">JADE</abbr> que necessitem de simular o <abbr title="Multi-Agent System">MAS</abbr> que desenvolveram. Convertendo o seu código, o programador pode realizar testes e simulações, fazer as alterações desejadas à simulação e re-converter o código para uma aplicação <abbr title="Java Agent DEvelopment Framework">JADE</abbr>, preservando as alterações feitas. Um programador de <abbr title="Java Agent DEvelopment Framework">JADE</abbr> pode também criar simulações de raiz utilizando frameworks como o Repast utilizando componentes baseados em <abbr title="Java Agent DEvelopment Framework">JADE</abbr> que já lhe são familiares. Por outro lado, um programador de Repast verá interesse neste sitema se desejar expandir o seu conhecimento sobre desenvolvimento de <abbr title="Multi-Agent System">MAS</abbr> utilizando frameworks mais complexas.
+</p>
+
+<p>
+Testes de validação desmonstraram que o comportamento dos componentes já implementados na <abbr title="Application Programming Interface">API</abbr> mostram um comportamento identico aos componentes análogos no <abbr title="Java Agent DEvelopment Framework">JADE</abbr>. Além disso, utilizando a <abbr title="Application Programming Interface">API</abbr> foi possível obter ganhos significativos a nível de performance.
+</p>
+</td></tr></table>
+
+<p>
+<strong>Further reading</strong>
+<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>
+<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>
+<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>
+<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Resumo" [5874-10184] -->
+<h3 class="sectionedit5" id="references">References</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT5 SECTION "References" [10185-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Jacques Ferber. Multi-agent systems: an introduction to distributed artificial intelligence, volume 1. Addison-Wesley Reading, 1999</div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Michael Wooldridge. An introduction to multiagent systems. Wiley. com, 2008.</div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+The Eclipse Foundation. Eclipse java development tools (jdt). Available at <a href="http://www.eclipse.org/jdt/" class="urlextern" title="http://www.eclipse.org/jdt/"  rel="nofollow">http://www.eclipse.org/jdt/</a>, last access on February 2014.</div>
+<div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+Jana Gormer, Gianina Homoceanu, Christopher Mumme, Michaela Huhn, and Jorg P Muller. Jrep: Extending repast simphony for jade agent behavior components. In Proceedings of the 2011 IEEE/WIC/ACM International Conferences on Web Intelligence and Intelligent Agent Technology-Volume 02, pages 149–154. IEEE Computer Society, 2011.</div>
+</div>

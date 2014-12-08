@@ -1,0 +1,61 @@
+
+<h2 class="sectionedit1" id="jade_classes_for_fipa_acl">JADE Classes for FIPA ACL</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT1 SECTION "JADE Classes for FIPA ACL" [1-39] -->
+<h3 class="sectionedit2" id="achievere">AchieveRE</h3>
+<div class="level3">
+
+<p>
+<a href="http://jade.tilab.com/doc/api/jade/proto/AchieveREInitiator.html" class="urlextern" title="http://jade.tilab.com/doc/api/jade/proto/AchieveREInitiator.html"  rel="nofollow">AchieveREInitiator</a> is a single homogeneous and effective implementation of all the <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr>-Request-like interaction protocols defined by <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr>, that is all those protocols where the initiator sends a single message (i.e. it performs a single communicative act) within the scope of an interaction protocol in order to verify if the RE (Rational Effect) of the communicative act has been achieved or not. This implementation works both for 1:1 and 1:N conversation.
+</p>
+
+<p>
+<a href="http://jade.tilab.com/doc/api/jade/proto/AchieveREResponder.html" class="urlextern" title="http://jade.tilab.com/doc/api/jade/proto/AchieveREResponder.html"  rel="nofollow">AchieveREResponder</a> is a single homogeneous and effective implementation of all the <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr>-Request-like interaction protocols defined by <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr>, that is all those protocols where the initiator sends a single message (i.e. it performs a single communicative act) within the scope of an interaction protocol in order to verify if the RE (Rational Effect) of the communicative act has been achieved or not.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "AchieveRE" [40-1059] -->
+<h3 class="sectionedit3" id="contractnet">ContractNet</h3>
+<div class="level3">
+
+<p>
+<a href="http://jade.tilab.com/doc/api/jade/proto/ContractNetInitiator.html" class="urlextern" title="http://jade.tilab.com/doc/api/jade/proto/ContractNetInitiator.html"  rel="nofollow">ContractNetInitiator</a> class implements the initiator role in a Fipa-Contract-Net or Iterated-Fipa-Contract-Net interaction protocol.
+This implementation works both for 1:1 and 1:N conversation.
+</p>
+
+<p>
+The following is a brief description of the protocol. The programmer should however refer to the <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> Spec for a complete description.
+</p>
+
+<p>
+The initiator solicits proposals from other agents by sending a CFP message that specifies the action to be performed and, if needed, conditions upon its execution. The implementation of the callback method prepareCfps must return the Vector of messages to be sent (eventually a single message with multiple receivers).
+</p>
+
+<p>
+The responders can then reply by sending a PROPOSE message including the preconditions that they set out for the action, for instance the price or the time. Alternatively, responders may send a REFUSE, to refuse the proposal or, eventually, a NOT-UNDERSTOOD
+</p>
+
+<p>
+<a href="http://jade.tilab.com/doc/api/jade/proto/ContractNetResponder.html" class="urlextern" title="http://jade.tilab.com/doc/api/jade/proto/ContractNetResponder.html"  rel="nofollow">ContractNetResponder</a> behaviour class for fipa-contract-net Responder role, implements the fipa-contract-net interaction protocol from the point of view of a responder to a call for proposal (cfp) message.
+The <abbr title="Application Programming Interface">API</abbr> of this class is similar and homogeneous to the AchieveREResponder. 
+</p>
+
+</div>
+<!-- EDIT3 SECTION "ContractNet" [1060-2417] -->
+<h3 class="sectionedit4" id="propose">Propose</h3>
+<div class="level3">
+
+<p>
+<a href="http://jade.tilab.com/doc/api/jade/proto/ProposeInitiator.html" class="urlextern" title="http://jade.tilab.com/doc/api/jade/proto/ProposeInitiator.html"  rel="nofollow">ProposeInitiator</a> class implements the Fipa-Propose interaction protocol with an <abbr title="Application Programming Interface">API</abbr> similar and homogeneous to AchieveREInitiator.
+The initiator sends a PROPOSE message to the Participant indicating that it will perform some action if the Participant agrees. The responders can then reply by sending a ACCEPT-PROPOSAL message, a REJECT-PROPOSAL, or, eventually, a NOT-UNDERSTOOD.
+</p>
+
+<p>
+<a href="http://jade.tilab.com/doc/api/jade/proto/ProposeResponder.html" class="urlextern" title="http://jade.tilab.com/doc/api/jade/proto/ProposeResponder.html"  rel="nofollow">ProposeResponder</a> Behaviour class for fipa-propose Responder role. This behaviour implements the fipa-propose interaction protocol from the point of view of a responder to a propose (propose) message.
+The <abbr title="Application Programming Interface">API</abbr> of this class is similar and homogeneous to the AchieveREResponder. 
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Propose" [2418-] -->

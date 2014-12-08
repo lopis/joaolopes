@@ -1,0 +1,53 @@
+===== FIPA tools for Repast =====
+
+I will use this page to document the implementation of FIPA protocols in Repast, which I will call **RepACL** for now. Some issues I've been thinking about:
+
+  * Should a directory facilitator be created? Or just use direct agent references - since agents in Repast are POJO? The DF would probably only introduce more complexity to the simulation. Besides, many Repast applications use spaces that contain the agents. If a DF is needed, it should be up to the programmer.
+  * Repast MABS are typically very fast so it's important to keep the library very lightweight. JADE uses behaviours to implement each type of communication. These behaviours are classes. For RepACL
+  * Different kinds of communication are available in JADE: REQUEST, PROPOSE, CONTRACT NET.
+
+==== RepACL Architecture ====
+
+I decided to study to feasibility of three different approaches for the architecture of RepACL: using an interface for agents, an abstract class that agents would extend or a separate "communicator class". The following table summarizes each one's strengths.
+
+^   ^ Implementation ^ Agent super classes allowed ^ Extra code in agent class ^ Sync ^
+| Interface | none | yes | all implementation | yes |
+| Abstract class | yes | no | some implementation | yes |
+| Separate class | yes | yes | just method calls | possible |
+
+{{ :wiki:repacl_arch_v5.png?300|}}
+The communicator class approach seemed the best at first, but I later decided on an hybrid approach. 
+
+As the picture shows, repast agents will implement an interface. It's a very simple interface, containing the generic ''send'' method. This method accepts an ACL Message that can be of various types depending on the protocol and performative of communication. The constructor of this class demands a value for those two fields. This performative is defined by FIPA and can have the following values, conveniently defined in the ACL helper class as constants:
+  * ACCEPT_PROPOSAL
+  * AGREE
+  * CANCEL
+  * CALL_FOR_PROPOSAL
+  * CONFIRM
+  * DISCONFIRM
+  * FAILURE
+  * INFORM
+  * INFORM_IF
+  * INFORM_REF
+  * NOT_UNDERSTOOD
+  * PROPAGATE
+  * PROPOSE
+  * PROXY
+  * QUERY_IF
+  * QUERY_REF
+  * REFUSE
+  * REJECT_PROPOSAL
+  * REQUEST
+  * REQUEST_WHEN
+  * REQUEST_WHENEVER
+  * SUBSCRIBE
+
+The valid values for the performative field are the following:
+  * ACHIEVE_RE_INITIATOR
+  * ACHIEVE_RE_RESPONDER
+  * CONTRACT_NET_INITIATOR
+  * CONTRACT_NET_RESPONDER
+  * PROPOSE_INITIATOR
+  * PROPOSE_RESPONDER
+
+The meaning behind this constants is defined by FIPA.

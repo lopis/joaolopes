@@ -1,0 +1,95 @@
+=====  Logs =====
+
+I'll be using this section to keep track of the my progress, save relevant links and references, keep meeting reports, etc.
+
+==== Notes ====
+  * End of implementation phase: **11th week**
+  * First complete version of thesis: **18th week**
+
+-----
+=== Week 14 | 19-May ===
+As the work load increased greatly, I decided to limit my logs to github's Issue tracking and commits.
+  * https://github.com/lopis/sajas/issues
+  * https://github.com/lopis/MASSim2Dev/issues 
+
+----
+=== Week 8 | 7-Apr ===
+The deadline for the paper submission was finally extended to April 23rd (strict deadline). So I'll be focusing on that.
+
+I removed all dependencies of Repacl on Repast. Basically, that means there will be no more conflicts between Repacl and Repast in new projects! This also means that porting the API to other frameworks or any Java projects is trivial. But the user has to schedule the behaviors themselves!
+
+I will now try to recap where I felt the plugin tool, because I had already forgot I had //any// development done!
+
+----
+=== Week 7 | 31-Mar ===
+Spent 2 days with conflicts in Repacl because I'm using the same repast JAR from two sources (Repacl and the Repast libraries). The first solution was to remove the references to the class "Context" in Repacl.
+
+It's necessary to include the project in the classpath (at least when importing the Repacl project and not a jar).
+
+This solved the most obvious exception being thrown. However, a more subtle problem appeared. Repast is not scheduling the step method with the @schedule annotation. It should be solved when the step method is __**//public//**__.
+
+Requirements for using RepACL to work:
+ - Add the library/project to the Build Path
+ - Add the library/project to the Class Path (run configurations...)
+ - The step method must be public.
+ - Behaviours MUST have the annotation in the action() method. Turns out annotations are not inherited, contrary to what an earlier test showed me.
+
+
+Meeting summary:
+  * TODO this week: implement at least one protocol, like FIPA_REQUEST, and create a teste with multiple agents that communicate with each other.
+  * In AchieveRE, either assume everyone sends AGREE/REJECT or ignore that step
+  * Maintain the @scheduled behaviors and improve the matching in the Mailbox
+    * Using an Hash Table, progressively build a reference table for used templates, therefore minimizing the time needed to search the Mailbox.
+    * One get one mail each time. At any time, one behavior will be handling a single message
+   * Implement a simple state machine. Maybe create a generic state machine behavior?
+   * On the course of a protocol, the message template should be updated as needed (depends on the state of the protocol)
+   * Responders don't die. After handling one message, returns to initial state and handles next one.
+   * Initiators die after handling all messages.
+
+----
+=== Week 6 | 24-Mar ===
+This week will be dedicated to code conversion. The goal is to have the basic structure of the eclipse plugin by Friday. The best tutorial I found to quickly get started in developing plugins for Eclipse was [[http://www.vogella.com/tutorials/EclipseCommands/article.html|this one]]
+
+[[paper|Started organizing paper ideas]].
+
+[[MASim2Dev|Started the plugin specification]]
+
+[[jade2repast|Mapping JADE and RepACL features]]
+----
+=== Week 5 | 17-Mar ===
+
+Some assertions from this week's tests:
+  * Repast uses a Context object that contains all objects that will be scheduled, i.e. the "agents" of Repast. Agents can contain behaviors that are themselves schedules. They just need to be added to the context as well.
+  * <del> If a class or abstract class contains an annotated method, any class that extends that one and overrides the scheduled method will inherit the @Schedule annotation.</del>
+  * Annotations themselves can be overridden.
+
+The RepACL library is coming along nicely, but keep being restructured. 
+
+----
+=== Week 4 | 10-Mar ===
+Proceeding with the development and specification of RepACL.
+The new architecture, and hopefully final-ish, is the following:
+{{ :wiki:repacl_arch_v6.png?300 |}}
+
+----
+=== Week 3 | 3-Mar ===
+I started to specify the [[wiki:repastFipaTool|FIPA tools for Repast]], namely, I created the UML for its architecture. An architecture similar to JADE's was followed: an interface for all ACL initiators and responders, and interfaces that extend this one for each [[wiki:jadeFipaObjects|class of communications]]. 
+
+----
+=== Week 2 | 24-Feb ===
+Change in work plan. During this week and the next one, I will also explore Repast Simphony and JADE, test a few examples and create a list of functionalities that I want to convert. First task will be to understand which JADE objects allow the use of FIPA ACL.
+
+[[wiki:jadeFipaObjects|Some interfaces provided by JADE to use FIPA ACL]]
+
+
+
+
+**JDT** allows to easily create projects (including classes, methods and fields) using Eclipse plugins. It's then possible to loop through all projects and access their properties, methods, etc.
+----
+=== Week 1 | 17-Feb ===
+
+This week was used to read and test code conversion tools. Unfortunately, I only covered some of the functionalities of JDT. JDT seems to be the best choice for this thesis. However, I decided to change the work plan. Instead of resuming the study of code conversion tools, I found that I should first create the mapping of JADE's and Repast's functionalities before proceeding. 
+
+[[http://www.programcreek.com/2011/01/best-java-development-tooling-jdt-and-astparser-tutorials/|Includes many tutorials ]] about creating plugin projects in eclipse and about using the java development tools.
+
+[[http://www.vogella.com/tutorials/eclipse.html|More JDT tutorials]]

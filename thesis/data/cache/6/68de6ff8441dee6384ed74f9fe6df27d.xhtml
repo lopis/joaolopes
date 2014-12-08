@@ -1,0 +1,83 @@
+
+<h3 class="sectionedit1" id="repacl">RepACL</h3>
+<div class="level3">
+
+<p>
+RepACL is an <abbr title="Application Programming Interface">API</abbr> that implements in Repast a group of concepts related to the <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> interaction protocols. RepACL was based on <abbr title="Java Agent DEvelopment Framework">JADE</abbr>&#039;s implementation of these protocols, therefore making the conversion of Repast projects to <abbr title="Java Agent DEvelopment Framework">JADE</abbr> applications more straightforward, using MASSim2Dev.
+</p>
+
+<p>
+This page tried to document the structure and usage of the <abbr title="Application Programming Interface">API</abbr> and provide some code examples.
+</p>
+
+</div>
+
+<h4 id="classes">Classes</h4>
+<div class="level4">
+
+</div>
+
+<h4 id="examples">Examples</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="basic_agent_and_behavior">Basic Agent and Behavior</h5>
+<div class="level5">
+
+<p>
+This example requires that the RepACL and the Repast Simphony libraries be added to the Java build path.
+</p>
+<dl class="code">
+<dt><a href="/thesis/doku.php?do=export_code&amp;id=wiki:repacl_docs&amp;codeblock=0" title="Download Snippet" class="mediafile mf_java">|MyAgent.java</a></dt>
+<dd><pre class="code java"><span class="kw1">import</span> <span class="co2">up.fe.liacc.repacl.Agent</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw1">public</span> <span class="kw1">class</span> MyAgent <span class="kw1">extends</span> Agent<span class="br0">&#123;</span>
+&nbsp;
+	<span class="kw1">public</span> MyAgent<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">super</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		addBehavior<span class="br0">&#40;</span><span class="kw1">new</span> MyBehavior<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre>
+</dd></dl>
+<dl class="code">
+<dt><a href="/thesis/doku.php?do=export_code&amp;id=wiki:repacl_docs&amp;codeblock=1" title="Download Snippet" class="mediafile mf_java">|MyBehavior.java</a></dt>
+<dd><pre class="code java"><span class="kw1">import</span> <span class="co2">repast.simphony.engine.schedule.ScheduledMethod</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">up.fe.liacc.repacl.Agent</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">up.fe.liacc.repacl.proto.Behavior</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw1">public</span> <span class="kw1">class</span> MyBehavior <span class="kw1">extends</span> Behavior<span class="br0">&#123;</span>
+&nbsp;
+	<span class="kw1">public</span> MyBehavior<span class="br0">&#40;</span>Agent owner<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<span class="kw1">super</span><span class="br0">&#40;</span>owner<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Sets the owner of this behavior.</span>
+	<span class="br0">&#125;</span>
+&nbsp;
+	@ScheduledMethod<span class="br0">&#40;</span>start <span class="sy0">=</span> <span class="nu0">1</span>, interval <span class="sy0">=</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+	<span class="kw1">public</span> <span class="kw4">void</span> action<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+		<a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Behaviour execution.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre>
+</dd></dl>
+<dl class="code">
+<dt><a href="/thesis/doku.php?do=export_code&amp;id=wiki:repacl_docs&amp;codeblock=2" title="Download Snippet" class="mediafile mf_java">|MyContextBuilder.java</a></dt>
+<dd><pre class="code java"><span class="kw1">import</span> <span class="co2">repast.simphony.context.Context</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">repast.simphony.dataLoader.ContextBuilder</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw1">public</span> <span class="kw1">class</span> MyContextBuilder <span class="kw1">implements</span> ContextBuilder<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> <span class="br0">&#123;</span>
+&nbsp;
+	@Override
+	<span class="kw1">public</span> Context<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> build<span class="br0">&#40;</span>Context<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> context<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+		context.<span class="me1">setId</span><span class="br0">&#40;</span><span class="st0">&quot;test&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+		<span class="co1">// Create agent</span>
+		MyAgent t <span class="sy0">=</span> <span class="kw1">new</span> MyAgent<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="co1">// Add the agent to the Repast context.</span>
+		context.<span class="me1">add</span><span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+		<span class="kw1">return</span> context<span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre>
+</dd></dl>
+
+</div>

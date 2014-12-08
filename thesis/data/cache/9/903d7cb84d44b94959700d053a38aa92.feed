@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://jlopes.pt/thesis/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://jlopes.pt/thesis/feed.php">
+        <title>MASSim2Dev - Masters Thesis - João Lopes wiki</title>
+        <description></description>
+        <link>http://jlopes.pt/thesis/</link>
+        <image rdf:resource="http://jlopes.pt/thesis/lib/tpl/vector/images/favicon.ico" />
+       <dc:date>2014-08-29T13:34:53+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:docs&amp;rev=1405696084&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:dokuwiki&amp;rev=1392655154&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:jadefipaobjects&amp;rev=1393437032&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:logs&amp;rev=1400772905&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:masim2dev&amp;rev=1395923913&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:navigation&amp;rev=1400773020&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:navigation_header&amp;rev=1392655154&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:paper&amp;rev=1395919524&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:repastfipatool&amp;rev=1394732855&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:reports&amp;rev=1392655154&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:syntax&amp;rev=1392655154&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:tools&amp;rev=1403623381&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:welcome&amp;rev=1392655154&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://jlopes.pt/thesis/lib/tpl/vector/images/favicon.ico">
+        <title>MASSim2Dev - Masters Thesis - João Lopes</title>
+        <link>http://jlopes.pt/thesis/</link>
+        <url>http://jlopes.pt/thesis/lib/tpl/vector/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:docs&amp;rev=1405696084&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-18T16:08:04+01:00</dc:date>
+        <title>wiki:docs</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:docs&amp;rev=1405696084&amp;do=diff</link>
+        <description>Reports
+
+Thesis
+
+	*  [Final draft for jury review]
+	*  [Final manuscript, post juri review] (Under production)
+
+Other manuscripts
+
+	*  Extended abstract: [English] | [Português]
+	*  [Interim Report]
+	*  [Interim slides]
+	*  [Thesis slides]
+
+Papers
+
+	*  Title: SAJaS - Bridging the Gap between MAS Simulation and Development using a JADE-based API for Repast
+	*  Authors: João P. C. Lopes, Henrique Lopes Cardoso, João S. V. Gonçalves 
+	*  Status: Submitted to MATES but Rejected.
+	*</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:dokuwiki&amp;rev=1392655154&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:39:14+01:00</dc:date>
+        <title>wiki:dokuwiki</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:dokuwiki&amp;rev=1392655154&amp;do=diff</link>
+        <description>DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:jadefipaobjects&amp;rev=1393437032&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-26T17:50:32+01:00</dc:date>
+        <title>wiki:jadefipaobjects</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:jadefipaobjects&amp;rev=1393437032&amp;do=diff</link>
+        <description>JADE Classes for FIPA ACL
+
+AchieveRE
+
+AchieveREInitiator is a single homogeneous and effective implementation of all the FIPA-Request-like interaction protocols defined by FIPA, that is all those protocols where the initiator sends a single message (i.e. it performs a single communicative act) within the scope of an interaction protocol in order to verify if the RE (Rational Effect) of the communicative act has been achieved or not. This implementation works both for 1:1 and 1:N conversation.</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:logs&amp;rev=1400772905&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-05-22T16:35:05+01:00</dc:date>
+        <title>wiki:logs</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:logs&amp;rev=1400772905&amp;do=diff</link>
+        <description>Logs
+
+I'll be using this section to keep track of the my progress, save relevant links and references, keep meeting reports, etc.
+
+Notes
+
+	*  End of implementation phase: 11th week
+	*  First complete version of thesis: 18th week
+
+----------
+
+Week 14 | 19-May
+
+As the work load increased greatly, I decided to limit my logs to github's Issue tracking and commits.</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:masim2dev&amp;rev=1395923913&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-27T12:38:33+01:00</dc:date>
+        <title>wiki:masim2dev</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:masim2dev&amp;rev=1395923913&amp;do=diff</link>
+        <description>MASim2Dev plugin</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:navigation&amp;rev=1400773020&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-05-22T16:37:00+01:00</dc:date>
+        <title>wiki:navigation</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:navigation&amp;rev=1400773020&amp;do=diff</link>
+        <description>*  Abstract
+	*  Documentation
+	*  Logs
+	*  Tools
+	*  My Bio</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:navigation_header&amp;rev=1392655154&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:39:14+01:00</dc:date>
+        <title>wiki:navigation_header</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:navigation_header&amp;rev=1392655154&amp;do=diff</link>
+        <description>[ Abstract | Contents | Reports | Logs ]</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:paper&amp;rev=1395919524&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-27T11:25:24+01:00</dc:date>
+        <title>wiki:paper</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:paper&amp;rev=1395919524&amp;do=diff</link>
+        <description>Paper brainstorming
+
+Some of the possible subjects to include in the paper
+
+	*  Introdution
+		*  MAS and MABS uses and framework limitations;
+
+	*  FIPA
+		*  Brief introduction and description
+		*  FIPA in JADE, interaction behaviors, etc
+
+	*  JRep &amp; MISIA vs MASSim2Dev
+		*  The advantages of having dedicated tools for each job</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:repastfipatool&amp;rev=1394732855&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-13T17:47:35+01:00</dc:date>
+        <title>wiki:repastfipatool</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:repastfipatool&amp;rev=1394732855&amp;do=diff</link>
+        <description>FIPA tools for Repast
+
+I will use this page to document the implementation of FIPA protocols in Repast, which I will call RepACL for now. Some issues I've been thinking about:
+
+	*  Should a directory facilitator be created? Or just use direct agent references - since agents in Repast are POJO? The DF would probably only introduce more complexity to the simulation. Besides, many Repast applications use spaces that contain the agents. If a DF is needed, it should be up to the programmer.
+	*  Repas…</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:reports&amp;rev=1392655154&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:39:14+01:00</dc:date>
+        <title>wiki:reports</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:reports&amp;rev=1392655154&amp;do=diff</link>
+        <description>Reports
+
+First semester Report
+
+This reports contains the details of the literary review and definition of the work plan. To summarize, this report proposes the development of a tool that converts a MABS created in Repast into MAS that uses JADE. Conversely, it should allow the conversion of a JADE MAS into a Repast MABS as well. This tool is useful in the context of development of a MAS whose development started as a MABS or when the need to create a simulation arises during development. JADE a…</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:syntax&amp;rev=1392655154&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:39:14+01:00</dc:date>
+        <title>wiki:syntax</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:syntax&amp;rev=1392655154&amp;do=diff</link>
+        <description>DokuWiki supports some simple markup language, which tries to make the datafiles to be as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing “Edit this page”. If you want to try something, just use the playground page. The simpler markup is easily accessible via quickbuttons, too.</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:tools&amp;rev=1403623381&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-06-24T16:23:01+01:00</dc:date>
+        <title>wiki:tools</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:tools&amp;rev=1403623381&amp;do=diff</link>
+        <description>Tools
+
+These are some tools I've been using throughout my thesis.
+
+All diagrams in this thesis were created by hand using Dia. I chose to create them by hand instead of using UML and diagram tools to be able to finely manipulate my pictures, make them more “LaTeX friendly” using LaTeX fonts and exporting them in SVG.</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:welcome&amp;rev=1392655154&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:39:14+01:00</dc:date>
+        <title>wiki:welcome</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:welcome&amp;rev=1392655154&amp;do=diff</link>
+        <description>Congratulations, your wiki is now up and running. Here are a few more tips to get you started.
+
+Enjoy your work with DokuWiki,
+
+-- the developers
+
+Create your first pages
+
+Your wiki needs to have a start page. As long as it doesn't exist, this link will be red: start.</description>
+    </item>
+</rdf:RDF>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://jlopes.pt/thesis/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://jlopes.pt/thesis/feed.php">
+        <title>MASSim2Dev - Masters Thesis - João Lopes</title>
+        <description></description>
+        <link>http://jlopes.pt/thesis/</link>
+        <image rdf:resource="http://jlopes.pt/thesis/lib/tpl/vector/images/favicon.ico" />
+       <dc:date>2014-07-22T21:33:39+01:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=start&amp;rev=1406013216&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:docs&amp;rev=1405696084&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Athesis.pdf&amp;ns=wiki&amp;rev=1405267967&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Aresumo-pt.pdf&amp;ns=wiki&amp;rev=1405014821&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Aresumo-en.pdf&amp;ns=wiki&amp;rev=1405014820&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis.pdf&amp;ns=wiki&amp;rev=1404417657&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_reviewc.pdf&amp;ns=wiki&amp;rev=1403896987&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_reviewb.pdf&amp;ns=wiki&amp;rev=1403660852&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?id=wiki:tools&amp;rev=1403623381&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_review.pdf&amp;ns=wiki&amp;rev=1403558805&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Apaper_api_joao_lopes.pdf&amp;ns=wiki&amp;rev=1400773157&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v6.png&amp;ns=wiki&amp;rev=1395165101&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v5.png&amp;ns=wiki&amp;rev=1394732850&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v4.png&amp;ns=wiki&amp;rev=1394552067&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v3.png&amp;ns=wiki&amp;rev=1394202734&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch.png&amp;ns=wiki&amp;rev=1394101952&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Afirst_semester_slides.pdf&amp;ns=wiki&amp;rev=1392653629&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://jlopes.pt/thesis/doku.php?image=wiki%3Aei10009.pdf&amp;ns=wiki&amp;rev=1392653111&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://jlopes.pt/thesis/lib/tpl/vector/images/favicon.ico">
+        <title>MASSim2Dev - Masters Thesis - João Lopes</title>
+        <link>http://jlopes.pt/thesis/</link>
+        <url>http://jlopes.pt/thesis/lib/tpl/vector/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=start&amp;rev=1406013216&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-22T08:13:36+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>start</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=start&amp;rev=1406013216&amp;do=diff</link>
+        <description>MASSIM2DEV -  From Simulation to Development of Multi Agent Systems
+
+My name is João Lopes and I will be updating this wiki throughout this semester (2013/2014 S2) with all information about my MSc thesis. Some pages of this wiki have temporary restricted access to the public. This thesis is being developed in the Faculty of Engineering of University of Porto (FEUP), at the Artificial Intelligence and Computer Science Laboratory (LIACC). The following is the most up-to-date abstract of my thesis…</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:docs&amp;rev=1405696084&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-18T16:08:04+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:docs</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:docs&amp;rev=1405696084&amp;do=diff</link>
+        <description>Reports
+
+Thesis
+
+	*  [Final draft for jury review]
+	*  [Final manuscript, post juri review] (Under production)
+
+Other manuscripts
+
+	*  Extended abstract: [English] | [Português]
+	*  [Interim Report]
+	*  [Interim slides]
+	*  [Thesis slides]
+
+Papers
+
+	*  Title: SAJaS - Bridging the Gap between MAS Simulation and Development using a JADE-based API for Repast
+	*  Authors: João P. C. Lopes, Henrique Lopes Cardoso, João S. V. Gonçalves 
+	*  Status: Submitted to MATES but Rejected.
+	*</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Athesis.pdf&amp;ns=wiki&amp;rev=1405267967&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-13T17:12:47+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:thesis.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Athesis.pdf&amp;ns=wiki&amp;rev=1405267967&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Aresumo-pt.pdf&amp;ns=wiki&amp;rev=1405014821&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-10T18:53:41+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:resumo-pt.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Aresumo-pt.pdf&amp;ns=wiki&amp;rev=1405014821&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Aresumo-en.pdf&amp;ns=wiki&amp;rev=1405014820&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-10T18:53:40+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:resumo-en.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Aresumo-en.pdf&amp;ns=wiki&amp;rev=1405014820&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis.pdf&amp;ns=wiki&amp;rev=1404417657&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-07-03T21:00:57+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:joao_lopes_thesis.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis.pdf&amp;ns=wiki&amp;rev=1404417657&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_reviewc.pdf&amp;ns=wiki&amp;rev=1403896987&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-06-27T20:23:07+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:joao_lopes_thesis_juri_reviewc.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_reviewc.pdf&amp;ns=wiki&amp;rev=1403896987&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_reviewb.pdf&amp;ns=wiki&amp;rev=1403660852&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-06-25T02:47:32+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:joao_lopes_thesis_juri_reviewb.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_reviewb.pdf&amp;ns=wiki&amp;rev=1403660852&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?id=wiki:tools&amp;rev=1403623381&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-06-24T16:23:01+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:tools</title>
+        <link>http://jlopes.pt/thesis/doku.php?id=wiki:tools&amp;rev=1403623381&amp;do=diff</link>
+        <description>Tools
+
+These are some tools I've been using throughout my thesis.
+
+All diagrams in this thesis were created by hand using Dia. I chose to create them by hand instead of using UML and diagram tools to be able to finely manipulate my pictures, make them more “LaTeX friendly” using LaTeX fonts and exporting them in SVG.</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_review.pdf&amp;ns=wiki&amp;rev=1403558805&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-06-23T22:26:45+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:joao_lopes_thesis_juri_review.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Ajoao_lopes_thesis_juri_review.pdf&amp;ns=wiki&amp;rev=1403558805&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Apaper_api_joao_lopes.pdf&amp;ns=wiki&amp;rev=1400773157&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-05-22T16:39:17+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:paper_api_joao_lopes.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Apaper_api_joao_lopes.pdf&amp;ns=wiki&amp;rev=1400773157&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v6.png&amp;ns=wiki&amp;rev=1395165101&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-18T17:51:41+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:repacl_arch_v6.png - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v6.png&amp;ns=wiki&amp;rev=1395165101&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/thesis/lib/exe/fetch.php?w=500&amp;h=280t=1395165101&amp;amp;tok=9e0c0f&amp;amp;media=wiki:repacl_arch_v6.png&quot; alt=&quot;wiki:repacl_arch_v6.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v5.png&amp;ns=wiki&amp;rev=1394732850&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-13T17:47:30+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:repacl_arch_v5.png - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v5.png&amp;ns=wiki&amp;rev=1394732850&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/thesis/lib/exe/fetch.php?w=500&amp;h=327t=1394732850&amp;amp;tok=0aad61&amp;amp;media=wiki:repacl_arch_v5.png&quot; alt=&quot;wiki:repacl_arch_v5.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v4.png&amp;ns=wiki&amp;rev=1394552067&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-11T15:34:27+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:repacl_arch_v4.png - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v4.png&amp;ns=wiki&amp;rev=1394552067&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/thesis/lib/exe/fetch.php?w=500&amp;h=367t=1394552067&amp;amp;tok=36d7d6&amp;amp;media=wiki:repacl_arch_v4.png&quot; alt=&quot;wiki:repacl_arch_v4.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v3.png&amp;ns=wiki&amp;rev=1394202734&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-07T14:32:14+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:repacl_arch_v3.png - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch_v3.png&amp;ns=wiki&amp;rev=1394202734&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/thesis/lib/exe/fetch.php?w=285&amp;h=315t=1394202734&amp;amp;tok=fddc65&amp;amp;media=wiki:repacl_arch_v3.png&quot; alt=&quot;wiki:repacl_arch_v3.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch.png&amp;ns=wiki&amp;rev=1394101952&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-06T10:32:32+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:repacl_arch.png - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Arepacl_arch.png&amp;ns=wiki&amp;rev=1394101952&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;/thesis/lib/exe/fetch.php?w=500&amp;h=232t=1394101952&amp;amp;tok=e44214&amp;amp;media=wiki:repacl_arch.png&quot; alt=&quot;wiki:repacl_arch.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Afirst_semester_slides.pdf&amp;ns=wiki&amp;rev=1392653629&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:13:49+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:first_semester_slides.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Afirst_semester_slides.pdf&amp;ns=wiki&amp;rev=1392653629&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://jlopes.pt/thesis/doku.php?image=wiki%3Aei10009.pdf&amp;ns=wiki&amp;rev=1392653111&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-17T16:05:11+01:00</dc:date>
+        <dc:creator>jlopes</dc:creator>
+        <title>wiki:ei10009.pdf - created</title>
+        <link>http://jlopes.pt/thesis/doku.php?image=wiki%3Aei10009.pdf&amp;ns=wiki&amp;rev=1392653111&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description></description>
+    </item>
+</rdf:RDF>

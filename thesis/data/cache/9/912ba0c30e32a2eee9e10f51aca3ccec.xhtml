@@ -1,0 +1,118 @@
+
+<h2 class="sectionedit1" id="fipa_tools_for_repast">FIPA tools for Repast</h2>
+<div class="level2">
+
+<p>
+I will use this page to document the implementation of <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> protocols in Repast, which I will call <strong>RepACL</strong> for now. Some issues I&#039;ve been thinking about:
+</p>
+<ul>
+<li class="level1"><div class="li"> Should a directory facilitator be created? Or just use direct agent references - since agents in Repast are POJO? The DF would probably only introduce more complexity to the simulation. Besides, many Repast applications use spaces that contain the agents. If a DF is needed, it should be up to the programmer.</div>
+</li>
+<li class="level1"><div class="li"> Repast <abbr title="Multi-Agent-Based Simulation">MABS</abbr> are typically very fast so it&#039;s important to keep the library very lightweight. <abbr title="Java Agent DEvelopment Framework">JADE</abbr> uses behaviours to implement each type of communication. These behaviours are classes. For RepACL</div>
+</li>
+<li class="level1"><div class="li"> Different kinds of communication are available in <abbr title="Java Agent DEvelopment Framework">JADE</abbr>: REQUEST, PROPOSE, CONTRACT NET.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "FIPA tools for Repast" [1-799] -->
+<h3 class="sectionedit2" id="repacl_architecture">RepACL Architecture</h3>
+<div class="level3">
+
+<p>
+I decided to study to feasibility of three different approaches for the architecture of RepACL: using an interface for agents, an abstract class that agents would extend or a separate “communicator class”. The following table summarizes each one&#039;s strengths.
+</p>
+<div class="table sectionedit3"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign">   </th><th class="col1"> Implementation </th><th class="col2"> Agent super classes allowed </th><th class="col3"> Extra code in agent class </th><th class="col4"> Sync </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> Interface </td><td class="col1"> none </td><td class="col2"> yes </td><td class="col3"> all implementation </td><td class="col4"> yes </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Abstract class </td><td class="col1"> yes </td><td class="col2"> no </td><td class="col3"> some implementation </td><td class="col4"> yes </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Separate class </td><td class="col1"> yes </td><td class="col2"> yes </td><td class="col3"> just method calls </td><td class="col4"> possible </td>
+	</tr>
+</table></div>
+<!-- EDIT3 TABLE [1091-1352] -->
+<p>
+<a href="/thesis/lib/exe/detail.php?id=wiki%3Arepastfipatool&amp;media=wiki:repacl_arch_v5.png" class="media" title="wiki:repacl_arch_v5.png"><img src="/thesis/lib/exe/fetch.php?w=300&amp;tok=5b4e39&amp;media=wiki:repacl_arch_v5.png" class="mediaright" alt="" width="300" /></a>
+The communicator class approach seemed the best at first, but I later decided on an hybrid approach. 
+</p>
+
+<p>
+As the picture shows, repast agents will implement an interface. It&#039;s a very simple interface, containing the generic <code>send</code> method. This method accepts an <abbr title="Agent Communication Language">ACL</abbr> Message that can be of various types depending on the protocol and performative of communication. The constructor of this class demands a value for those two fields. This performative is defined by <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> and can have the following values, conveniently defined in the <abbr title="Agent Communication Language">ACL</abbr> helper class as constants:
+</p>
+<ul>
+<li class="level1"><div class="li"> ACCEPT_PROPOSAL</div>
+</li>
+<li class="level1"><div class="li"> AGREE</div>
+</li>
+<li class="level1"><div class="li"> CANCEL</div>
+</li>
+<li class="level1"><div class="li"> CALL_FOR_PROPOSAL</div>
+</li>
+<li class="level1"><div class="li"> CONFIRM</div>
+</li>
+<li class="level1"><div class="li"> DISCONFIRM</div>
+</li>
+<li class="level1"><div class="li"> FAILURE</div>
+</li>
+<li class="level1"><div class="li"> INFORM</div>
+</li>
+<li class="level1"><div class="li"> INFORM_IF</div>
+</li>
+<li class="level1"><div class="li"> INFORM_REF</div>
+</li>
+<li class="level1"><div class="li"> NOT_UNDERSTOOD</div>
+</li>
+<li class="level1"><div class="li"> PROPAGATE</div>
+</li>
+<li class="level1"><div class="li"> PROPOSE</div>
+</li>
+<li class="level1"><div class="li"> PROXY</div>
+</li>
+<li class="level1"><div class="li"> QUERY_IF</div>
+</li>
+<li class="level1"><div class="li"> QUERY_REF</div>
+</li>
+<li class="level1"><div class="li"> REFUSE</div>
+</li>
+<li class="level1"><div class="li"> REJECT_PROPOSAL</div>
+</li>
+<li class="level1"><div class="li"> REQUEST</div>
+</li>
+<li class="level1"><div class="li"> REQUEST_WHEN</div>
+</li>
+<li class="level1"><div class="li"> REQUEST_WHENEVER</div>
+</li>
+<li class="level1"><div class="li"> SUBSCRIBE</div>
+</li>
+</ul>
+
+<p>
+The valid values for the performative field are the following:
+</p>
+<ul>
+<li class="level1"><div class="li"> ACHIEVE_RE_INITIATOR</div>
+</li>
+<li class="level1"><div class="li"> ACHIEVE_RE_RESPONDER</div>
+</li>
+<li class="level1"><div class="li"> CONTRACT_NET_INITIATOR</div>
+</li>
+<li class="level1"><div class="li"> CONTRACT_NET_RESPONDER</div>
+</li>
+<li class="level1"><div class="li"> PROPOSE_INITIATOR</div>
+</li>
+<li class="level1"><div class="li"> PROPOSE_RESPONDER</div>
+</li>
+</ul>
+
+<p>
+The meaning behind this constants is defined by <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "RepACL Architecture" [800-] -->

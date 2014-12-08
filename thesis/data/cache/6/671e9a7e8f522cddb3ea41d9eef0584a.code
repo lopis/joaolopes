@@ -1,0 +1,18 @@
+<span class="kw1">import</span> <span class="co2">repast.simphony.context.Context</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">repast.simphony.dataLoader.ContextBuilder</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw1">public</span> <span class="kw1">class</span> MyContextBuilder <span class="kw1">implements</span> ContextBuilder<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> <span class="br0">&#123;</span>
+&nbsp;
+	@Override
+	<span class="kw1">public</span> Context<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> build<span class="br0">&#40;</span>Context<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> context<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+		context.<span class="me1">setId</span><span class="br0">&#40;</span><span class="st0">&quot;test&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+		<span class="co1">// Create agent</span>
+		MyAgent t <span class="sy0">=</span> <span class="kw1">new</span> MyAgent<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="co1">// Add the agent to the Repast context.</span>
+		context.<span class="me1">add</span><span class="br0">&#40;</span>t<span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+		<span class="kw1">return</span> context<span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>

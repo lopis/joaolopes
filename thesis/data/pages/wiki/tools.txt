@@ -1,0 +1,7 @@
+==== Tools ====
+
+These are some tools I've been using throughout my thesis.
+
+All diagrams in this thesis were created by hand using [[http://dia-installer.de/|Dia]]. I chose to create them by hand instead of using UML and diagram tools to be able to finely manipulate my pictures, make them more "LaTeX friendly" using LaTeX fonts and exporting them in SVG.
+
+For creation of my reports and papers, I use Sublime Text 3, including a plugin for LaTeX edition. It's available in https://github.com/SublimeText/LaTeXTools .

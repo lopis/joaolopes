@@ -1,0 +1,57 @@
+
+<h2 class="sectionedit1" id="fipa_tools_for_repast">FIPA tools for Repast</h2>
+<div class="level2">
+
+<p>
+I will use this page to document the implementation of <abbr title="Foundation for Intelligent Physical Agents">FIPA</abbr> protocols in Repast, which I will call <strong>RepACL</strong> for now. Some issues I&#039;ve been thinking about:
+</p>
+<ul>
+<li class="level1"><div class="li"> Should a directory facilitator be created? Or just use direct agent references - since agents in Repast are POJO? The DF would probably only introduce more complexity to the simulation. Besides, many Repast applications use spaces that contain the agents. If a DF is needed, it should be up to the programmer.</div>
+</li>
+<li class="level1"><div class="li"> Repast <abbr title="Multi-Agent-Based Simulation">MABS</abbr> are typically very fast so it&#039;s important to keep the library very lightweight. <abbr title="Java Agent DEvelopment Framework">JADE</abbr> uses behaviours to implement each type of communication. These behaviours are classes. For RepACL</div>
+</li>
+<li class="level1"><div class="li"> Different kinds of communication are available in <abbr title="Java Agent DEvelopment Framework">JADE</abbr>: REQUEST, PROPOSE, CONTRACT NET.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "FIPA tools for Repast" [1-799] -->
+<h3 class="sectionedit2" id="repacl_architecture">RepACL Architecture</h3>
+<div class="level3">
+
+<p>
+<a href="/thesis/lib/exe/detail.php?id=wiki%3Arepastfipatool&amp;media=wiki:repacl_arch_v3.png" class="media" title="wiki:repacl_arch_v3.png"><img src="/thesis/lib/exe/fetch.php?w=200&amp;tok=55e715&amp;media=wiki:repacl_arch_v3.png" class="mediaright" alt="" width="200" /></a>
+</p>
+
+<p>
+After creating multiple drafts of RepACL&#039;s architecture, I decided to keep it lightweight. There were three main possibilities for the architecture.
+</p>
+<div class="table sectionedit3"><table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign">   </th><th class="col1"> Implementation </th><th class="col2"> Agent super classes allowed </th><th class="col3"> Extra code in agent class </th><th class="col4"> Sync </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> Interface </td><td class="col1"> none </td><td class="col2"> yes </td><td class="col3"> all implementation </td><td class="col4"> yes </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Abstract class </td><td class="col1"> yes </td><td class="col2"> no </td><td class="col3"> some implementation </td><td class="col4"> yes </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Separate class </td><td class="col1"> yes </td><td class="col2"> yes </td><td class="col3"> just method calls </td><td class="col4"> possible </td>
+	</tr>
+</table></div>
+<!-- EDIT3 TABLE [1016-1277] -->
+<p>
+Having the agents extend of implement RepACL would be very straightforward, simple and flexible. However, using an abstract class prevents agents that extend it to extends their own super classes. On the other hand, using an interface means that there is <em>no implementation whatsoever</em>, i.e. it&#039;s up to the agent to implement all protocols.
+</p>
+
+<p>
+I decided to use a “communicator class” that contains static methods that receive all messages and keep them in a queue. Each kind of communication (Request, Propose, Contract Net) will deal with the <abbr title="Agent Communication Language">ACL</abbr> Messages in a different way. This class uses a message queue and it should work just like any other repast agent, executing its <code>step()</code> function on each tick. The step method will send all messages currently in the buffer.
+</p>
+
+<p>
+The ACLMessage class contains all the information about the message: the agents involved, the performative (the “intent” of the message), and the content, which can be any object or null. 
+</p>
+
+</div>
+<!-- EDIT2 SECTION "RepACL Architecture" [800-] -->

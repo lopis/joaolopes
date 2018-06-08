@@ -1,4 +1,4 @@
-const url = 'https://raw.githubusercontent.com/lopis/joaolopes/bio/bio.json'
+const url = 'https://raw.githubusercontent.com/lopis/joaolopes/master/bio.json'
 const sections = [
   'personal',
   'bio',

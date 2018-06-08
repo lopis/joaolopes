@@ -62,14 +62,14 @@ h3 {
  margin: 0;
  line-height: 2;
  padding: 0 10px;
+ font-size: 1em;
 }
 label {
  float: left;
  line-height: 1.5;
- padding: 0 10px;
+ padding: 0 15px 0 2px;
  color: #f43f1099;
  font-weight: bold;
- margin-right: 5px;
  min-width: 22%;
  box-sizing: border-box;
 }
@@ -82,4 +82,12 @@ a {
  display: block;
  color: #f84e41;
  line-height: 1.5;
+}
+
+li.skill {
+  display: inline-block;
+  background: #fbb29f;
+  margin: 2px;
+  color: #644;
+  padding: 2px 7px 2px 2px;
 }

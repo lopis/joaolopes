@@ -10,7 +10,7 @@
   "education": [
     {
       "designation": "Masters in Computer/IT Engineering",
-      "issuer": "FEUP, Universidade do Porto",
+      "institution": "FEUP, Universidade do Porto",
       "website": "https://fe.up.pt",
       "location": "Porto, Portugal",
       "date": "2015",
@@ -24,7 +24,7 @@
   "jobs": [
     {
       "designation": "Fullstack developer",
-      "issuer": "VentureOak",
+      "company": "VentureOak",
       "website": "https://ventureoak.com/",
       "location": "Porto, Portugal",
       "period": ["2015-07-01", "2016-06-24"],
@@ -38,7 +38,7 @@
     },
     {
       "designation": "Frontend Developer",
-      "issuer": "simplesurance",
+      "company": "simplesurance",
       "website": "https://simplesurance.com/",
       "location": "Berlin, Germany",
       "period": ["2015-08-24", "Present"],

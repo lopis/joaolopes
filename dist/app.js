@@ -50,6 +50,20 @@ class Application extends React.Component {
       });
     };
 
+    this.renderSkills = data => {
+      return React.createElement(
+        'ul',
+        null,
+        data.map(skill => {
+          return React.createElement(
+            'li',
+            { className: 'skill' },
+            skill
+          );
+        })
+      );
+    };
+
     this.rendererMap = {
       'string': data => React.createElement(
         'p',
@@ -69,7 +83,8 @@ class Application extends React.Component {
         `${data[0]} - ${data[1]}`
       ),
       'education': this.renderEducation,
-      'jobs': this.renderEducation
+      'jobs': this.renderEducation,
+      'skills': this.renderSkills
     };
 
     this.renderSectionBody = (data, section) => {

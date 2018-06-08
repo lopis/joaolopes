@@ -59,6 +59,16 @@ class Application extends React.Component {
     })
   }
 
+  renderSkills = (data) => {
+    return <ul>
+      {
+        data.map(skill => {
+          return <li className="skill">{skill}</li>
+        })
+      }
+    </ul>
+  }
+
   rendererMap = {
     'string': data => <p>{data}</p>,
     'website': data => <a href={data}>{data}</a>,
@@ -67,6 +77,7 @@ class Application extends React.Component {
     'period': data => <p>{`${data[0]} - ${data[1]}`}</p>,
     'education': this.renderEducation,
     'jobs': this.renderEducation,
+    'skills': this.renderSkills
   }
 
   renderSectionBody = (data, section) => {

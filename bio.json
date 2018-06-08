@@ -53,24 +53,12 @@
       ]
     }
   ],
-  "tongues": [
-    {
-      "name": "Portuguese (EU)",
-      "level": "Native"
-    },
-    {
-      "name": "English",
-      "level": "Fluent"
-    },
-    {
-      "name": "Spanish",
-      "level": "OK"
-    },
-    {
-      "name": "German",
-      "level": "Ein Bisschen"
-    }
-  ],
+  "tongues": {
+    "Portuguese (EU)": "Native",
+    "English": "Fluent",
+    "Spanish": "OK",
+    "German": "Ein Bisschen"
+  },
   "preferences": {
     "IDE": "Atom ⚛️",
     "OS": "Linux 🐧",

@@ -1,0 +1,81 @@
+{
+  "bio": "I'm a software developer as a trade and as a hobby. I try to have other hobbies as well that keep me away fromt the machine like cookie, gardening and cycling. I like to take things apart and take great pleasure in putting them back together sometimes. If you're reading this, it has probably been generated from my CV in JSON into a human friendly format.",
+  "personal": {
+    "Name": "João Pedro Camacho Lopes",
+    "Birth date": "1990-09-13",
+    "Birth place": "Funchal, Portugal",
+    "Current location": "Berlin, Germany",
+    "Github": "lopis"
+  },
+  "education": [
+    {
+      "designation": "Masters in Computer/IT Engineering",
+      "issuer": "FEUP, Universidade do Porto",
+      "website": "https://fe.up.pt",
+      "location": "Porto, Portugal",
+      "date": "2015",
+      "extras": [
+        "Summer school mentor for highschool students",
+        "Mentor for AI course",
+        "MsC Thesis: AI Agents Software (Java)"
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "designation": "Fullstack developer",
+      "issuer": "VentureOak",
+      "website": "https://ventureoak.com/",
+      "location": "Porto, Portugal",
+      "period": ["2015-07-01", "2016-06-24"],
+      "skills": [
+        "Fullstack web development",
+        "Responsive websites",
+        "Single-page applications",
+        "Javascript", "JQuery", "SASS",
+        "Symfony", "MongoDB"
+      ]
+    },
+    {
+      "designation": "Frontend Developer",
+      "issuer": "simplesurance",
+      "website": "https://simplesurance.com/",
+      "location": "Berlin, Germany",
+      "period": ["2015-08-24", "Present"],
+      "skills": [
+        "Frontend web development",
+        "Responsive websites",
+        "Single-page applications",
+        "Widget Integration",
+        "Javascript", "ReactJs", "JQuery", "SASS",
+        "Webpack", "Babel",
+        "Symfony", "MongoDB"
+      ]
+    },
+  ],
+  "tongues": [
+    {
+      "name": "Portuguese (EU)",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "Spanish",
+      "level": "OK"
+    },
+    {
+      "name": "German",
+      "level": "Ein Bisschen"
+    },
+  ],
+  "preferences": {
+    "IDE": "Atom ⚛️",
+    "OS": "Linux 🐧",
+    "Browser": "Firefox 🦊",
+    "Food": "vegan 🌱, asian",
+    "Languages": "javascript, python"
+  }
+}

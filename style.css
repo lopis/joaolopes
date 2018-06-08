@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html {
+ background: #333;
+}
+body {
+ background: white;
+ color: #333;
+ height: 297mm;
+ width: 210mm;
+ margin: 5px auto;
+ padding: 5px;
+ box-sizing: border-box;
+ border: 1px solid #999;
+ font-family: Ubuntu, sans-serif;
+ columns: 2;
+ padding: 10mm 20mm 10mm 20mm;
+}
+@page
+{
+   size: auto;   /* auto is the initial value */
+   /* the margin in the printer settings */
+   margin: 0mm;
+}
+
+section {
+ break-inside: avoid-column;
+ page-break-inside: avoid;
+}
+
+ul {
+ list-style: none;
+ padding-left: 0;
+ margin: 0 0 10px 0;
+}
+
+li {
+ box-shadow: -5px 0 #f43f10AA inset;
+ padding-right: 8px;
+}
+
+li li {
+ box-shadow: -5px 0 #f43f1066 inset;
+}
+
+p {
+ margin: 0;
+ line-height: 1.5;
+ padding: 0 5px;
+ text-align: justify;
+}
+
+h2 {
+ padding: 20px 0 15px 0;
+ margin: 0;
+ border-bottom: 1px solid #f43f10AA;
+}
+
+h3 {
+ background: #f43f10AA;
+ color: white;
+ margin: 0;
+ line-height: 2;
+ padding: 0 10px;
+}
+label {
+ float: left;
+ line-height: 1.5;
+ padding: 0 10px;
+ color: #f43f1099;
+ font-weight: bold;
+ margin-right: 5px;
+ min-width: 22%;
+ box-sizing: border-box;
+}
+
+label + ul {
+ padding-left: 22%
+}
+
+a {
+ display: block;
+ color: #f84e41;
+ line-height: 1.5;
+}

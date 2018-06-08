@@ -1,5 +1,5 @@
 {
-  "bio": "I'm a software developer as a trade and as a hobby. I try to have other hobbies as well that keep me away fromt the machine like cookie, gardening and cycling. I like to take things apart and take great pleasure in putting them back together sometimes. If you're reading this, it has probably been generated from my CV in JSON into a human friendly format.",
+  "bio": "I'm a software developer as a trade and as a hobby. I started programming as a kid when I needed to fix something online. This was before I even knew what programming was. I maintain other hobbies to keep me away from the computer. These include cooking, gardening and cycling. I like to take things apart - I find great pleasure in ocasionally putting them back together. This CV has been generated from my C.V. in JSON into a human friendly format.",
   "personal": {
     "Name": "João Pedro Camacho Lopes",
     "Birth date": "1990-09-13",
@@ -49,7 +49,7 @@
         "Widget Integration",
         "Javascript", "ReactJs", "JQuery", "SASS",
         "Webpack", "Babel",
-        "Symfony", "MongoDB"
+        "Symfony",
       ]
     }
   ],

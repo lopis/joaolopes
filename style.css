@@ -21,6 +21,7 @@ body {
    size: auto;   /* auto is the initial value */
    /* the margin in the printer settings */
    margin: 0mm;
+   -webkit-margin: 0mm;
 }
 
 section {
@@ -41,6 +42,10 @@ li {
 
 li li {
  box-shadow: -5px 0 #f43f1066 inset;
+}
+
+li > div {
+  display: flex;
 }
 
 p {
@@ -65,17 +70,11 @@ h3 {
  font-size: 1em;
 }
 label {
- float: left;
  line-height: 1.5;
  padding: 0 15px 0 2px;
  color: #f43f1099;
  font-weight: bold;
- min-width: 22%;
  box-sizing: border-box;
-}
-
-label + ul {
- padding-left: 22%
 }
 
 a {

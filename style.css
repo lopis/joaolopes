@@ -118,6 +118,9 @@ li.skill {
     font-size: 90%;
     background: transparent;
   }
+  .printMe  {
+    display: none;
+  }
 }
 @media screen and (max-width: 215mm) {
   body {

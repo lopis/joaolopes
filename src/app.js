@@ -12,6 +12,10 @@ class Application extends React.Component {
   constructor () {
     super()
 
+    console.log('Hello, thank you for checking my CV.')
+    console.log('This page was written in ReactJS.')
+    console.log('It is parsing a JSON formatted file to show you this information.')
+
     this.state = {
       data: {
         loading: true

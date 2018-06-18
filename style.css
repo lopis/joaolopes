@@ -31,6 +31,14 @@ body {
     background: transparent;
   }
 }
+@media screen and (max-width: 215mm) {
+  body {
+    width: auto;
+    margin: 0;
+    columns: unset;
+    padding: 5vh 5vw;
+  }
+}
 
 section {
   break-inside: avoid-column;

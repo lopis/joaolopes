@@ -1,7 +1,7 @@
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-const url = 'https://raw.githubusercontent.com/lopis/joaolopes/master/bio.json';
-const sections = ['personal', 'bio', 'education', 'tongues', 'jobs', 'preferences'];
+const url = 'bio.json';
+const sections = ['c.v.', 'bio', 'education', 'tongues', 'jobs', 'interests'];
 
 class Application extends React.Component {
   constructor() {
@@ -12,7 +12,7 @@ class Application extends React.Component {
         'ul',
         null,
         Object.keys(data).map(key => {
-          const renderer = this.rendererMap[key] || this.rendererMap[typeof data[key]];
+          const renderer = this.rendererMap[key.toLowerCase()] || this.rendererMap[typeof data[key]];
 
           return React.createElement(
             'li',
@@ -50,7 +50,7 @@ class Application extends React.Component {
       });
     };
 
-    this.renderSkills = data => {
+    this.renderTags = data => {
       return React.createElement(
         'ul',
         null,
@@ -64,17 +64,20 @@ class Application extends React.Component {
       );
     };
 
+    this.renderLink = data => React.createElement(
+      'a',
+      { href: data },
+      data
+    );
+
     this.rendererMap = {
       'string': data => React.createElement(
         'p',
         null,
         data
       ),
-      'website': data => React.createElement(
-        'a',
-        { href: data },
-        data
-      ),
+      'website': this.renderLink,
+      'github': this.renderLink,
       'object': this.renderObject,
       'undefined': data => '',
       'period': data => React.createElement(
@@ -84,12 +87,13 @@ class Application extends React.Component {
       ),
       'education': this.renderEducation,
       'jobs': this.renderEducation,
-      'skills': this.renderSkills
+      'skills': this.renderTags,
+      'interests': this.renderTags
     };
 
     this.renderSectionBody = (data, section) => {
       const type = typeof data;
-      const renderer = this.rendererMap[section] || this.rendererMap[type];
+      const renderer = this.rendererMap[section.toLowerCase()] || this.rendererMap[type];
       return renderer(data, section);
     };
 

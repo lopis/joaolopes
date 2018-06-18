@@ -1,11 +1,11 @@
-const url = 'https://raw.githubusercontent.com/lopis/joaolopes/master/bio.json'
+const url = 'bio.json'
 const sections = [
-  'personal',
+  'c.v.',
   'bio',
   'education',
   'tongues',
   'jobs',
-  'preferences',
+  'interests',
 ]
 
 class Application extends React.Component {
@@ -35,7 +35,7 @@ class Application extends React.Component {
   renderObject = (data = {}, section = '') => {
     return <ul>
       {Object.keys(data).map(key => {
-        const renderer = this.rendererMap[key]
+        const renderer = this.rendererMap[key.toLowerCase()]
           || this.rendererMap[typeof data[key]]
 
         return <li key={key + section}>
@@ -59,7 +59,7 @@ class Application extends React.Component {
     })
   }
 
-  renderSkills = (data) => {
+  renderTags = (data) => {
     return <ul>
       {
         data.map(skill => {
@@ -69,20 +69,24 @@ class Application extends React.Component {
     </ul>
   }
 
+  renderLink = data => <a href={data}>{data}</a>
+
   rendererMap = {
     'string': data => <p>{data}</p>,
-    'website': data => <a href={data}>{data}</a>,
+    'website': this.renderLink,
+    'github': this.renderLink,
     'object': this.renderObject,
     'undefined': data => '',
     'period': data => <p>{`${data[0]} - ${data[1]}`}</p>,
     'education': this.renderEducation,
     'jobs': this.renderEducation,
-    'skills': this.renderSkills
+    'skills': this.renderTags,
+    'interests': this.renderTags
   }
 
   renderSectionBody = (data, section) => {
     const type = typeof data
-    const renderer = this.rendererMap[section]
+    const renderer = this.rendererMap[section.toLowerCase()]
       || this.rendererMap[type]
     return renderer(data, section)
   }

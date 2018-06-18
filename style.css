@@ -15,35 +15,6 @@ body {
   columns: 2;
   padding: 10mm 20mm 10mm 20mm;
 }
-@page
-{
-  size: auto;   /* auto is the initial value */
-  /* the margin in the printer settings */
-  margin: 0mm;
-  -webkit-margin: 0mm;
-}
-@media print {
-  html {
-    background: transparent;
-  }
-  body {
-    font-size: 90%;
-    background: transparent;
-  }
-}
-@media screen and (max-width: 215mm) {
-  body {
-    width: auto;
-    height: auto;
-    margin: 0;
-    columns: unset;
-    padding: 5vh 5vw 15vh 5vw;
-  }
-  .printMe  {
-    bottom: 0;
-    top: unset;
-  }
-}
 
 section {
   break-inside: avoid-column;
@@ -129,4 +100,35 @@ li.skill {
 .printMe:hover, .printMe :focus {
   box-shadow: 0px 3px 8px #00000080;
   background: #fbb29f88;
+}
+
+
+@page
+{
+  size: auto;   /* auto is the initial value */
+  /* the margin in the printer settings */
+  margin: 0mm;
+  -webkit-margin: 0mm;
+}
+@media print {
+  html {
+    background: transparent;
+  }
+  body {
+    font-size: 90%;
+    background: transparent;
+  }
+}
+@media screen and (max-width: 215mm) {
+  body {
+    width: auto;
+    height: auto;
+    margin: 0;
+    columns: unset;
+    padding: 5vh 5vw 15vh 5vw;
+  }
+  .printMe  {
+    bottom: 0;
+    top: unset;
+  }
 }

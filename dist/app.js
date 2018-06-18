@@ -1,7 +1,7 @@
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 const url = 'bio.json';
-const sections = ['c.v.', 'bio', 'education', 'tongues', 'jobs', 'interests'];
+const sections = ['c.v.', 'bio', 'tongues', 'interests', 'jobs', 'education'];
 
 class Application extends React.Component {
   constructor() {

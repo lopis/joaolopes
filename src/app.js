@@ -108,8 +108,15 @@ class Application extends React.Component {
     })
   }
 
+  renderPrinter = () => {
+    return <button className="printMe" title="Print Me" onClick={window.print}>🖨️</button>
+  }
+
   render() {
-    return this.renderSections();
+    return <div>
+      {this.renderSections()}
+      {this.renderPrinter()}
+    </div>
   }
 }
 

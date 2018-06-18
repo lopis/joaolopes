@@ -34,9 +34,14 @@ body {
 @media screen and (max-width: 215mm) {
   body {
     width: auto;
+    height: auto;
     margin: 0;
     columns: unset;
-    padding: 5vh 5vw;
+    padding: 5vh 5vw 15vh 5vw;
+  }
+  .printMe  {
+    bottom: 0;
+    top: unset;
   }
 }
 
@@ -105,4 +110,23 @@ li.skill {
   margin: 2px;
   color: #644;
   padding: 2px 7px 2px 2px;
+}
+
+.printMe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fbb29f;
+  padding: 1mm 2mm;
+  border: 1px solid #f77f5f;
+  border-radius: 4px;
+  font-size: 190%;
+  margin: 4mm;
+  box-shadow: 0px 3px 4px #00000080;
+  transition: background 200ms, box-shadow 200ms;
+  cursor: pointer;
+}
+.printMe:hover, .printMe :focus {
+  box-shadow: 0px 3px 8px #00000080;
+  background: #fbb29f88;
 }

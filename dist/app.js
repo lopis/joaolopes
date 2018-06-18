@@ -114,6 +114,18 @@ class Application extends React.Component {
       });
     };
 
+    this.renderPrinter = () => {
+      return React.createElement(
+        'button',
+        { className: 'printMe', title: 'Print Me', onClick: window.print },
+        '\uD83D\uDDA8\uFE0F'
+      );
+    };
+
+    console.log('Hello, thank you for checking my CV.');
+    console.log('This page was written in ReactJS.');
+    console.log('It is parsing a JSON formatted file to show you this information.');
+
     this.state = {
       data: {
         loading: true
@@ -133,7 +145,12 @@ class Application extends React.Component {
   }
 
   render() {
-    return this.renderSections();
+    return React.createElement(
+      'div',
+      null,
+      this.renderSections(),
+      this.renderPrinter()
+    );
   }
 }
 

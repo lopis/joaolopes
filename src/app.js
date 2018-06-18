@@ -2,10 +2,10 @@ const url = 'bio.json'
 const sections = [
   'c.v.',
   'bio',
-  'education',
   'tongues',
-  'jobs',
   'interests',
+  'jobs',
+  'education',
 ]
 
 class Application extends React.Component {

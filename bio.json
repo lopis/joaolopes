@@ -23,20 +23,6 @@
   ],
   "jobs": [
     {
-      "designation": "Fullstack developer",
-      "company": "VentureOak",
-      "website": "https://ventureoak.com/",
-      "location": "Porto, Portugal",
-      "period": ["2015-07-01", "2016-06-24"],
-      "skills": [
-        "Fullstack web development",
-        "Responsive websites",
-        "Single-page applications",
-        "Javascript", "JQuery", "SASS",
-        "Symfony", "MongoDB"
-      ]
-    },
-    {
       "designation": "Frontend Developer",
       "company": "simplesurance",
       "website": "https://simplesurance.com/",
@@ -50,6 +36,20 @@
         "Javascript", "ReactJs", "JQuery", "SASS",
         "Webpack", "Babel",
         "Symfony"
+      ]
+    },
+    {
+      "designation": "Fullstack developer",
+      "company": "VentureOak",
+      "website": "https://ventureoak.com/",
+      "location": "Porto, Portugal",
+      "period": ["2015-07-01", "2016-06-24"],
+      "skills": [
+        "Fullstack web development",
+        "Responsive websites",
+        "Single-page applications",
+        "Javascript", "JQuery", "SASS",
+        "Symfony", "MongoDB"
       ]
     }
   ],

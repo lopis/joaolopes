@@ -119,11 +119,20 @@ class Application extends React.Component {
       });
     };
 
-    this.renderPrinter = () => {
+    this.renderButtons = () => {
       return React.createElement(
-        'button',
-        { className: 'printMe', title: 'Print Me', onClick: window.print },
-        '\uD83D\uDDA8\uFE0F'
+        'div',
+        { 'class': 'buttons' },
+        React.createElement(
+          'button',
+          { className: 'printMe', title: 'Print Me', onClick: window.print },
+          '\uD83D\uDDA8\uFE0F'
+        ),
+        React.createElement(
+          'a',
+          { className: 'printMe', title: 'My CV', href: 'dist/joao_lopes_frontend.pdf' },
+          '\uFE0F\uD83D\uDCC4'
+        )
       );
     };
 
@@ -154,7 +163,7 @@ class Application extends React.Component {
       'div',
       null,
       this.renderSections(),
-      this.renderPrinter()
+      this.renderButtons()
     );
   }
 }

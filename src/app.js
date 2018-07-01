@@ -113,14 +113,17 @@ class Application extends React.Component {
     })
   }
 
-  renderPrinter = () => {
-    return <button className="printMe" title="Print Me" onClick={window.print}>🖨️</button>
+  renderButtons = () => {
+    return <div class="buttons">
+      <button className="printMe" title="Print Me" onClick={window.print}>🖨️</button>
+      <a className="printMe" title="My CV" href="dist/joao_lopes_frontend.pdf" >️📄</a>
+    </div>
   }
 
   render() {
     return <div>
       {this.renderSections()}
-      {this.renderPrinter()}
+      {this.renderButtons()}
     </div>
   }
 }

@@ -70,6 +70,10 @@ class Application extends React.Component {
       data
     );
 
+    this.renderLinks = data => {
+      return Object.keys(data).map(this.renderLink);
+    };
+
     this.rendererMap = {
       'string': data => React.createElement(
         'p',
@@ -88,7 +92,8 @@ class Application extends React.Component {
       'education': this.renderEducation,
       'jobs': this.renderEducation,
       'skills': this.renderTags,
-      'interests': this.renderTags
+      'interests': this.renderTags,
+      'pages': this.renderLinks
     };
 
     this.renderSectionBody = (data, section) => {

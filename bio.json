@@ -4,9 +4,12 @@
     "Birth date": "1990-09-13",
     "Birth place": "Funchal, Portugal",
     "Current location": "Berlin, Germany",
-    "Github": "https://github.com/lopis/"
+    "Pages": {
+      "Github/lopis": "https://github.com/lopis/",
+      "Codepen/lopis": "https://codepen.io/lopis/"
+    }
   },
-  "bio": "I'm a software developer. Young me discovered programming as a means to make computers do my bidding. My main expertise is web development, mostly on the frontend side of things. I'm generally interested in science, physics, astronomy, technology.I try to entretain other analog hobbies like cooking, gardening and cycling. I like to take things apart - I find great pleasure in ocasionally putting them back together. This CV has been generated from my C.V. in JSON into a human friendly format.",
+  "bio": "I'm a software developer. Young me discovered programming as a means to make computers do my bidding. My main expertise is web development, mostly on the frontend side of things. I'm interested in science, physics, astronomy, technology. I try to entretain other analog hobbies like cooking, gardening and cycling. I like to take things apart - I find great pleasure in ocasionally putting them back together. This CV has been generated from my C.V. in JSON into a human friendly format.",
   "education": [
     {
       "designation": "Masters in Computer/IT Engineering",
@@ -33,7 +36,9 @@
         "Responsive websites",
         "Single-page applications",
         "Widget Integration",
-        "Javascript", "ReactJs", "JQuery", "SASS",
+        "Javascript", "React",
+        "React Native",
+        "JQuery", "SASS",
         "Webpack", "Babel",
         "Symfony"
       ]
@@ -63,9 +68,14 @@
     "FOSS",
     "Linux",
     "Firefox",
-    "CSS & UX",
-    "React & JS",
+    "Inkspace",
+    "UX",
+    "CSS",
+    "Javascript",
+    "React",
+    "React Native",
     "Science",
+    "Technology",
     "Food",
     "Nature",
     "Health",

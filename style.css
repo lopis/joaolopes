@@ -36,6 +36,11 @@ li li {
   border-right: 5px solid #f43f1066;
 }
 
+li li p {
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
 li > div {
   display: flex;
 }
@@ -73,6 +78,7 @@ a {
   display: block;
   color: #f84e41;
   line-height: 1.5;
+  margin-right: 1em;
 }
 
 li.skill {

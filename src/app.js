@@ -75,6 +75,10 @@ class Application extends React.Component {
 
   renderLink = data => <a href={data}>{data}</a>
 
+  renderLinks = data => {
+    return Object.keys(data).map(this.renderLink)
+  }
+
   rendererMap = {
     'string': data => <p>{data}</p>,
     'website': this.renderLink,
@@ -85,7 +89,8 @@ class Application extends React.Component {
     'education': this.renderEducation,
     'jobs': this.renderEducation,
     'skills': this.renderTags,
-    'interests': this.renderTags
+    'interests': this.renderTags,
+    'pages': this.renderLinks,
   }
 
   renderSectionBody = (data, section) => {

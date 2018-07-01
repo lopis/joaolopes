@@ -73,10 +73,10 @@ class Application extends React.Component {
     </ul>
   }
 
-  renderLink = data => <a href={data}>{data}</a>
+  renderLink = (link, label) => <a href={link}>{label || link}</a>
 
   renderLinks = data => {
-    return Object.keys(data).map(this.renderLink)
+    return Object.keys(data).map((key) => this.renderLink(data[key], key))
   }
 
   rendererMap = {

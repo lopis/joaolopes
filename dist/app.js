@@ -64,14 +64,14 @@ class Application extends React.Component {
       );
     };
 
-    this.renderLink = data => React.createElement(
+    this.renderLink = (link, label) => React.createElement(
       'a',
-      { href: data },
-      data
+      { href: link },
+      label || link
     );
 
     this.renderLinks = data => {
-      return Object.keys(data).map(this.renderLink);
+      return Object.keys(data).map(key => this.renderLink(data[key], key));
     };
 
     this.rendererMap = {

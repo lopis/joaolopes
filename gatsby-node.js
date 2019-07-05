@@ -47,6 +47,6 @@ exports.onCreateWebpackConfig = ({
   actions,
 }) => {
   actions.setWebpackConfig({
-    devtool: 'cheap-module-source-map',
+    // devtool: 'cheap-module-source-map',
   })
 }

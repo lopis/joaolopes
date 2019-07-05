@@ -1,0 +1,18 @@
+.container {
+  clear: both;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.btn {
+  background: #ddd;
+  border: 1px solid #999;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.active {
+  background: lawngreen;
+}

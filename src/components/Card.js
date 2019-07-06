@@ -12,6 +12,7 @@ const Card = css.div`
   display: flex;
   flex-direction: column;
   a > & {
+    width: 100%;
     top: 0;
     transition: box-shadow 100ms ease-in-out, top 100ms ease-in-out;
   }
@@ -24,6 +25,8 @@ const Card = css.div`
 const Title = css.h3`
   margin: 30px;
   margin-bottom: 0;
+  min-height: 2em;
+  line-height: 1em;
 `
 
 const Body = css.div`

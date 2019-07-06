@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
                   img={item.image}
                   title={item.title}
                   footer={<small>
-                    Originally publish to <a href={item.original_link}>{item.original_source}</a>
+                    Originally published to <a href={item.original_link}>{item.original_source}</a>
                   </small>}>
                     {(new Date(item.date)).toDateString()}
                     <br/>

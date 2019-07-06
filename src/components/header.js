@@ -33,7 +33,7 @@ export default ({ siteTitle }) => (
       </H1>
     </NavLink>
     <NavLink to="/#about">
-      articles
+      posts
     </NavLink>
     <NavLink to="/#about">
       about

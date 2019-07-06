@@ -21,9 +21,9 @@ collections:
       - { label: 'Period', name: 'period', widget: 'string' }    
       - { label: 'Tags', name: 'tags', widget: 'string', required: false }    
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'articles'
-    label: 'Articles'
-    folder: 'data/articles'
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'data/posts'
     create: true
     slug: '{{slug}}'
     fields:

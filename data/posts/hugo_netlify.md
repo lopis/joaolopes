@@ -109,7 +109,7 @@ In Hugo and Netlify everything is a page - the Post is a page and the User is a 
 
 ## Why not Hugo taxonomy?
 
-I found an article in the oficial Netflify blog on [how to create author pages in Hugo](https://www.netlify.com/blog/2018/07/24/hugo-tips-how-to-create-author-pages/). This seemed like just what I needed. Unfortunately it makes use of a very useful Hugo feature called **taxonomy**. Taxonomy lets you group pages from different collections by common field names, for instance by "author". It even allows you to add extra meta data to each author like their full name, biography, etc. Unfortunately the taxonomy data storage is kind of incompatible with Netlify.
+I found an post in the oficial Netflify blog on [how to create author pages in Hugo](https://www.netlify.com/blog/2018/07/24/hugo-tips-how-to-create-author-pages/). This seemed like just what I needed. Unfortunately it makes use of a very useful Hugo feature called **taxonomy**. Taxonomy lets you group pages from different collections by common field names, for instance by "author". It even allows you to add extra meta data to each author like their full name, biography, etc. Unfortunately the taxonomy data storage is kind of incompatible with Netlify.
 
 ```
 # Hugo directory structure for taxonomy

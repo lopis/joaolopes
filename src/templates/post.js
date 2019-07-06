@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Card from '../components/Card';
 
 export default ({data}) => {
-  const { article, img } = data
+  const { post, img } = data
 
   const ImageWrapper = css.div`
     overflow: hidden;
@@ -21,16 +21,16 @@ export default ({data}) => {
         <ImageWrapper>
           {img && <Img fluid={img.childImageSharp.fluid} />}
         </ImageWrapper>
-        <h1>{article.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: article.html }} />
+        <h1>{post.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Card>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query Article($path: String!, $image: String) {
-    article: markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query Post($path: String!, $image: String) {
+    post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
         date

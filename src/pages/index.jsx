@@ -11,14 +11,14 @@ class IndexPage extends React.Component {
 
   render() {
     const career = this.props.data.career.edges.map(({node}) => ({...node.frontmatter, html: node.html}))
-    const articles = this.props.data.articles.edges.map(({node}) => ({...node.frontmatter, html: node.html}))
+    const posts = this.props.data.posts.edges.map(({node}) => ({...node.frontmatter, html: node.html}))
 
     return (
       <Layout>
         <TranslucidBox>
-          <SubTitle id="articles">Articles</SubTitle>
+          <SubTitle id="posts">Posts</SubTitle>
           <ColumnContainer>
-            {articles.map((item, index) => (
+            {posts.map((item, index) => (
               <Link to={item.path} style={{textDecoration: 'none', display: 'flex'}}>
                 <Card key={index}
                   img={item.image}
@@ -78,8 +78,8 @@ export const query = graphql`
         }
       }
     }
-    articles: allMarkdownRemark(
-      filter: { collection: { eq: "articles" } }
+    posts: allMarkdownRemark(
+      filter: { collection: { eq: "posts" } }
       sort: {fields: [frontmatter___date], order: DESC}
     ){
       edges {

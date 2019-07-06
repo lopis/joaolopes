@@ -10,7 +10,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const careerTemplate = path.resolve(`src/templates/career.js`)
-  const articlesTemplate = path.resolve(`src/templates/articles.js`)
+  const postsTemplate = path.resolve(`src/templates/posts.js`)
 
   return graphql(`
     {
@@ -23,7 +23,7 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      articles: allMarkdownRemark(filter: { collection: { eq: "articles" } }) {
+      posts: allMarkdownRemark(filter: { collection: { eq: "posts" } }) {
         edges {
           node {
             frontmatter {
@@ -37,10 +37,10 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
-    result.data.articles.edges.forEach(({ node }) => {
+    result.data.posts.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: articlesTemplate,
+        component: postsTemplate,
       })
     })
     result.data.career.edges.forEach(({ node }) => {

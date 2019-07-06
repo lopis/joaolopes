@@ -9,11 +9,21 @@ const path = require('path')
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const carreerTemplate = path.resolve(`src/templates/carreer.js`)
+  const careerTemplate = path.resolve(`src/templates/career.js`)
+  const articlesTemplate = path.resolve(`src/templates/articles.js`)
 
   return graphql(`
     {
-      allMarkdownRemark {
+      career: allMarkdownRemark(filter: { collection: { eq: "career" } }) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+      articles: allMarkdownRemark(filter: { collection: { eq: "articles" } }) {
         edges {
           node {
             frontmatter {
@@ -27,16 +37,26 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.articles.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: carreerTemplate,
-        context: {
-          image: node.frontmatter.image,
-        },
+        component: articlesTemplate,
+      })
+    })
+    result.data.career.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: careerTemplate,
       })
     })
   })
+}
+
+exports.onCreateNode =({ node, getNode, boundActionCreators }) => {
+  if (node.internal.type === 'MarkdownRemark') {
+      const { createNodeField } = boundActionCreators;
+      node.collection = getNode(node.parent).sourceInstanceName;
+  }
 }
 
 exports.onCreateWebpackConfig = ({

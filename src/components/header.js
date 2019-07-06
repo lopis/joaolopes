@@ -3,42 +3,43 @@ import { Link } from 'gatsby'
 import css from 'styled-components';
 
 const Header = css.div`
-  marginBottom: 1.45rem;
+  marginBottom: 1.5rem;
+  padding: 1.5rem;
   fontSize: 80%;
   display: flex;
-  padding: 1.45rem 1.0875rem;
-  max-width: 960px;
   margin: 0 auto;
 `
-const SiteTitle = css(Link)`
-  text-decoration: none;
-  color: white;
-`
 const NavLink = css(Link)`
+  text-decoration: none;
   padding: 1em;
   color: white;
+  line-height: 1;
+  transition: background 70ms, color 70ms;
+  &:hover {
+    background: white;
+    color: #b34471;
+  }
 `
 
 const H1 = css.h1`
-  margin: 0; 
-  flex-grow: 1;
+  font-size: 100%;
 `
 
 export default ({ siteTitle }) => (
   <Header>
-    <H1 style={{ margin: 0 }}>
-      <SiteTitle to="/">
+    <NavLink to="/">
+      <H1 style={{ margin: 0 }}>
         {siteTitle}
-      </SiteTitle>
-    </H1>
-    <NavLink to="/about">
+      </H1>
+    </NavLink>
+    <NavLink to="/#about">
       articles
     </NavLink>
-    <NavLink to="/about">
+    <NavLink to="/#about">
       about
     </NavLink>
-    <NavLink to="/about">
-      resume
+    <NavLink to="/#career">
+      career
     </NavLink>
   </Header>
 )

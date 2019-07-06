@@ -5,9 +5,9 @@ backend:
 media_folder: 'assets' # Media files will be stored in the repo under static/images/uploads
 
 collections:
-  - name: 'carreer'
-    label: 'Carreer' # Used in the UI
-    folder: 'data/carreer' # The path to the folder where the documents are stored
+  - name: 'career'
+    label: 'Career' # Used in the UI
+    folder: 'data/career' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -18,5 +18,21 @@ collections:
       - { label: 'Website', name: 'website', widget: 'string' }
       - { label: 'Location', name: 'location', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'string' }    
+      - { label: 'Period', name: 'period', widget: 'string' }    
+      - { label: 'Tags', name: 'tags', widget: 'string', required: false }    
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'articles'
+    label: 'Articles'
+    folder: 'data/articles'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Path', name: 'path', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'string' }
+      - { label: 'Original source', name: 'original_source', widget: 'string', required: false }
+      - { label: 'Original link', name: 'original_link', widget: 'string', required: false }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'string', required: false }
       - { label: 'Tags', name: 'tags', widget: 'string', required: false }    
       - { label: 'Body', name: 'body', widget: 'markdown' }

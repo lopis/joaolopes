@@ -30,7 +30,7 @@ class IndexPage extends React.Component {
           <SubTitle id="about">About me</SubTitle>
           <HorizontalCard
             horizontal
-            image={about.image && <Img fixed={about.image.childImageSharp.fixed} />}
+            image={about.image && <Img fluid={about.image.childImageSharp.fluid} />}
             title={about.title}>
             {about.bio}
             <br />
@@ -138,8 +138,8 @@ export const query = graphql`
         bio
         image {
           childImageSharp {
-            fixed(width: 150, height: 150) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 500, maxHeight: 500) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

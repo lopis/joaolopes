@@ -20,10 +20,15 @@ const Card = css.div`
     top: -3px;
     box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.1), 0px 6px 8px 0px rgba(0,0,0,0.07), 0px 8px 4px -4px rgba(0,0,0,0.06);
   }
+  @media (max-width: 768px) {
+    margin: 10px 0 0 0;
+  }
 `;
 
 const CardHorizontal = css(Card)`
-  padding-right: 200px;
+  @media (min-width: 769px) {
+    padding-right: 200px;
+  }
 `
 
 const Title = css.h3`
@@ -50,14 +55,20 @@ const ImageWrapper = css.div`
 `
 
 const ImageCircleWrapper = css.div`
-	overflow: hidden;
-	height: 150px;
-	width: 150px;
-	border-radius: 100px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	margin: 1.2em;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1.2em;
+  @media (max-width: 768px) {
+    border-radius: 0 0 0 50px;
+    height: 100px;
+     width: 100px;
+     margin: 0;
+  }
 `
 
 export default ({ title, footer, image, children }) => {

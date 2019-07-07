@@ -1,19 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+
+import Career from '../components/pages/Career'
 
 export default ({ data }) => {
   const { post } = data
-  return (
-    <Layout>
-      <div>
-        <div>
-          <h1>{post.frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
-      </div>
-    </Layout>
-  )
+
+  return <Career post={post} />
 }
 
 export const query = graphql`

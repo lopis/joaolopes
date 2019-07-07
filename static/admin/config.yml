@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: lopis/joaolopes
   branch: master
 
 media_folder: 'assets' # Media files will be stored in the repo under static/images/uploads
@@ -35,4 +36,21 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'string', required: false }
       - { label: 'Tags', name: 'tags', widget: 'string', required: false }    
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'about'
+    label: 'About me'
+    folder: 'data/about'
+    create: false
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string'}
+      - { label: 'Path', name: 'path', widget: 'string'}
+      - { label: 'Github', name: 'github', widget: 'string'}
+      - { label: 'Linkedin', name: 'linkedin', widget: 'string'}
+      - { label: 'Twitter', name: 'twitter', widget: 'string'}
+      - { label: 'Websites', name: 'websites', widget: 'list'}
+      - { label: 'Location', name: 'location', widget: 'string'}
+      - { label: 'Date', name: 'date', widget: 'string'}
+      - { label: 'Bio', name: 'bio', widget: 'string'}
+      - { label: 'Image', name: 'image', widget: 'string'}
       - { label: 'Body', name: 'body', widget: 'markdown' }

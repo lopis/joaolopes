@@ -2,34 +2,58 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Layout from '../components/layout'
-import Card from '../components/Card'
-import ColumnContainer from '../components/ColumnContainer'
-import TranslucidBox from '../components/TranslucidBox'
+import Layout from '../components/layout/Layout'
+import Card, { HorizontalCard } from '../components/layout/Card'
+import ColumnContainer from '../components/layout/ColumnContainer'
+import TranslucidBox from '../components/layout/TranslucidBox'
 import SubTitle from '../components/typography/SubTitle'
+
+function format (object) {
+  return object.map(({node}) => ({...node.frontmatter, html: node.html}))
+}
 
 class IndexPage extends React.Component {
 
   render() {
-    const career = this.props.data.career.edges.map(({node}) => ({...node.frontmatter, html: node.html}))
-    const posts = this.props.data.posts.edges.map(({node}) => ({...node.frontmatter, html: node.html}))
+    const career = format(this.props.data.career.edges)
+    const posts = format(this.props.data.posts.edges)
+    const about = {
+      ...this.props.data.about.frontmatter,
+      html: this.props.data.about.html
+    }
+    console.log('about', about);
+    
 
     return (
       <Layout>
         <TranslucidBox>
+          <SubTitle id="about">About me</SubTitle>
+          <HorizontalCard
+            horizontal
+            image={about.image && <Img fixed={about.image.childImageSharp.fixed} />}
+            title={about.title}>
+            {about.bio}
+            <br />
+            {/* <Link to={about.path}>
+              More about me
+            </Link> */}
+          </HorizontalCard>
+        </TranslucidBox>
+        <TranslucidBox>
           <SubTitle id="posts">Posts</SubTitle>
           <ColumnContainer>
             {posts.map((item, index) => (
-              <Link to={item.path} style={{textDecoration: 'none', display: 'flex'}}>
-                <Card key={index}
+              <Link key={index} to={item.path} style={{textDecoration: 'none', display: 'flex'}}>
+                <Card
                   image={item.image && <Img fluid={item.image.childImageSharp.fluid} />}
                   title={item.title}
                   footer={<small>
-                    Originally published to <a href={item.original_link}>{item.original_source}</a>
-                  </small>}>
-                    {(new Date(item.date)).toDateString()}
-                    <br/>
-                    {item.description}
+                    Originally published to {item.original_source}
+                  </small>}
+                  >
+                  {(new Date(item.date)).toDateString()}
+                  <br/>
+                  {item.description}
                 </Card>
               </Link>
             ))}
@@ -39,8 +63,8 @@ class IndexPage extends React.Component {
         <TranslucidBox>
           <SubTitle id="career">Career and Education</SubTitle>
           <ColumnContainer>
-            {career.map(item => (
-              <Card key={item.path}
+            {career.map((item, index) => (
+              <Card key={index}
                 title={item.org}
                 footer={<Link to={item.path}>Read more</Link>}
               >
@@ -101,6 +125,23 @@ export const query = graphql`
             path
           }
           html
+        }
+      }
+    }
+    about: markdownRemark(frontmatter: { path: { eq: "/about_me" } }) {
+      frontmatter {
+        title
+        path
+        github
+        linkedin
+        twitter
+        bio
+        image {
+          childImageSharp {
+            fixed(width: 150, height: 150) {
+              ...GatsbyImageSharpFixed
+            }
+          }
         }
       }
     }

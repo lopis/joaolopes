@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Header from './header'
+import Header from './Header'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -16,6 +16,11 @@ const Layout = ({ children }) => (
     >
       {children}
     </div>
+    <footer>
+      <p>
+      &copy; Joao Lopes 2019
+      </p>
+    </footer>
   </div>
 )
 

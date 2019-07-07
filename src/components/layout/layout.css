@@ -1,7 +1,7 @@
 @import url('/PT_Sans-Web-Regular.ttf');
 @font-face {
   font-family: "PT Sans";
-  src: url("../../static/fonts/PT_Sans-Web-Regular.ttf");
+  src: url("../../../static/fonts/PT_Sans-Web-Regular.ttf");
 }
 
 html {

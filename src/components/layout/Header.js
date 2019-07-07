@@ -32,7 +32,7 @@ export default ({ siteTitle }) => (
         {siteTitle}
       </H1>
     </NavLink>
-    <NavLink to="/#about">
+    <NavLink to="/#posts">
       posts
     </NavLink>
     <NavLink to="/#about">

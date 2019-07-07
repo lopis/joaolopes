@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import Card from '../components/Card'
@@ -21,7 +22,7 @@ class IndexPage extends React.Component {
             {posts.map((item, index) => (
               <Link to={item.path} style={{textDecoration: 'none', display: 'flex'}}>
                 <Card key={index}
-                  img={item.image}
+                  image={item.image && <Img fluid={item.image.childImageSharp.fluid} />}
                   title={item.title}
                   footer={<small>
                     Originally published to <a href={item.original_link}>{item.original_source}</a>
@@ -40,7 +41,6 @@ class IndexPage extends React.Component {
           <ColumnContainer>
             {career.map(item => (
               <Card key={item.path}
-                img={item.image}
                 title={item.org}
                 footer={<Link to={item.path}>Read more</Link>}
               >
@@ -90,7 +90,13 @@ export const query = graphql`
             original_source
             original_link
             description
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             tags
             path
           }

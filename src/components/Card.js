@@ -40,8 +40,16 @@ const Footer = css.div`
   text-align: right;
 `
 
-export default ({ title, footer, children }) => {
+const ImageWrapper = css.div`
+  overflow: hidden;
+  max-height: 150px;
+`
+
+export default ({ title, footer, image, children }) => {
   return <Card>
+    <ImageWrapper>
+      {image}
+    </ImageWrapper>
     {title && <Title>{title}</Title>}
     <Body>
       {children}

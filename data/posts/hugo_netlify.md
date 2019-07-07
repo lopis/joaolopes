@@ -6,7 +6,7 @@ original_source: simplesurance.tech
 original_link: https://simplesurance.tech/post/hugo-netlify-and-dynamic-author-lists/
 description: >-
   I explored ways to maintain a list of blog authors in an Hugo+NetlifyCMS blog.
-image: /assets/img/pexels-photo-311269.jpeg
+image: ../../assets/img/pexels-photo-311269.jpeg
 ---
 ### TOC
  * [Creating a new Author template](#creating-a-new-author-template)

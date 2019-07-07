@@ -6,7 +6,7 @@ original_source: dev.to/mrlopis
 original_link: https://dev.to/mrlopis/requirements-are-bull-crap-4gc1
 description: Requirements are bull crap ...sometimes at least
 tags: software engineering
-image: /assets/img/puzzle.jpg
+image: ../../assets/img/office-troopers.jpg
 ---
 
 ...sometimes at least.

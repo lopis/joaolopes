@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Card from '../components/Card';
 
 export default ({data}) => {
-  const { post, img } = data
+  const { post } = data
 
   const ImageWrapper = css.div`
     overflow: hidden;
@@ -19,7 +19,7 @@ export default ({data}) => {
     <Layout>
       <Card maxWidth="960">
         <ImageWrapper>
-          {img && <Img fluid={img.childImageSharp.fluid} />}
+          {post.image && <Img fluid={post.image.childImageSharp.fluid} />}
         </ImageWrapper>
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -29,7 +29,7 @@ export default ({data}) => {
 }
 
 export const query = graphql`
-  query Post($path: String!, $image: String) {
+  query Post($path: String!) {
     post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
@@ -37,26 +37,22 @@ export const query = graphql`
         original_source
         original_link
         description
-        image
+        image {
+          childImageSharp {
+            original {
+              width
+              height
+            }
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+          absolutePath
+        }
         tags
         path
       }
       html
-    }
-    img: file(
-      sourceInstanceName: { eq: "assets" }
-      relativePath: { eq: $image }
-    ) {
-      childImageSharp {
-        original {
-          width
-          height
-        }
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-      absolutePath
     }
   }
 `

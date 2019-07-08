@@ -11,6 +11,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const careerTemplate = path.resolve(`src/templates/career.js`)
   const postsTemplate = path.resolve(`src/templates/posts.js`)
+  const aboutTemplate = path.resolve(`src/templates/about.js`)
 
   return graphql(`
     {
@@ -32,6 +33,11 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      about: markdownRemark(frontmatter: { path: { eq: "/about_me" } }) {
+        frontmatter {
+          path
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
@@ -48,6 +54,10 @@ exports.createPages = ({ actions, graphql }) => {
         path: node.frontmatter.path,
         component: careerTemplate,
       })
+    })
+    createPage({
+      path: result.data.about.frontmatter.path,
+      component: aboutTemplate,
     })
   })
 }

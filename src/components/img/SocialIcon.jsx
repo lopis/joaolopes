@@ -16,7 +16,7 @@ const Img = css.img`
   margin: 0 10px;
 `
 export default ({link, type}) => {
-  return <a href={link} target="_blank">
+  return <a href={link} target="_blank" rel="noopener noreferrer">
     <Img src={icons[type]} alt="type"/>
   </a>
 }

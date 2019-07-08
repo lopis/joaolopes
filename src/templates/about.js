@@ -1,31 +1,30 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Post from '../components/pages/Post'
+import About from '../components/pages/About'
 
 export default ({data}) => {
   const { post } = data
 
-  return <Post post={post} />
+  return <About post={post} />
 }
 
 export const query = graphql`
-  query Post($path: String!) {
+  query About($path: String!) {
     post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
-        date
-        original_source
-        original_link
-        description
+        path
+        github
+        linkedin
+        twitter
+        bio
         image {
           childImageSharp {
-            fluid(maxWidth: 980) {
+            fluid(maxWidth: 500, maxHeight: 500) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        tags
-        path
       }
       html
     }

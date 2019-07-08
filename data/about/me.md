@@ -30,7 +30,7 @@ I care a lot about libre software. I'm a 24/7 Linux user and so far I don't see 
 
 I'm also very interested in Internet Privacy. Yes, I'm from the 5% that stuck to using Firefox 🦊🌍 even in the dark times. But it's getting much better - arguably the best! I also believe we will finally see a post-google environment in the next years, where Google no longer has the lion's share of search, browser, and phone markets.
 
-Finally, I care a lot about human and animal rights. I've been mostly vegetarian for almost ten, and vegan for the past 4. I love browsing recipe blogs and subreddits and trying alternative ingredients that make people show the funniest facial expressions when they hear about them. Did you know you can use the water from a can of chickpeas as replacement for eggs in a merengue?
+Finally, I care a lot about human and animal rights. I've been mostly vegetarian for almost ten years, and vegan for the past 4. I love browsing recipe blogs and subreddits and trying alternative ingredients that make people show the funniest facial expressions when they hear about them. Did you know you can use the water from a can of chickpeas as replacement for eggs in a merengue?
 
 ### About this website
 

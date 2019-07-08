@@ -20,7 +20,7 @@ export const query = graphql`
         bio
         image {
           childImageSharp {
-            fluid(maxWidth: 500, maxHeight: 500) {
+            fluid(maxWidth: 900, maxHeight: 900) {
               ...GatsbyImageSharpFluid
             }
           }

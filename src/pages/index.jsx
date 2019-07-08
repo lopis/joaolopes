@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import css from 'styled-components'
 
 import Layout from '../components/layout/Layout'
 import Card, { HorizontalCard } from '../components/layout/Card'
@@ -11,6 +12,10 @@ import SubTitle from '../components/typography/SubTitle'
 function format (object) {
   return object.map(({node}) => ({...node.frontmatter, html: node.html}))
 }
+
+const NegativeContainer = css.div`
+  margin: 30px -10px;
+`
 
 class IndexPage extends React.Component {
 
@@ -26,8 +31,7 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <TranslucidBox>
-          <SubTitle id="about">About me</SubTitle>
+        <NegativeContainer>
           <HorizontalCard
             horizontal
             image={about.image && <Img fluid={about.image.childImageSharp.fluid} />}
@@ -38,7 +42,7 @@ class IndexPage extends React.Component {
               More about me
             </Link> */}
           </HorizontalCard>
-        </TranslucidBox>
+        </NegativeContainer>
         <TranslucidBox>
           <SubTitle id="posts">Posts</SubTitle>
           <ColumnContainer>

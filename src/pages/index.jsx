@@ -8,13 +8,23 @@ import Card, { HorizontalCard } from '../components/layout/Card'
 import ColumnContainer from '../components/layout/ColumnContainer'
 import TranslucidBox from '../components/layout/TranslucidBox'
 import SubTitle from '../components/typography/SubTitle'
+import SocialIcon from '../components/img/SocialIcon'
 
 function format (object) {
   return object.map(({node}) => ({...node.frontmatter, html: node.html}))
 }
 
 const NegativeContainer = css.div`
-  margin: 30px -10px;
+  margin: 30px auto;
+  max-width: 960px;
+`
+
+const SocialContainer = css.div`
+  float: right;
+  @media(max-width: 768px) {
+    float: none;
+    margin: 30px -10px 0;
+  }
 `
 
 class IndexPage extends React.Component {
@@ -37,10 +47,16 @@ class IndexPage extends React.Component {
             image={about.image && <Img fluid={about.image.childImageSharp.fluid} />}
             title={about.title}>
             {about.bio}
-            <br />
-            {/* <Link to={about.path}>
-              More about me
-            </Link> */}
+            <div style={{marginTop: '1.5em'}}>
+              <Link to={about.path}>
+                More about me
+              </Link>
+              <SocialContainer>
+                <SocialIcon link={about.github} type="github" />
+                <SocialIcon link={about.linkedin} type="linkedin" />
+                <SocialIcon link={about.twitter} type="twitter" />
+              </SocialContainer>
+            </div>
           </HorizontalCard>
         </NegativeContainer>
         <TranslucidBox>

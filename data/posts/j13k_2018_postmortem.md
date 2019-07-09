@@ -19,7 +19,7 @@ The 2018 edition of [js13k game development competition](http://js13kgames.com/)
 
 Each year, the competition has a theme. The previous theme was "lost" while this year, the theme was "offline". You are of course free to interpret this theme however you want. Somehow, I quickly came up with the idea for a new game. I would make a tamagochi-like game where the online/offline state of the device would directly influence the mental state of the pet. So I started how I always start: with a pen and some paper:
 
-![Initial mockup of the game](../../assets/img/signalmon_mockup.jpg)
+![Initial mockup of the game](signalmon_mockup.jpg)
 
 Although I started late this year, I tried to get the best out of the remaining 3 weeks. With the game concept creation out of the way, it was time to explore technologies and tools.
 

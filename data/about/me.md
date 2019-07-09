@@ -4,6 +4,7 @@ path: /about_me
 github: http://github.com/lopis/
 linkedin: https://www.linkedin.com/in/joaopclopes/
 twitter: https://twitter.com/mrlopis
+resume: ../../assets/files/CV_2019.pdf
 websites: 
  - Stack Overflow | https://stackoverflow.com/users/1125171/ecc
  - Dev.to | https://dev.to/mrlopis

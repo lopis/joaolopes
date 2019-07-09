@@ -25,6 +25,9 @@ export const query = graphql`
             }
           }
         }
+        resume {
+          publicURL
+        }
       }
       html
     }

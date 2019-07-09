@@ -9,6 +9,7 @@ import ColumnContainer from '../components/layout/ColumnContainer'
 import TranslucidBox from '../components/layout/TranslucidBox'
 import SubTitle from '../components/typography/SubTitle'
 import SocialIcon from '../components/img/SocialIcon'
+import cv from '../../assets/files/CV_2019.pdf'
 
 function format (object) {
   return object.map(({node}) => ({...node.frontmatter, html: node.html}))
@@ -55,6 +56,7 @@ class IndexPage extends React.Component {
                 <SocialIcon link={about.github} type="github" />
                 <SocialIcon link={about.linkedin} type="linkedin" />
                 <SocialIcon link={about.twitter} type="twitter" />
+                <SocialIcon link={cv} type="resume" />
               </SocialContainer>
             </div>
           </HorizontalCard>
@@ -150,11 +152,13 @@ export const query = graphql`
     }
     about: markdownRemark(frontmatter: { path: { eq: "/about_me" } }) {
       frontmatter {
-        title
         path
         github
         linkedin
         twitter
+        resume {
+          publicURL
+        }
         bio
         image {
           childImageSharp {

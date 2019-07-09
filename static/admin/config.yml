@@ -43,14 +43,15 @@ collections:
     create: false
     slug: '{{slug}}'
     fields:
-      - { label: 'Title', name: 'title', widget: 'string'}
-      - { label: 'Path', name: 'path', widget: 'string'}
-      - { label: 'Github', name: 'github', widget: 'string'}
-      - { label: 'Linkedin', name: 'linkedin', widget: 'string'}
-      - { label: 'Twitter', name: 'twitter', widget: 'string'}
-      - { label: 'Websites', name: 'websites', widget: 'list'}
-      - { label: 'Location', name: 'location', widget: 'string'}
-      - { label: 'Date', name: 'date', widget: 'string'}
-      - { label: 'Bio', name: 'bio', widget: 'string'}
-      - { label: 'Image', name: 'image', widget: 'string'}
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: Title, name: title, widget: string }
+      - { label: Path, name: path, widget: string }
+      - { label: Github, name: github, widget: string }
+      - { label: Linkedin, name: linkedin, widget: string }
+      - { label: Twitter, name: twitter, widget: string }
+      - { label: Websites, name: websites, widget: list}
+      - { label: Location, name: location, widget: string }
+      - { label: Date, name: date, widget: string }
+      - { label: Bio, name: bio, widget: string }
+      - { label: Image, name: image, widget: string }
+      - { label: Resume, name: resume, widget: string }
+      - { label: Body, name: body, widget: markdown }

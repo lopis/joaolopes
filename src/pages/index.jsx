@@ -152,6 +152,7 @@ export const query = graphql`
     }
     about: markdownRemark(frontmatter: { path: { eq: "/about_me" } }) {
       frontmatter {
+        title
         path
         github
         linkedin

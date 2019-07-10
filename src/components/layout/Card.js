@@ -25,7 +25,7 @@ const Card = css.div`
   @media (max-width: 768px) {
     margin: 10px 0 0 0;
   }
-`;
+`
 
 const CardHorizontal = css(Card)`
   padding-right: 35px;
@@ -79,28 +79,24 @@ const ImageCircleWrapper = css.div`
 `
 
 export default ({ title, footer, image, children }) => {
-  return <Card>
-    <ImageWrapper>
-      {image}
-    </ImageWrapper>
-    {title && <Title>{title}</Title>}
-    <Body>
-      {children}
-    </Body>
-    {footer && <Footer>{footer}</Footer>}
-  </Card>
+  return (
+    <Card>
+      <ImageWrapper>{image}</ImageWrapper>
+      {title && <Title>{title}</Title>}
+      <Body>{children}</Body>
+      {footer && <Footer>{footer}</Footer>}
+    </Card>
+  )
 }
 
 const HorizontalCard = ({ title, footer, image, children }) => {
-  return <CardHorizontal>
-    <ImageCircleWrapper>
-      {image}
-    </ImageCircleWrapper>
-    {title && <Title>{title}</Title>}
-    <Body>
-      {children}
-    </Body>
-    {footer && <Footer>{footer}</Footer>}
-  </CardHorizontal>
+  return (
+    <CardHorizontal>
+      <ImageCircleWrapper>{image}</ImageCircleWrapper>
+      {title && <Title>{title}</Title>}
+      <Body>{children}</Body>
+      {footer && <Footer>{footer}</Footer>}
+    </CardHorizontal>
+  )
 }
-export {HorizontalCard}
+export { HorizontalCard }

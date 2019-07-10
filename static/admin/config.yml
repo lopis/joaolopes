@@ -55,3 +55,18 @@ collections:
       - { label: Image, name: image, widget: string }
       - { label: Resume, name: resume, widget: string }
       - { label: Body, name: body, widget: markdown }
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'data/projects'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Path, name: path, widget: string }
+      - { label: Date, name: date, widget: string }
+      - { label: Repository, name: repository, widget: string }
+      - { label: Website, name: websites, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Status, name: status, widget: string }
+      - { label: Image, name: image, widget: string }
+      - { label: Body, name: body, widget: markdown }

@@ -4,9 +4,9 @@ import Img from 'gatsby-image'
 import css from 'styled-components'
 
 import Layout from '../components/layout/Layout'
-import Card from '../components/layout/Card';
+import Card from '../components/layout/Card'
 
-export default ({data}) => {
+export default ({ data }) => {
   const { post } = data
 
   const ImageWrapper = css.div`
@@ -33,10 +33,12 @@ export const query = graphql`
     project: markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
+        path
         date
-        original_source
-        original_link
+        repository
+        websites
         description
+        status
         image {
           childImageSharp {
             original {
@@ -49,8 +51,6 @@ export const query = graphql`
           }
           absolutePath
         }
-        tags
-        path
       }
       html
     }

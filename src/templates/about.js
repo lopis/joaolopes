@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import About from '../components/pages/About'
 
-export default ({data}) => {
+export default ({ data }) => {
   const { post } = data
 
   return <About post={post} />

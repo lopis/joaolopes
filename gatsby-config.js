@@ -27,6 +27,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `projects`,
+        path: `${__dirname}/data/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `assets`,
         path: `${__dirname}/assets/`,
       },
@@ -40,10 +47,10 @@ module.exports = {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
               destinationDir: 'path/to/dir',
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -60,7 +67,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify-cms',
-    'gatsby-plugin-styled-components',  
+    'gatsby-plugin-styled-components',
     //'gatsby-plugin-offline',
   ],
 }

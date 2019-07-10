@@ -11,6 +11,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const careerTemplate = path.resolve(`src/templates/career.js`)
   const postsTemplate = path.resolve(`src/templates/posts.js`)
+  const projectsTemplate = path.resolve(`src/templates/projects.js`)
   const aboutTemplate = path.resolve(`src/templates/about.js`)
 
   return graphql(`
@@ -25,6 +26,15 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
       posts: allMarkdownRemark(filter: { collection: { eq: "posts" } }) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+      projects: allMarkdownRemark(filter: { collection: { eq: "projects" } }) {
         edges {
           node {
             frontmatter {
@@ -55,6 +65,12 @@ exports.createPages = ({ actions, graphql }) => {
         component: careerTemplate,
       })
     })
+    result.data.posts.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: postsTemplate,
+      })
+    })
     createPage({
       path: result.data.about.frontmatter.path,
       component: aboutTemplate,
@@ -62,10 +78,10 @@ exports.createPages = ({ actions, graphql }) => {
   })
 }
 
-exports.onCreateNode =({ node, getNode, boundActionCreators }) => {
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   if (node.internal.type === 'MarkdownRemark') {
-      const { createNodeField } = boundActionCreators;
-      node.collection = getNode(node.parent).sourceInstanceName;
+    const { createNodeField } = boundActionCreators
+    node.collection = getNode(node.parent).sourceInstanceName
   }
 }
 

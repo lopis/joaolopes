@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import css from 'styled-components';
+import css from 'styled-components'
 
 const Header = css.div`
   marginBottom: 1.5rem;
@@ -28,18 +28,11 @@ const H1 = css.h1`
 export default ({ siteTitle }) => (
   <Header>
     <NavLink to="/">
-      <H1 style={{ margin: 0 }}>
-        {siteTitle}
-      </H1>
+      <H1 style={{ margin: 0 }}>{siteTitle}</H1>
     </NavLink>
-    <NavLink to="/#posts">
-      posts
-    </NavLink>
-    <NavLink to="/#about">
-      about
-    </NavLink>
-    <NavLink to="/#career">
-      career
-    </NavLink>
+    <NavLink to="/#about">about</NavLink>
+    <NavLink to="/#posts">posts</NavLink>
+    <NavLink to="/#projects">projects</NavLink>
+    <NavLink to="/#career">career</NavLink>
   </Header>
 )

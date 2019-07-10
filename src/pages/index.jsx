@@ -19,7 +19,6 @@ const NegativeContainer = css.div`
   margin: 30px auto;
   max-width: 960px;
 `
-
 const SocialContainer = css.div`
   float: right;
   @media(max-width: 768px) {
@@ -27,12 +26,20 @@ const SocialContainer = css.div`
     margin: 30px -10px 0;
   }
 `
+const ProjectLinksContainer = css.div`
+float: left;
+@media(max-width: 768px) {
+  float: none;
+  margin: 30px -10px 0;
+}
+`
 
 class IndexPage extends React.Component {
 
   render() {
     const career = format(this.props.data.career.edges)
     const posts = format(this.props.data.posts.edges)
+    const projects = format(this.props.data.projects.edges)
     const about = {
       ...this.props.data.about.frontmatter,
       html: this.props.data.about.html
@@ -96,6 +103,31 @@ class IndexPage extends React.Component {
             ))}
           </ColumnContainer>
         </TranslucidBox>
+
+        <TranslucidBox>
+          <SubTitle id="projects">
+            Projects
+          </SubTitle>
+          <ColumnContainer>
+            {projects.map((item, index) => (
+              <Card key={index}
+                image={item.image && <Img fluid={item.image.childImageSharp.fluid} />}
+                title={item.title}
+                footer={(
+                  <div>
+                    <ProjectLinksContainer>
+                      {item.repository && <SocialIcon link={item.repository} type="github" />}
+                      {item.website && <SocialIcon link={item.website} type="website" />}
+                    </ProjectLinksContainer>
+                    <Link to={item.path}>Read more</Link>
+                  </div>
+                )}
+              >
+                <div>{item.description}</div>
+              </Card>
+            ))}
+          </ColumnContainer>
+        </TranslucidBox>
       </Layout>
     )
   }
@@ -145,6 +177,31 @@ export const query = graphql`
             }
             tags
             path
+          }
+          html
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      filter: { collection: { eq: "projects" } }
+      sort: {fields: [frontmatter___date], order: DESC}
+    ){
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            description
+            path
+            repository
+            website
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           html
         }

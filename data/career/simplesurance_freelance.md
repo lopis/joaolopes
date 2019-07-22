@@ -1,11 +1,11 @@
 ---
 title: Freelance Frontend Developer
-path: /simplesurance_freelance
-date: "2019-01-05T00:00:00.000Z"
+path: /frontend_freelance
+org: freelancer
+website: 'https://www.jlopes.dev'
+location: 'Remote / Berlin, Germany'
+date: '2019-01-05T00:00:00.000Z'
 period: May 2019 - July 2019
-org: Simplesurance
-website: https://www.simplesurance.com/
-location: Berlin, Germany
 ---
 ### Frontend Developer
 

@@ -65,10 +65,10 @@ exports.createPages = ({ actions, graphql }) => {
         component: careerTemplate,
       })
     })
-    result.data.posts.edges.forEach(({ node }) => {
+    result.data.projects.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: postsTemplate,
+        component: projectsTemplate,
       })
     })
     createPage({

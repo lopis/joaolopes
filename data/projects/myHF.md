@@ -1,6 +1,6 @@
 ---
 title: 'MyHF Bus App'
-path: '/my_hf_buss_app'
+path: '/my_hf_bus_app'
 date: 2019-05-1T12:00:00.253Z
 repository: "https://github.com/lopis/my-hf"
 description: >-

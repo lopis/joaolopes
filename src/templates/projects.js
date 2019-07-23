@@ -1,36 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import css from 'styled-components'
-
-import Layout from '../components/layout/Layout'
-import Card from '../components/layout/Card'
+import Post from '../components/pages/Post'
 
 export default ({ data }) => {
   const { post } = data
 
-  const ImageWrapper = css.div`
-    overflow: hidden;
-    max-height: 300px;
-    margin: -30px -30px 30px;
-  `
-
-  return (
-    <Layout>
-      <Card maxWidth="960">
-        <ImageWrapper>
-          {post.image && <Img fluid={post.image.childImageSharp.fluid} />}
-        </ImageWrapper>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Card>
-    </Layout>
-  )
+  return <Post post={post} />
 }
 
 export const query = graphql`
   query Project($path: String!) {
-    project: markdownRemark(frontmatter: { path: { eq: $path } }) {
+    post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
         path

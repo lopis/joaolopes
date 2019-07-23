@@ -16,7 +16,7 @@ export const query = graphql`
         path
         date
         repository
-        websites
+        website
         description
         status
         image {

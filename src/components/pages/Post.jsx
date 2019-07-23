@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Layout from '../layout/Layout'
 import Card from '../layout/Card'
 import './markdown.css'
+import SocialIcon from '../img/SocialIcon';
 
 const ImageWrapper = css.div`
 overflow: hidden;
@@ -17,6 +18,14 @@ max-width: 960px;
 margin: auto;
 `
 
+const ProjectLinksContainer = css.div`
+float: right;
+@media(max-width: 768px) {
+  float: none;
+  margin: 30px -10px 15px;
+}
+`
+
 const Post = ({post}) => {
   return (
     <Layout>
@@ -25,6 +34,10 @@ const Post = ({post}) => {
           <ImageWrapper>
             {post.frontmatter.image && <Img fluid={post.frontmatter.image.childImageSharp.fluid} />}
           </ImageWrapper>
+          <ProjectLinksContainer>
+            {post.frontmatter.repository && <SocialIcon link={post.frontmatter.repository} type="github" />}
+            {post.frontmatter.website && <SocialIcon link={post.frontmatter.website} type="website" />}
+          </ProjectLinksContainer>
           <h1>{post.frontmatter.title}</h1>
           <div>
             <a href={post.original_link}>{post.original_source}</a>

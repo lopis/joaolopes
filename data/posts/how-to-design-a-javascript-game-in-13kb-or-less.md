@@ -2,11 +2,11 @@
 title: 'How to design a javascript game? (in 13KB or less)'
 path: '/how-to-design-a-javascript-game-13kb'
 date: 2019-09-13T11:41:01.253Z
-original_source: dev.to
+original_source: dev.to/mrlopis
 original_link: 'https://dev.to/mrlopis/how-to-design-a-javascript-game-in-13kb-or-less-59kn'
 description: >-
   Where I describe my struggle to focus on my game idea
-image: 'https://thepracticaldev.s3.amazonaws.com/i/mjlcu51rjqj8hi0egfto.png'
+image: ../../assets/img/hero.png
 ---
 Another [Js13K](https://js13kgames.com/) has passed. This is my third time participating in this game jam. I like to think that I always learn a thing or two with these. ([You can play the game here](https://js13kgames.com/entries/regresso))
 

@@ -31,6 +31,7 @@ const Post = ({post}) => {
     <Layout>
       <Container>
         <Card>
+
           <ImageWrapper>
             {post.frontmatter.image && <Img fluid={post.frontmatter.image.childImageSharp.fluid} />}
           </ImageWrapper>
@@ -39,9 +40,11 @@ const Post = ({post}) => {
             {post.frontmatter.website && <SocialIcon link={post.frontmatter.website} type="website" />}
           </ProjectLinksContainer>
           <h1>{post.frontmatter.title}</h1>
-          <div>
-            <a href={post.original_link}>{post.original_source}</a>
-          </div>
+          <p>
+            <em>
+            Originally posted to <a href={post.frontmatter.original_link}>{post.frontmatter.original_source}</a>
+            </em>
+          </p>
           <div className="markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </Card>
       </Container>

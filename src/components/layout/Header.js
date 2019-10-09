@@ -11,13 +11,16 @@ const Header = css.div`
 `
 const NavLink = css(Link)`
   text-decoration: none;
-  padding: 1em;
+  padding: 0.6em;
   color: white;
   line-height: 1;
   transition: background 70ms, color 70ms;
   &:hover {
     background: white;
     color: #b34471;
+  }
+  @media (min-width: 769px) {
+    padding: 1em;
   }
 `
 

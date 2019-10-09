@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
       {children}
     </div>
     <footer>
-      <p>&copy; Joao Lopes 2019</p>
+      &copy; Joao Lopes 2019
     </footer>
   </div>
 )

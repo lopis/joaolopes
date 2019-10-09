@@ -216,6 +216,7 @@ body {
   background: linear-gradient(20deg, #721f21, #cf5494);
   background-attachment: fixed;
   height: 100vh;
+  padding-bottom: 1em;
 }
 img {
   max-width: 100%;

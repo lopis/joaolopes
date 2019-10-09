@@ -15,7 +15,6 @@ export const query = graphql`
         title
         path
         github
-        linkedin
         twitter
         bio
         image {

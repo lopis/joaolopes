@@ -61,7 +61,6 @@ class IndexPage extends React.Component {
               </Link>
               <SocialContainer>
                 <SocialIcon link={about.github} type="github" />
-                <SocialIcon link={about.linkedin} type="linkedin" />
                 <SocialIcon link={about.twitter} type="twitter" />
                 <SocialIcon link={cv} type="resume" />
               </SocialContainer>
@@ -212,7 +211,6 @@ export const query = graphql`
         title
         path
         github
-        linkedin
         twitter
         resume {
           publicURL

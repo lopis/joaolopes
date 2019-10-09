@@ -2,7 +2,6 @@
 title: Hello
 path: /about_me
 github: http://github.com/lopis/
-linkedin: https://www.linkedin.com/in/joaopclopes/
 twitter: https://twitter.com/mrlopis
 resume: ../../assets/files/CV_2019.pdf
 websites: 

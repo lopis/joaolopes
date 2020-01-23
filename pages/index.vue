@@ -8,28 +8,40 @@
       <h2 class="subtitle">
         Personal Page
       </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <div v-html="posts[0]" class="links"></div>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+// import { getMarkdown } from '~/util/markdown'
 
 export default {
   components: {
     Logo
+  },
+  asyncData({ app }) {
+    const posts = [
+      'creating-a-13kb-js-game-using-svg',
+      'react_code_sharing',
+      'how-to-design-a-javascript-game-in-13kb-or-less',
+      'requirements',
+      'hugo_netlify',
+      'j13k_2018_postmortem'
+    ]
+
+    async function asyncImport(postName) {
+      const content = await import(`~/data/posts/${postName}.md`)
+
+      return content.default
+    }
+
+    return Promise.all(posts.map((post) => asyncImport(post))).then((res) => {
+      return {
+        posts: res
+      }
+    })
   }
 }
 </script>

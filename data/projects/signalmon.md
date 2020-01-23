@@ -9,7 +9,7 @@ description: >-
   It's a javascript web game where you have a little pet that feeds off
   of flies and the flies feed off of wifi. The whole game is 13KB.
 status: Released
-image: ../../assets/img/signalmon.jpg
+image: ~/assets/img/signalmon.jpg
 ---
 
 Signalmon was my entry for the 2018 edition of 13kjs Game competition.

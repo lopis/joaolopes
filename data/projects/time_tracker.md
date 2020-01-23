@@ -10,7 +10,7 @@ description: >-
   but I wanted to have an idea of how many hours I'm working per
   day. So I started exploring a basic UI for that.
 status: WIP
-image: ../../assets/img/time_tracker.jpg
+image: ~/assets/img/time_tracker.jpg
 ---
 
 When I started freelancing, I wanted a simple tool to track

@@ -6,7 +6,7 @@ original_source: dev.to/mrlopis
 original_link: 'https://dev.to/mrlopis/how-to-design-a-javascript-game-in-13kb-or-less-59kn'
 description: >-
   Where I describe my struggle to focus on my game idea
-image: ../../assets/img/hero.png
+image: ~/assets/img/hero.png
 ---
 Another [Js13K](https://js13kgames.com/) has passed. This is my third time participating in this game jam. I like to think that I always learn a thing or two with these. ([You can play the game here](https://js13kgames.com/entries/regresso))
 

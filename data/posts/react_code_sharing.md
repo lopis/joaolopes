@@ -7,7 +7,7 @@ original_link: https://simplesurance.tech/post/multi-app-react-code-sharing-in-a
 description: >-
   How we initially approached managing shared components and assets with multiple react js
   apps in a monorepo.
-image: ../../assets/img/puzzle.jpg
+image: ~/assets/img/puzzle.jpg
 ---
 At simplesurance, we've been busy re-engineering big chunks of our codebase to bring it up to speed with the new technologies and software architecture trends. We're transitioning from symfony/twig apps to a more diverse mesh of microservices and apps. We're also moving towards a single git repository, a monorepo.
 A single repo organization brings some challenges, but it opens some possibilities too. Our monorepo contains everything from the microservices, the older symfony apps still in use, as well as the frontend react web and native apps. This opens doors to having more shared code. Frontend-wise, this meant the possibility to finally work with the design team in a company-wide "module palette" and to finally have a consistent, and easily reusable and maintainable design between several apps.

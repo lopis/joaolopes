@@ -1,80 +1,131 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        joaolopes
-      </h1>
-      <h2 class="subtitle">
-        Personal Page
-      </h2>
-      <div v-html="posts[0]" class="links"></div>
-    </div>
+  <div>
+    <h1>jlopes.dev</h1>
+    <h2>About:</h2>
+    <section>
+      <article class="bio">
+        <p>
+          {{ about.bio }}
+        </p>
+        <div class="pic-container">
+          <img :src="require(`~/assets/img/train_station.jpg`)" />
+        </div>
+        <p class="links">
+          <a :href="about.twitter">Twitter</a>
+          <a :href="about.github">Github</a>
+          <a :href="about.resume">Resume</a>
+          <a
+            v-for="website in about.websites"
+            v-bind:key="website"
+            :href="website.split('|')[1]"
+            >{{ website.split('|')[0] }}</a
+          >
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <article>
+        <h2>Posts:</h2>
+        <ul>
+          <li v-for="post in posts" :key="post">
+            <a :href="post.location">{{ post.title }}</a>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Projects:</h2>
+        <ul>
+          <li v-for="project in projects" :key="project">
+            <a :href="project.location">{{ project.title }}</a>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Career:</h2>
+        <ul>
+          <li v-for="job in career" :key="job">
+            <a :href="job.location">{{ job.title }}</a>
+          </li>
+        </ul>
+      </article>
+    </section>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-// import { getMarkdown } from '~/util/markdown'
+const articles = {
+  posts: [
+    'creating-a-13kb-js-game-using-svg',
+    'how-to-design-a-javascript-game-in-13kb-or-less',
+    'hugo_netlify',
+    'j13k_2018_postmortem',
+    'react_code_sharing',
+    'requirements'
+  ],
+  projects: ['myHF', 'regresso', 'signalmon', 'time_tracker'],
+  career: [
+    'masters',
+    'simplesurance_freelance',
+    'simplesurance',
+    'software-engineer',
+    'ventureoak'
+  ]
+}
 
 export default {
-  components: {
-    Logo
-  },
-  asyncData({ app }) {
-    const posts = [
-      'creating-a-13kb-js-game-using-svg',
-      'react_code_sharing',
-      'how-to-design-a-javascript-game-in-13kb-or-less',
-      'requirements',
-      'hugo_netlify',
-      'j13k_2018_postmortem'
-    ]
-
-    async function asyncImport(postName) {
-      const content = await import(`~/data/posts/${postName}.md`)
-
-      return content.default
+  data() {
+    return {
+      posts: [],
+      projects: [],
+      career: []
     }
+  },
+  created() {
+    Object.keys(articles).forEach((category) => {
+      this[category] = articles[category].reduce((rest, article) => {
+        const { attributes } = require(`~/data/${category}/${article}.md`)
+        rest.push({
+          location: `${category}?name=${article}`,
+          title: attributes.title
+        })
 
-    return Promise.all(posts.map((post) => asyncImport(post))).then((res) => {
-      return {
-        posts: res
-      }
+        return rest
+      }, [])
+
+      this.about = require(`~/data/about/me.md`).attributes
     })
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+.bio {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.pic-container {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.pic-container img {
+  height: 100%;
+  width: auto;
 }
 
 .links {
-  padding-top: 15px;
+  margin-top: 0.5em;
+  flex-grow: 1;
+}
+
+.links a {
+  text-decoration: underline;
+  margin-right: 0.5em;
 }
 </style>

@@ -6,7 +6,7 @@ original_source: dev.to/mrlopis
 original_link: https://dev.to/mrlopis/js13k-game-competition-postmortem-2j1p
 description: What I learned about game development and working on my own
 tags: javascript, js13k, game development
-image: ../../assets/img/signalmon.jpg
+image: ~/assets/img/signalmon.jpg
 ---
 
 ## The challenge

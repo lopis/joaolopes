@@ -15,17 +15,20 @@
   "lint-staged": {
     "*.{js,vue}": "eslint"
   },
-  "husky": {
+  "husky--disabled": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
     "@nuxt/markdown": "^0.0.21",
+    "frontmatter-markdown-loader": "^3.1.0",
+    "github-markdown-css": "^3.0.1",
     "html-loader": "^0.5.5",
-    "markdown-loader": "^5.1.0",
     "marked": "^0.8.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "url-loader": "^3.0.0",
+    "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

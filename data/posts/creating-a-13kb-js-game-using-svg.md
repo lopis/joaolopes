@@ -4,14 +4,14 @@ path: '/how-to-design-a-javascript-game-in-13kb-or-less'
 date: 2019-09-18T09:11:01.253Z
 description: Where I go through my process of using SVGs to create an animated game interface.
 tags: js13k, javascript, svg
-image: ../../assets/img/blueprint.png
+image: ~/assets/img/blueprint.png
 ---
 
 This is the second, more technical, part of my JS13K post-mortem. If you didn't yet, [check out the first part about game design](https://dev.to/mrlopis/how-to-design-a-javascript-game-in-13kb-or-less-59kn).
 
 ----
 
-[JS13K](https://js13kgames.com/) is all about developing 13KB javascript games using anything you want, as long as all your assents fit in those 13kb - that includes code, images, sounds, game data, and any libraries you might need. I developed my game from scratch, I 
+[JS13K](https://js13kgames.com/) is all about developing 13KB javascript games using anything you want, as long as all your assents fit in those 13kb - that includes code, images, sounds, game data, and any libraries you might need.
 
 ## TOC
 

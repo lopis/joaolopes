@@ -8,7 +8,7 @@ description: >-
   But they actually have interesting just-in-time info if you know how to scrape it.
   I used Expo to quickly create a React Native prototype.
 status: Prototype
-image: ../../assets/img/my_hf.jpg
+image: ~/assets/img/my_hf.jpg
 ---
 
 My local Bus company has an app and a website with terrible interfaces.

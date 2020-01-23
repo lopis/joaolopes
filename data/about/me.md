@@ -3,19 +3,17 @@ title: Hello
 path: /about_me
 github: http://github.com/lopis/
 twitter: https://twitter.com/mrlopis
-resume: ../../assets/files/CV_2019.pdf
+resume: ~/assets/files/CV_2019.pdf
 websites: 
  - Stack Overflow | https://stackoverflow.com/users/1125171/ecc
  - Dev.to | https://dev.to/mrlopis
- - CodeMentor | https://www.codementor.io/joaopclopes
- - UpWork | https://www.upwork.com/freelancers/~01f307586298434391
 location: Funchal, Portugal / Berlin, Germany
 date: "2019-07-07T17:22:00.000Z"
 bio: >-
     My name is João, I'm from Portugal and I'm a fullstack developer
     with a focus on frontend development. This is my personal website where
     you can read about me, my short professional work, and my hobby projects.
-image: ../../assets/img/train_station.jpg
+image: ~/assets/img/train_station.jpg
 ---
 
 ### About me

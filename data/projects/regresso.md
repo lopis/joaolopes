@@ -7,7 +7,7 @@ website: 'https://js13kgames.com/entries/regresso'
 description: >-
   My entry for the 2019 edition os JS13k game jam. Regresso is a clicker game where you have a series of actions and tasks. Gameplay is about 5-10 minutes if you don't screw up.
 status: Released
-image: ../../assets/img/hero.png
+image: ~/assets/img/hero.png
 ---
 Regresso is a clicker game where you have a series of actions and tasks. Gameplay is about 5-10 minutes if you don't screw up.
 

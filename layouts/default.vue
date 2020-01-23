@@ -5,51 +5,54 @@
 </template>
 
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 1em;
+  max-width: 980px;
+  background: #24292e;
+  color: #dbdbdb;
+  font-size: 20px;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+h1 {
+  margin: 0.5em 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+h2 {
+  margin: 1em 0;
+  color: indianred;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0.5em 0;
+}
+
+a {
+  color: #df9797;
   text-decoration: none;
-  padding: 10px 30px;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+section {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+article {
+  margin-right: 2em;
+}
+
+img {
+  max-width: 100%;
 }
 </style>

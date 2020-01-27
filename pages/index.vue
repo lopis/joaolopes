@@ -1,16 +1,16 @@
 <template>
   <div>
+    <div class="pic-container">
+      <img :src="require(`~/assets/img/train_station.jpg`)" />
+    </div>
     <h1>jlopes.dev</h1>
-    <h2>About:</h2>
+    <h2>About</h2>
     <section>
       <article class="bio">
-        <p>
+        <div>
           {{ about.bio }}
-        </p>
-        <div class="pic-container">
-          <img :src="require(`~/assets/img/train_station.jpg`)" />
         </div>
-        <p class="links">
+        <div class="links">
           <a :href="about.twitter">Twitter</a>
           <a :href="about.github">Github</a>
           <a :href="about.resume">Resume</a>
@@ -20,13 +20,13 @@
             :href="website.split('|')[1]"
             >{{ website.split('|')[0] }}</a
           >
-        </p>
+        </div>
       </article>
     </section>
 
     <section>
       <article>
-        <h2>Posts:</h2>
+        <h2>Posts</h2>
         <ul>
           <li v-for="post in posts" :key="post">
             <a :href="post.location">{{ post.title }}</a>
@@ -35,16 +35,18 @@
       </article>
 
       <article>
-        <h2>Projects:</h2>
+        <h2>Projects</h2>
         <ul>
           <li v-for="project in projects" :key="project">
             <a :href="project.location">{{ project.title }}</a>
+            <br />
+            <small>{{ project.description }}</small>
           </li>
         </ul>
       </article>
 
       <article>
-        <h2>Career:</h2>
+        <h2>Career</h2>
         <ul>
           <li v-for="job in career" :key="job">
             <a :href="job.location">{{ job.title }}</a>
@@ -72,7 +74,9 @@ export default {
         const { attributes } = require(`~/data/${category}/${article}.md`)
         rest.push({
           location: `${category}?name=${article}`,
-          title: attributes.title
+          title: attributes.title,
+          description: attributes.description,
+          image: attributes.image
         })
 
         return rest
@@ -94,7 +98,7 @@ export default {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  flex-shrink: 0;
+  float: right;
 }
 
 .pic-container img {

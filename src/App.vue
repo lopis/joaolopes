@@ -42,6 +42,7 @@ export default {
 :root {
   --color-background: #ffffff;
   --color-text: #2c3e50;
+  --color-accent: #0075ae;
 }
 
 html {
@@ -68,37 +69,40 @@ body {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
-	color: #0075ae;
+	color: var(--color-accent);
 	text-decoration-style: dotted;
 }
 
 a:visited {
-  color: #6d2faa;
-}
-
-.title, .title a {
-  margin: 0;
-  color: #8fd3f4;
-  text-shadow: 1px 1px rgb(59, 170, 222);
-  text-decoration: none;
+  color: var(--color-text);
 }
 
 pre {
 	max-width: 100%;
 	overflow-x: scroll;
 	font-size: 80%;
-	background: rgba(0,0,0,0.1);
+	background: #e0fff9;
 	padding: 1ch;
-	border: 1px solid #8fd3f4;
+	border: 1px solid #84fab0;
+}
+
+blockquote {
+	border-left: 1ch solid #84fab0;
+	margin: 0;
+	padding: 0 2ch;
+	font-size: 0.9em;
+	font-style: italic;
+	text-indent: 4ch;
 }
 
 p img {
 	max-width: calc(80vw);
 	border: 20px solid white;
-	margin-left: -25px;
+	margin-left: -20px;
 }
 
 @media screen and (min-width: 960px) {

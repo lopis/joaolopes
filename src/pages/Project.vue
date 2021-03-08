@@ -10,14 +10,24 @@
       Originally published on: {{ formattedDate }}
     </p>
     <div v-safe-html="contents"></div>
+    <p>
+      <a :href="repository">Check on github</a>
+    </p>
   </div>
 </template>
 <script lang="ts">
-import fetchMarkdown from '../util/markdown'
+import page from 'page'
 import { VFile } from 'vfile'
+
+import SiteHeader from '../components/SiteHeader.vue'
+import fetchMarkdown from '../util/markdown'
 import { Frontmatter } from '../util/types'
 
+
 export default {
+  components: {
+    SiteHeader
+  },
   props: {
     pageId: {
       type: String,
@@ -48,6 +58,9 @@ export default {
       this.status = data.status || ''
       this.image = data.image || ''
       this.contents = String(file.contents)
+    })
+    .catch((e) => {
+      page.redirect('404')
     })
   },
 }

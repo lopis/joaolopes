@@ -3,6 +3,7 @@ title: Writing Vue Storybook stories in markdown
 published: true
 description: Extending @josephuspaye 's work, I started writing vue stories in vue and markdown instead of CSF
 tags: vue, js, storybook, mdx
+date: 2020-02-15T12:00:00.000Z
 ---
 
 At [Ecosia](https://www.ecosia.org/) we started last year investing some resources into defining our Design System (DS). Building a DS allows us to focus on streamlining the design and implementation of our UIs, and to be more aware of the impact of our product design decisions. It helps our team move in unison when developing new products or refactoring old ones.
@@ -20,25 +21,28 @@ While this worked great for developers, we found it a bit too bare bones. For th
 [Storybook](https://storybook.js.org). has been around for a long time. It started as "React Storybook" but has grown immensely, and now supports several frameworks. (Fun fact: like Storybook, Vue Styleguidist is also built using React). Storybook users can take advantage of a very active community and rich library of addons.
 
 Out of the box:
- - Easy theming using a theme API without the need for CSS;
- - 2 base themes: light and dark;
- - Allows complex and custom organization of the pages, including nested stories and sections;
- - Easy creation of plain text docs besides code documentation;
- - Test/visualize each component individually, or all together in a pretty docs page;
- - Zoom feature for individual stories
+
+- Easy theming using a theme API without the need for CSS;
+- 2 base themes: light and dark;
+- Allows complex and custom organization of the pages, including nested stories and sections;
+- Easy creation of plain text docs besides code documentation;
+- Test/visualize each component individually, or all together in a pretty docs page;
+- Zoom feature for individual stories
 
 With storybook-maintained addons:
- - Ally features (e.g. including audits (https://github.com/storybookjs/storybook/tree/master/addons/a11y), and color blindness simulation)
- - Responsive design simulation (we can set our list of device dimensions)
- - Event and behaviour manipulation
- - Event tracking
+
+- Ally features (e.g. including audits (<https://github.com/storybookjs/storybook/tree/master/addons/a11y>), and color blindness simulation)
+- Responsive design simulation (we can set our list of device dimensions)
+- Event and behaviour manipulation
+- Event tracking
 
 With community addons:
- - Dark mode switcher
- - Easier themes
- - Easier documentation
- - Generation of docs from code
- - ...???
+
+- Dark mode switcher
+- Easier themes
+- Easier documentation
+- Generation of docs from code
+- ...???
 
 ## Writing stories - Why not CSF/MDX?
 
@@ -53,15 +57,15 @@ CSF is the recommended way to write component stories in Storybook. However, it'
 
 [@josephuspaye came up with the brilliant idea](https://dev.to/josephuspaye/using-storybook-with-vue-single-file-components-2od) of creating a simple Webpack loader to load Vue files into a CSF story. This approach has a series of advantages:
 
- - Each individual story is pure Vue.js instead of a string
- - State of the story is handled just like in any vue component
- - Syntax for styles or scripts is the same as other components and completely isolated from storybook
+- Each individual story is pure Vue.js instead of a string
+- State of the story is handled just like in any vue component
+- Syntax for styles or scripts is the same as other components and completely isolated from storybook
 
 I identified the following shortcomings in the solution:
 
- - The source of the vue file is not picked up by addon-docs or addon-source;
- - Stories are written in CSF which is much less elegant than MDX, which is markdown containing JSX.
- - CSF doesn't let you write text between each example, so the documentation with CSF would be all code examples with no change to textual docs
+- The source of the vue file is not picked up by addon-docs or addon-source;
+- Stories are written in CSF which is much less elegant than MDX, which is markdown containing JSX.
+- CSF doesn't let you write text between each example, so the documentation with CSF would be all code examples with no change to textual docs
 
 ## Markdown All the way
 
@@ -258,6 +262,7 @@ addons.register(ADDON_ID, () => {
 });
 
 ```
+
 ```js
 // manager.js
 

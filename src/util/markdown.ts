@@ -8,7 +8,13 @@ import {VFile} from 'vfile'
 const fetchMarkdown = (slug: String): Promise<VFile> => {
   return new Promise<VFile>((resolve, reject) => {
     fetch(`/data/${slug}.md`)
-    .then(data => data.text())
+    .then((data: Response) => {
+      if (data.status === 200) {
+        return data.text()
+      } else {
+        throw new Error(String(data.status))
+      }
+    })
     .then((md:String) => {
       remark()
         .use(html)
@@ -24,8 +30,8 @@ const fetchMarkdown = (slug: String): Promise<VFile> => {
         })
     })
     .catch((err) => {
-      console.error(err);
-      reject();
+      console.log('oopsie')
+      reject(err)
     })
   })
 }

@@ -1,23 +1,25 @@
 <template>
   <div>
-    <h1 class="title">
-      <a href="/">
-        João Lopes
-      </a>
-    </h1>
+    <SiteHeader />
     <h2>{{ title }}</h2>
     <p class="date">
-      Originally published on: {{ formattedDate }}
+      Originally published on: {{ date }}
     </p>
     <div v-safe-html="contents"></div>
   </div>
 </template>
 <script lang="ts">
-import fetchMarkdown from '../util/markdown'
 import { VFile } from 'vfile'
+import page from 'page'
+
+import SiteHeader from '../components/SiteHeader.vue'
+import fetchMarkdown from '../util/markdown'
 import { Frontmatter } from '../util/types'
 
 export default {
+  components: {
+    SiteHeader
+  },
   props: {
     pageId: {
       type: String,
@@ -41,15 +43,22 @@ export default {
       const data = file.data as Frontmatter
       this.title = data.title
       this.path = data.path
-      this.date = (data.date || '')
+      this.date = data.date ? (new Date(data.date || '')).toLocaleDateString('pt') : ''
       this.description = data.description || ''
       this.tags = (data.tags || '').split(',')
       this.image = data.image || ''
       this.contents = String(file.contents)
     })
+    .catch((e) => {
+      page.redirect('404')
+    })
   },
 }
 </script>
-<style lang="">
-
+<style>
+.date {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: var(--color-accent);
+}
 </style>

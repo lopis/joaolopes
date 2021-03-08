@@ -28,6 +28,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/page@^1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@types/page/-/page-1.11.1.tgz#3b329a62843d4b9e47b494ebeab4a240be65a0a1"
+  integrity sha512-BpOTA/w+PgZeQ1iJqy0le9VSXOKV7qcoX/+m/obCtzENwPOrtVybdAaOAFD6xwAdieAq+GimObGJjWTCIBz4nA==
+
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
@@ -787,6 +792,13 @@ vfile@^4.0.0:
     is-buffer "^2.0.0"
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
+
+vite-svg-loader@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/vite-svg-loader/-/vite-svg-loader-1.4.2.tgz#54e66edbc439a729224617fc00442639502c0d29"
+  integrity sha512-YHgKBITwHAO3NfCiLKutM7EkbiEF4QfcxApmZKCQbHVYTQVIRNUKRSpcwqk3CJQtykZrGc0OL4QfpQRqH/mU7A==
+  dependencies:
+    "@vue/compiler-sfc" "^3.0.5"
 
 vite@^2.0.1:
   version "2.0.3"

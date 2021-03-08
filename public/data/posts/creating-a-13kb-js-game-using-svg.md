@@ -11,20 +11,20 @@ This is the second, more technical, part of my JS13K post-mortem. If you didn't 
 
 ----
 
-[JS13K](https://js13kgames.com/) is all about developing 13KB javascript games using anything you want, as long as all your assents fit in those 13kb - that includes code, images, sounds, game data, and any libraries you might need. I developed my game from scratch, I 
+[JS13K](https://js13kgames.com/) is all about developing 13KB javascript games using anything you want, as long as all your assents fit in those 13kb - that includes code, images, sounds, game data, and any libraries you might need. I developed my game from scratch, I
 
 ## TOC
 
- * [Choice of graphics](#choice-of-graphics)
- * [Creating and manipulating SVGs](#creating-and-manipulating-svgs)
- * [Saving and optimizing SVGs](#saving-and-optimizing-svgs)
- * [Animating dots on an SVG](#animating-dots-on-an-svg)
- * [Moving SVG elements around](#moving-svg-elements-around)
- * [Final notes](#final-notes)
+* [Choice of graphics](#choice-of-graphics)
+* [Creating and manipulating SVGs](#creating-and-manipulating-svgs)
+* [Saving and optimizing SVGs](#saving-and-optimizing-svgs)
+* [Animating dots on an SVG](#animating-dots-on-an-svg)
+* [Moving SVG elements around](#moving-svg-elements-around)
+* [Final notes](#final-notes)
 
 ## Choice of graphics
 
-[Last year](https://js13kgames.com/entries/signalmon) I developed a game using 2D Canvas. Canvas are really flexible and easy to use. You can save lots of bytes by generating your own graphics in javascript on the fly. 
+[Last year](https://js13kgames.com/entries/signalmon) I developed a game using 2D Canvas. Canvas are really flexible and easy to use. You can save lots of bytes by generating your own graphics in javascript on the fly.
 
 ![Paper prototypes](https://thepracticaldev.s3.amazonaws.com/i/51sqxgk3fw7b9kyk736t.jpg)
 
@@ -70,7 +70,6 @@ Inkscape supports saving SVG in several different formats, like PDF, PNG, or Pos
 
 ![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/q1gk3h6v6onyuax53bmq.png)
 
-
 For instance, `paint-order` is a property that defines if an element's stroke is drawn in front or behind it's fill. But most my shapes don't even have strokes, so this whole style is unnecessary. I found myself removing these styles occasionally because Inkscape would add them again.
 
 As I mentioned earlier, SVG supports symbols. That worked great for some scenarios, namely for static objects like the little houses in my game. But for the people running around, I found that duplicating SVG objects in javascript was for effective.
@@ -101,7 +100,7 @@ Each person is then a dash on a path, with the exception of the hunters, who alw
 
 ![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/d01w02z0i5tx3brkp431.png)
 
-> Fun fact: the stars in the sky are also a dashed path with a very large gap between dots!
+Fun fact: the stars in the sky are also a dashed path with a very large gap between dots!
 
 # Animating gradient backgrounds
 
@@ -122,6 +121,7 @@ SVG elements don't accept the `background` CSS property. Instead, they use the p
     dur="5" from="28" to="1" repeatCount="1" />
 </linearGradient>
 ```
+
 The above `<animate>` element defines an animation of the gradient. Typically, the animation would start right away. But because of the `begin="indefinite"` property, the animation is in stand-by. It's possible to trigger the animation using javascript:
 
 ```javascript
@@ -130,7 +130,7 @@ querySelect('animate').beginElement()
 
 ## Moving SVG elements around
 
-I found a few different ways to accomplish movement. In this case CSS is a viable option. It's possible to use CSS transforms on individual elements and groups of elements. Unfortunately, the way the element moves can be unexpected. 
+I found a few different ways to accomplish movement. In this case CSS is a viable option. It's possible to use CSS transforms on individual elements and groups of elements. Unfortunately, the way the element moves can be unexpected.
 
 Firstly, SVG lives in a different dimension. What I mean is that a pixel on your webpage is not necessarily a pixel on your SVG if your SVG has been scaled. Also, if the element you are trying to move has been translated (for example in Inkscape), the transform origin might not be the middle of the element. This makes rotations very hard to use because it's often not clear where the rotation centre is.
 
@@ -143,7 +143,7 @@ I ended up adding some ugly CSS just for Chrome to try and force-reset some tran
 ```css
 /* Stupid hack for stupid Chrome */
 @supports (not (-moz-appearance:none))
-{ 
+{
   #ship.new {
     transform: translate(0%, 0%);
   }
@@ -161,10 +161,11 @@ $shipTop.removeAttribute('transform') // Because Chrome is shit
 ```
 
 ## Final notes
+
 Because of all the trouble I went through _just to move a boat_, you will probably not find me making more games using SVG and SMIL. I simply cannot recommend it - at least in its raw form without any libraries. So we are left in a situation where CSS3 animations of SVGs are not reliable, but have been pushed as a replacement for SMIL, [almost to the point of deprecating SMIL, but not quite](https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/5o0yiO440LM/YGEJBsjUAwAJ).
 
 > In the 15 months since we announced our intention to deprecate and eventually remove SMIL, we’ve heard a variety of opinions from members of the community. We value all of your feedback, and it's clear that there are use cases serviced by SMIL that just don’t have high-fidelity replacements yet. As a result, we’ve decided to suspend our intent to deprecate and take smaller steps toward other options.
-> - Chrome team, 2016/08/17
-
+>
+> * Chrome team, 2016/08/17
 
 My main takeaway this year is that I should prepare myself better before the next competition, by studying new tools like canvas engines and webGL. Also, I don't know why it didn't occur to me, but the most obvious solution to this whole mess would have been to have the boat be a _separate SVG_ that overlapped the map. Hindsight is 20/20 right?

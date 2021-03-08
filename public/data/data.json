@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": "creating-a-13kb-js-game-using-svg.md",
+      "title": "Creating a 13KB JS Game using SVG"
+    },
+    {
+      "id": "how-to-design-a-javascript-game-in-13kb-or-less.md",
+      "title": "how-to-design-a-javascript-game-in-13kb-or-less"
+    },
+    {
+      "id": "hugo_netlify.md",
+      "title": "hugo_netlify"
+    },
+    {
+      "id": "j13k_2018_postmortem.md",
+      "title": "j13k_2018_postmortem"
+    },
+    {
+      "id": "react_code_sharing.md",
+      "title": "react_code_sharing"
+    },
+    {
+      "id": "requirements.md",
+      "title": "requirements"
+    },
+    {
+      "id": "signalmon_mockup.jpg",
+      "title": "signalmon_mockup"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "raven-joy",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "index": "node src/util/index.js"
+  },
+  "dependencies": {
+    "page": "^1.11.6",
+    "remark": "^13.0.0",
+    "remark-extract-frontmatter": "https://github.com/lopis/remark-extract-frontmatter",
+    "remark-frontmatter": "^3.0.0",
+    "remark-html": "^13.0.1",
+    "vue": "^3.0.5",
+    "vue-safe-html": "^1.0.1",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.4",
+    "@vue/compiler-sfc": "^3.0.5",
+    "typescript": "^4.1.3",
+    "vite": "^2.0.1"
+  }
+}

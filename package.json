@@ -1,6 +1,6 @@
 {
   "name": "raven-joy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,6 +16,9 @@
     "vue": "^3.0.5",
     "vue-safe-html": "^1.0.1",
     "yaml": "^1.10.0"
+  },
+  "engines": {
+    "node": "^14.15.1"
   },
   "devDependencies": {
     "@types/page": "^1.11.1",

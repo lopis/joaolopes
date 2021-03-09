@@ -1,9 +1,14 @@
 [[redirects]]
-  from = "/posts/**"
+  from = "/posts/*"
   to = "/"
   status = 200
 
 [[redirects]]
   from = "/projects/*"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/*"
   to = "/"
   status = 200

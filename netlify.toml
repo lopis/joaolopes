@@ -1,5 +1,9 @@
 [[redirects]]
-  from = "/*"
+  from = "/posts/**"
   to = "/"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/projects/*"
+  to = "/"
+  status = 200

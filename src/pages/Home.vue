@@ -7,6 +7,12 @@
         <h2>Posts</h2>
         <ul>
           <li>
+            <a href="/posts/clicking-stuff-in-cypress">
+              Clicking Stuff in E2E tests - smooth scrolling, Electron flags,
+              and Cypress
+            </a>
+          </li>
+          <li>
             <a href="/posts/writing-vue-storybook-stories-in-markdown">
               Writing Vue Storybook stories in markdown
             </a>

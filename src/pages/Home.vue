@@ -1,5 +1,6 @@
 <template>
   <h1 class="title">João Lopes</h1>
+  <img src="/photo.jpg" alt="blurry photo of me" class="photo" />
   <nav>
     <ul>
       <li>
@@ -36,9 +37,7 @@
             </a>
           </li>
           <li>
-            <a href="/posts/requirements">
-              Requirements are bull crap
-            </a>
+            <a href="/posts/requirements"> Requirements are bull crap </a>
           </li>
         </ul>
       </li>
@@ -51,9 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="/projects/regresso">
-              Regresso - strategy clicker game
-            </a>
+            <a href="/projects/regresso"> Regresso - strategy clicker game </a>
           </li>
           <li>
             <a href="/projects/signalmon">
@@ -61,9 +58,7 @@
             </a>
           </li>
           <li>
-            <a href="/projects/time-tracker">
-              Time Tracker
-            </a>
+            <a href="/projects/time-tracker"> Time Tracker </a>
           </li>
           <li>
             <a href="/projects/my-hf">
@@ -78,21 +73,39 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import fetchMarkdown from '../util/markdown'
+import { defineComponent } from "vue";
+import fetchMarkdown from "../util/markdown";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   data() {
     return {
-      bio: ''
-    }
+      bio: "",
+    };
   },
   mounted() {
-    fetchMarkdown('about/me')
-    .then(file => {
-      this.bio = String(file.contents)
-    })
+    fetchMarkdown("about/me").then((file) => {
+      this.bio = String(file.contents);
+    });
   },
-})
+});
 </script>
+
+<style>
+.photo {
+  position: relative;
+  right: -100px;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 500px;
+  background: var(--color-text);
+  float: right;
+}
+@media screen and (max-width: 960px) {
+  .photo {
+    display: none;
+  }
+}
+</style>

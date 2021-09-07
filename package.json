@@ -12,7 +12,7 @@
     "remark": "^13.0.0",
     "remark-extract-frontmatter": "https://github.com/lopis/remark-extract-frontmatter",
     "remark-frontmatter": "^3.0.0",
-    "remark-html": "^13.0.1",
+    "remark-html": "^13.0.2",
     "vue": "^3.0.5",
     "vue-safe-html": "^1.0.1",
     "yaml": "^1.10.0"

@@ -1,6 +1,5 @@
 <template>
   <h1 class="title">João Lopes</h1>
-  <img src="/photo.jpg" alt="blurry photo of me" class="photo" />
   <nav>
     <ul>
       <li>
@@ -75,6 +74,7 @@
       </li>
     </ul>
   </nav>
+  <img src="/photo.jpg" alt="blurry photo of me" class="photo" />
   <div v-safe-html="bio"></div>
 </template>
 
@@ -100,12 +100,13 @@ export default defineComponent({
 <style>
 .photo {
   position: relative;
-  right: -100px;
+  margin-top: 50px;
+  margin-right: -100px;
+  margin-left: 20px;
   height: 250px;
   width: 250px;
   object-fit: cover;
   overflow: hidden;
-  border-radius: 500px;
   background: var(--color-text);
   float: right;
 }

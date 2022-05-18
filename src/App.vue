@@ -43,6 +43,7 @@ export default {
   --color-background: #ffffff;
   --color-text: #2c3e50;
   --color-accent: #0075ae;
+  --color-visited-link: #5d348d;
 }
 
 html {
@@ -65,7 +66,7 @@ body {
   font-family: "Quattrocento Sans", sans-serif;
   color: var(--color-text);
   max-width: 60ch;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.5;
   min-height: 100vh;
   padding: 2vw;
@@ -90,7 +91,7 @@ a {
 }
 
 a:visited {
-  color: var(--color-text);
+  color: var(--color-visited-link);
 }
 
 pre {

@@ -6,7 +6,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "index": "node src/util/index.js",
-    "lighthouse": "concurrently \"yarn dev\" \"lighthouse http://localhost:3000/\" -k -s last"
+    "test:lighthouse": "lighthouse http://localhost:5000/ --quiet --chrome-flags=\"--headless\" --output-path=lighthouse-report.html",
+    "lighthouse": "yarn build; concurrently \"yarn serve\" \"yarn test:lighthouse\" -k -s last; firefox lighthouse-report.html"
   },
   "dependencies": {
     "page": "^1.11.6",

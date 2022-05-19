@@ -59,6 +59,7 @@ body {
 @font-face {
   font-family: "Quattrocento Sans";
   src: url("/QuattrocentoSans-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 #app {
   background: rgba(255, 255, 255, 0.95);

@@ -1,0 +1,117 @@
+[
+    {
+        "text": "Introducing the first JS13K Games Community Soundtrack",
+        "href": "//dev.to/lopis/introducing-the-first-js13k-games-community-soundtrack-3kgm",
+        "tags": [
+            "music",
+            "webaudio",
+            "gamedev"
+        ],
+        "date": "Oct 23, 2023"
+    },
+    {
+        "text": "A tiny pixel art game using no images",
+        "href": "//dev.to/lopis/a-tiny-pixel-art-game-using-no-images-49df",
+        "tags": [
+            "gamedev",
+            "javascript",
+            "js13k"
+        ],
+        "date": "Sep 13, 2023"
+    },
+    {
+        "text": "Who's responsible for accessibility in software development? ",
+        "href": "//dev.to/lopis/whos-responsible-for-accessibility-in-software-development-1b0c",
+        "tags": [
+            "a11y",
+            "engineering"
+        ],
+        "date": "May 17, 2023"
+    },
+    {
+        "text": "Creating a tiny zen game using Kontra",
+        "href": "//dev.to/lopis/creating-a-tiny-zen-game-using-kontra-jm8",
+        "tags": [
+            "gamedev",
+            "javascript",
+            "js13k"
+        ],
+        "date": "Sep 30, 2021"
+    },
+    {
+        "text": "12 things I learned as a volunteer programming teacher ",
+        "href": "//dev.to/lopis/12-things-i-learned-as-a-volunteer-programming-teacher-2pd6",
+        "tags": [
+            "teaching",
+            "programming",
+            "volunteering"
+        ],
+        "date": "Jul 6, 2021"
+    },
+    {
+        "text": "Clicking Stuff in E2E tests - smooth scrolling, Electron flags, and Cypress",
+        "href": "//dev.to/lopis/clicking-stuff-in-e2e-tests-smooth-scrolling-electron-flags-and-cypress-2a1c",
+        "tags": [
+            "cypress",
+            "testing",
+            "frontend"
+        ],
+        "date": "Mar 19, 2021"
+    },
+    {
+        "text": "Writing Vue Storybook stories in markdown",
+        "href": "//dev.to/lopis/writing-vue-storybook-stories-in-markdown-10gd",
+        "tags": [
+            "vue",
+            "storybook",
+            "frontend"
+        ],
+        "date": "Feb 15, 2021"
+    },
+    {
+        "text": "JS13k 2019 Meta Postmortem",
+        "href": "//dev.to/mrlopis/js13k-meta-postmortem-5f9b",
+        "tags": [
+            "js13k"
+        ],
+        "date": "Oct 7, 2019"
+    },
+    {
+        "text": "Creating a 13KB JS Game using SVG",
+        "href": "//dev.to/lopis/creating-a-13kb-js-game-using-svg-5fjk",
+        "tags": [
+            "gamedev",
+            "javascript",
+            "js13k"
+        ],
+        "date": "Sep 18, 2019"
+    },
+    {
+        "text": "How to design a javascript game? (in 13KB or less)",
+        "href": "//dev.to/lopis/how-to-design-a-javascript-game-in-13kb-or-less-59kn",
+        "tags": [
+            "gamedev",
+            "javascript",
+            "js13k"
+        ],
+        "date": "Sep 13, 2019"
+    },
+    {
+        "text": "JS13K 2018 Game competition postmortem",
+        "href": "//dev.to/lopis/js13k-game-competition-postmortem-2j1p",
+        "tags": [
+            "gamedev",
+            "javascript",
+            "js13k"
+        ],
+        "date": "May 24, 2019"
+    },
+    {
+        "text": "Requirements are bull crap ",
+        "href": "//dev.to/mrlopis/requirements-are-bull-crap-4gc1",
+        "tags": [
+            "engineering"
+        ],
+        "date": "Jan 13, 2018"
+    }
+]

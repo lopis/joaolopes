@@ -1,4 +1,4 @@
-<script>
+<script lagn="ts">
 	export let title = '';
 
 	// You can replace these links with your actual data

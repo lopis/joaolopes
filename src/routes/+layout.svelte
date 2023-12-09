@@ -12,6 +12,8 @@
 
 <style>
   main {
+    min-height: 100vh;
+    box-sizing: border-box;
     padding-bottom: 50px;
     background: linear-gradient(-10deg, var(--light2) 30%, var(--light1) 100%) fixed;
     color: var(--dark2);

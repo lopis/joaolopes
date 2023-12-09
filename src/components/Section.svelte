@@ -1,5 +1,6 @@
 <script lagn="ts">
 	export let title = '';
+	export let more = '';
 
 	// You can replace these links with your actual data
 	export let sectionLinks = [
@@ -21,6 +22,9 @@
       </li>
 		{/each}
 	</ul>
+  {#if more}
+    <a href={more}><small>See more</small></a>
+  {/if}
 </section>
 
 <style>
@@ -40,22 +44,27 @@ h2 {
 }
 
 li {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   position: relative;
 }
 
 li[data-icon]::before {
-  content: attr(data-icon);
-  float: left;
-  background: var(--light1);
-  padding: 8px;
-  border-radius: 100px;
-  margin-right: 8px;
+	content: attr(data-icon);
+	float: left;
+	background: var(--light1);
+	border-radius: 100px;
+	margin-right: 8px;
+	width: 2.2em;
+	display: flex;
+	justify-content: center;
+	height: 2.2em;
+	align-items: center;
 }
 
 .meta {
   margin: 4px 0;
   font-size: 80%;
+  white-space: nowrap;
 }
 
 .tag {

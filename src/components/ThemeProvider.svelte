@@ -20,6 +20,13 @@
   z-index: 1;
 }
 
+@media (max-width: 600px) {
+  .theme-label {
+    top: unset;
+    bottom: 24px;
+  }
+}
+
 .checkbox {
   display: none;
 }
@@ -37,7 +44,7 @@
   transition: all 200ms ease-in-out;
 }
 
-.checkbox:checked ~ * {
+.checkbox:not(:checked) ~ * {
   --dark1: #622369;
   --dark2: #1a0228;
   --light1: #fffcf7;
@@ -45,7 +52,7 @@
   --underline: #37164955;
 }
 @media (prefers-color-scheme: dark) {
-  .checkbox:checked ~ * {
+  .checkbox:not(:checked) ~ * {
     --dark1: #fffcf7;
     --dark2: #ffc9c9;
     --light1: #622369;
@@ -53,7 +60,7 @@
     --underline: #ffdada55;
   }
 }
-.checkbox:not(:checked) ~ * {
+.checkbox:checked ~ * {
     --dark1: #fffcf7;
     --dark2: #ffc9c9;
     --light1: #622369;
@@ -61,7 +68,7 @@
     --underline: #ffdada55;
 }
 @media (prefers-color-scheme: dark) {
-  .checkbox:not(:checked) ~ * {
+  .checkbox:checked ~ * {
     --dark1: #622369;
     --dark2: #1a0228;
     --light1: #fffcf7;

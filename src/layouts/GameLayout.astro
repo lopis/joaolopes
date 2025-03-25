@@ -18,7 +18,12 @@ const displayDate = new Date(date).toLocaleDateString();
     >
   </nav>
   <main>
-    <iframe src={embed}></iframe>
+    <div class="gameWrapper">
+      <iframe src={embed}></iframe>
+      <a href={embed} target="_blank">
+        <span class="fullscreen">⛶ Fullscreen</span>
+      </a>
+    </div>
   </main>
   <p>
     <slot />
@@ -27,13 +32,34 @@ const displayDate = new Date(date).toLocaleDateString();
 
 <style>
   iframe {
-    width: calc(100% + 8vw);
+    width: 100%;
     aspect-ratio: 4/3;
-    margin: 1em -4vw;
+    border: 1px solid var(--black);
+    border-radius: 5px;
   }
 
   h1 {
     position: relative;
+  }
+
+  .gameWrapper {
+    position: relative;
+    margin: 1em -4vw;
+  }
+
+  .fullscreen {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--light);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+
+    &:hover {
+      background: var(--highlight);
+    }
   }
 
   .goback {

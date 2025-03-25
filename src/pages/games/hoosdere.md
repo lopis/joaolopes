@@ -1,7 +1,7 @@
 ---
 title: Hoosdere
 thumbnail: https://github.com/lopis/lopis/raw/master/hoosdere.png
-original_link: https://js13kgames.com/2017/games/hoosdere
+website: https://js13kgames.com/2017/games/hoosdere
 date: 2017-09-13T1:00:00.253Z
 repository: https://github.com/lopis/hoosdere
 embed: https://lopis.github.io/hoosdere/src/dev.html

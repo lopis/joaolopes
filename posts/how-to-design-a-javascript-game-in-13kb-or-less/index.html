@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to design a javascript game? (in 13KB or less)</title><style>:root{--black: #1a000a;--white: #ffe4d8;--highlight: #e44800;--medium: #8b2c00}html,body{margin:0}html{background:var(--black);color:var(--black)}body{min-height:100vh;max-width:1100px;box-sizing:border-box;background-color:var(--white);font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;padding:1em 5vw;margin:auto;font-size:18px}h1{font-weight:400;font-family:serif}a,a:visited{color:var(--medium)}p{max-width:80ch}pre{padding:2em;border-radius:5px;white-space:break-spaces;background:var(--black)!important}
+.cover[data-astro-cid-gjtny2mx]{width:calc(100% + 10vw);height:25vw;object-fit:cover;margin:2vw -5vw;border-bottom:3px solid var(--highlight)}.cover[data-astro-cid-gjtny2mx].default{border:none;background-color:var(--white);opacity:.6;background-image:linear-gradient(30deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(150deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(30deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(150deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(60deg,#e4480077 25%,transparent 25.5%,transparent 75%,#e4480077 75%,#e4480077),linear-gradient(60deg,#e4480077 25%,transparent 25.5%,transparent 75%,#e4480077 75%,#e4480077);background-size:80px 140px;background-position:0 0,0 0,40px 70px,40px 70px,0 0,40px 70px}h1[data-astro-cid-gjtny2mx]{position:relative}.goback[data-astro-cid-gjtny2mx]{text-decoration:none;position:absolute;left:-60px;font-weight:700;display:inline-block;height:48px;width:48px;text-align:center;font-size:1.3em;line-height:1em;border-radius:5px;&:hover{background:var(--highlight);color:#fff}}
+</style></head> <body>  <h1 data-astro-cid-gjtny2mx> <a class="goback" href="/" data-astro-cid-gjtny2mx>&#60;</a> How to design a javascript game? (in 13KB or less) </h1> <nav data-astro-cid-gjtny2mx> 9/13/2019 
+| <a href="https://dev.to/mrlopis/how-to-design-a-javascript-game-in-13kb-or-less-59kn" data-astro-cid-gjtny2mx>Original post</a>   </nav> <div class="cover default" data-astro-cid-gjtny2mx></div><main data-astro-cid-gjtny2mx> <p>Another <a href="https://js13kgames.com/">Js13K</a> has passed. This is my third time participating in this game jam. I like to think that I always learn a thing or two with these. (<a href="https://js13kgames.com/entries/regresso">You can play the game here</a>)</p>
+<h2 id="the-game-theme">The game theme</h2>
+<p>When this year’s theme came out (‘BACK’), I decided I wanted to make a game about the crew of a ship that wrecked on an island and is trying to go back home. The would need to collect resources to re-build the ship, in a game that would be a mixture of <a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, Minecraft and that old <a href="https://www.youtube.com/watch?v=BHoT1ig9DdU">Grow flash game</a>.</p>
+<h2 id="prototyping">Prototyping</h2>
+<p>I immediately started prototyping an island generation algorithm. It was gonna have everything: ocean, sand, grass, trees, ores, animals, fresh water lakes, maybe even rivers (my favourite prototyping tool is <a href="https://codepen.io/">https://codepen.io/</a>).</p>
+<p>Except I’ve never done anything remotely like this. After two days of frustrating results, I gave up on the game and went to bed.</p>
+<p>The next day I realized all the time I spent on the failed island generator didn’t get me closer to the game I set out to build <em>at all</em>. So I scraped everything and started over. What <em>was</em> I set out to make? I sat down with a notepad and wrote.</p>
+<ol>
+<li><strong>I wanted a clicker.</strong> The game is all about clicking for resources. So I gave it buttons. You click, you get it.</li>
+</ol>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/nzubb9020nxw81el7uwe.png" alt="Picture of the buttons for each resource"></p>
+<ol start="2">
+<li><strong>I wanted resources to be volatile.</strong> Also, they can’t just be free. So I made it so that, every day, people will eat the food. Also, each person takes a few seconds to go grab the food.</li>
+</ol>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/1buaapypolhs12ka9no7.png" alt="Log showing people&#x27;s actions"></p>
+<ol start="3">
+<li>Finally, <strong>I wanted <em>drama</em></strong>. What happens if you don’t feed people?</li>
+</ol>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/pza2pwg7zx20m0dsv71q.png" alt="People die"></p>
+<p>Eventually I dropped the whole “+5 food” when someone dies. The game is morbid enough without the cannibalism. You can test <a href="https://codepen.io/lopis/pen/yLBVmeG?editors=1010">my final prototype here</a>.
+4. The fourth component I wanted for my game was <strong>a set of “projects”</strong> that you have to accomplish before you can finally build the ship. Inspired by “Grow”, I wanted that the order by which the player completes the projects to influence the end goal. So, for instance, if you develop fishing early on, you get more food, but then you have less people ready to work since one person is now a dedicated fisher.</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/un0vatrtqyaec5huqx26.png" alt="List of projects"></p>
+<h2 id="balancing-progress-and-difficulty">Balancing progress and difficulty</h2>
+<p>Most projects I came up with are a result of trying to balance and rebalance the game.</p>
+<ol>
+<li>
+<p>Clicking on forage and hunting all the time leaves little free time to read the game messages and project description; so I created fishing to automate food gathering.</p>
+</li>
+<li>
+<p>With the fishing project done, it’s really trivial to stockpile a crap ton of food very quickly; so I created <em>death by wild animals</em> to nerf the hunting action.</p>
+</li>
+<li>
+<p>Stockpiling wood was also very easy. So I also gave logging a small risk of animal attacks.</p>
+</li>
+<li>
+<p>Now animal attacks are too much of a problem! So I countered this with the “Weapons” project, which reduces the chance of animal attack deaths.</p>
+</li>
+<li>
+<p>I was still stock piling lots of wood. So I made it so the people burn a little bit of wood every day (for heating and cooking).</p>
+</li>
+<li>
+<p>After all this I realized that, by the end of the game, <em>there was no risk of dying</em>. With a steady food supply, losing the game was impossible. So I sneaked in a “God’s Wrath” parameter. God will sink your run-away ship if you don’t build Him a chapel and pray a lot. 🙏🙏🙏</p>
+</li>
+</ol>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/prn81xxdjgkgte3yujoc.png" alt="God hates you. You die."></p>
+<h2 id="the-ui">The UI</h2>
+<p>I had totally scraped the plans for a map generator. But I wanted some kind of UI. I decided to keep the log from the prototype and create a sort of small “map” to hint the player to what is happening. I gave the game elements and controls animations to make everything more satisfying to watch (also a bit more chaotic, but that’s ok (I hope)). I made the island using SVG. SVG in the times of HTML5 is both a blessing and a curse. But more about that in another article.</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/3kohzskoh3d1nnpqasbn.png" alt="The Game UI"></p>
+<p>The game is hecka confusing at first. You start playing, your people die after two days because everything happens too fast; so your shout at the screen and refresh. You try again, you get distracted reading the project descriptions; every one starved. You refresh. You try again. It’s so annoying to refresh the page to restart a game. Quick-death games need to also be very quick to restart. So I added a restart button that resets the game. Adding the reset button was also a very refactoring exercise because it forced me to gather all the game data in the same places and initialize them properly.</p>
+<h2 id="calculating-the-score">Calculating the score</h2>
+<p>Finally, my game needed a reward. I felt that the result win/lose was a sad ending and not very engaging. So I developed a score equation:</p>
+<ol>
+<li>
+<p>Each person that doesn’t die gives you lots of points</p>
+</li>
+<li>
+<p>Each project you complete also gives you some points</p>
+</li>
+<li>
+<p>Final score is inversely proportional to the number of days you take to finish</p>
+</li>
+<li>
+<p>The score is also inversely proportional to God’s Wrath</p>
+</li>
+<li>
+<p>You get a bonus just for leaving the island.</p>
+</li>
+</ol>
+<p>In case you’re wondering, my best score so far was 349 points</p>
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/013xojnc7esj2c3bdni4.png" alt="My best score was 309 points"></p>
+<p>I believe I managed to make a small entertaining game and I’m looking forward to next year’s challenge. Let me know if you can finish in 30 days! I believe it’s possible!</p>
+<h2 id="stats-for-nerds">Stats for nerds</h2>
+<p>I developed my game using Typescript but never got around to actually using types. I used gulp to build my game and to zip my files.</p>
+<p>I coded on VSCode, on Ubuntu, on an XPS13.</p>
+<p>I worked about 15 hours per week 5 to 6 days per week since day one of the competition.</p>
+<p>Apart from the gulp project builder, I made the game from scratch without any libraries. I’m still writing a more technical post-mortem.</p> </main>  </body></html> 

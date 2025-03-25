@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hugo, Netlify and dynamic author lists</title><style>:root{--black: #1a000a;--white: #ffe4d8;--highlight: #e44800;--medium: #8b2c00}html,body{margin:0}html{background:var(--black);color:var(--black)}body{min-height:100vh;max-width:1100px;box-sizing:border-box;background-color:var(--white);font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;padding:1em 5vw;margin:auto;font-size:18px}h1{font-weight:400;font-family:serif}a,a:visited{color:var(--medium)}p{max-width:80ch}pre{padding:2em;border-radius:5px;white-space:break-spaces;background:var(--black)!important}
+.cover[data-astro-cid-gjtny2mx]{width:calc(100% + 10vw);height:25vw;object-fit:cover;margin:2vw -5vw;border-bottom:3px solid var(--highlight)}.cover[data-astro-cid-gjtny2mx].default{border:none;background-color:var(--white);opacity:.6;background-image:linear-gradient(30deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(150deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(30deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(150deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(60deg,#e4480077 25%,transparent 25.5%,transparent 75%,#e4480077 75%,#e4480077),linear-gradient(60deg,#e4480077 25%,transparent 25.5%,transparent 75%,#e4480077 75%,#e4480077);background-size:80px 140px;background-position:0 0,0 0,40px 70px,40px 70px,0 0,40px 70px}h1[data-astro-cid-gjtny2mx]{position:relative}.goback[data-astro-cid-gjtny2mx]{text-decoration:none;position:absolute;left:-60px;font-weight:700;display:inline-block;height:48px;width:48px;text-align:center;font-size:1.3em;line-height:1em;border-radius:5px;&:hover{background:var(--highlight);color:#fff}}
+</style></head> <body>  <h1 data-astro-cid-gjtny2mx> <a class="goback" href="/" data-astro-cid-gjtny2mx>&#60;</a> Hugo, Netlify and dynamic author lists </h1> <nav data-astro-cid-gjtny2mx> 1/24/2019 
+| <a href="https://simplesurance.tech/post/hugo-netlify-and-dynamic-author-lists/" data-astro-cid-gjtny2mx>Original post</a>   </nav> <div class="cover default" data-astro-cid-gjtny2mx></div><main data-astro-cid-gjtny2mx> <h3 id="toc">TOC</h3>
+<ul>
+<li><a href="#creating-a-new-author-template">Creating a new Author template</a></li>
+<li><a href="#creating-a-new-collection-of-authors">Creating a new collection of Authors</a></li>
+<li><a href="#how-to-find-the-actual-user-data">How to find the actual user data</a></li>
+<li><a href="#why-not-hugo-taxonomy">Why not Hugo taxonomy?</a></li>
+<li><a href="#the-solution">The solution</a></li>
+</ul>
+<p><a href="https://gohugo.io/">Hugo</a> is an efficient static site generator written in Go. It’s currently powering this same blog you’re reading. <a href="https://www.netlify.com">Netlify</a> is the serverless host of this website. They are both great tools and pair nicely together.</p>
+<p>While developing this blog, I though it would be pretty useful to keep a list of blog post authors. I wanted any editor to be able to create and modify authors’ data from the netlify cms backend.</p>
+<h2 id="creating-a-new-author-template">Creating a new Author template</h2>
+<p>Firstly, I create a fancy template for displaying user data which I added to the post params.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"><span style="color:#E1E4E8">title: Multi-app React code sharing in a monorepo</span></span>
+<span class="line"><span style="color:#E1E4E8">date: 2017-06-16T12:12:00.000Z</span></span>
+<span class="line"><span style="color:#E1E4E8">author:</span></span>
+<span class="line"><span style="color:#E1E4E8">  name: João Lopes</span></span>
+<span class="line"><span style="color:#E1E4E8">  image: img/photo/lopis.jpg</span></span>
+<span class="line"><span style="color:#E1E4E8">  github: lopis</span></span>
+<span class="line"><span style="color:#E1E4E8">description: How we approached managing shared ...</span></span>
+<span class="line"><span style="color:#E1E4E8">image: /img/puzzle.jpg</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span></code></pre>
+<p>Then I rendered that data after the blog post content.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;div class="author"></span></span>
+<span class="line"><span>  &#x3C;img src="{{ .Params.author.image }}" alt=""></span></span>
+<span class="line"><span>  &#x3C;div></span></span>
+<span class="line"><span>      &#x3C;span>{{ .Params.author.name }}&#x3C;/span>&#x3C;br></span></span>
+<span class="line"><span>      &#x3C;div></span></span>
+<span class="line"><span>        {{ if .Params.author.github }}</span></span>
+<span class="line"><span>            &#x3C;a href="www.github.com/{{ .Params.author.github }}"></span></span>
+<span class="line"><span>              &#x3C;img src="/img/github-logo.svg" height="20" width="20" alt=""></span></span>
+<span class="line"><span>              {{ .Params.author.github  }}</span></span>
+<span class="line"><span>            &#x3C;/a></span></span>
+<span class="line"><span>        {{ end }}</span></span>
+<span class="line"><span>      &#x3C;/div></span></span>
+<span class="line"><span>  &#x3C;/div></span></span>
+<span class="line"><span>&#x3C;/div></span></span></code></pre>
+<h2 id="creating-a-new-collection-of-authors">Creating a new collection of Authors</h2>
+<p>From the netlify side of things, it was all about <a href="https://www.netlifycms.org/docs/collection-types/">creating a new collection</a> to host the author pages. Each author is saved as a markdown file under <code>content/authors/author-name.md</code>.</p>
+<p>Hugo would now render these mardkdown files. I initially setup a list of authors in the home page like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"f2 b lh-title mb3"</span><span style="color:#E1E4E8">>Authors&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"w-100 flex-ns mhn1-ns flex-wrap mb3"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">	{{ range first 4 (where .Data.Pages "Type" "author") }}</span></span>
+<span class="line"><span style="color:#E1E4E8">		&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"ph1-ns w-50-ns flex"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">			{{ .Render "profile" }}</span></span>
+<span class="line"><span style="color:#E1E4E8">		&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">	{{ end }}</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>Netlify <a href="https://www.netlifycms.org/docs/widgets/#relation">supports the widget type “relation”</a>. This let’s me insert an item of type “Author” into an item of type “Post”.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>collections: # A list of collections the CMS should be able to edit</span></span>
+<span class="line"><span>  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit</span></span>
+<span class="line"><span>    label: "Post" # Used in the UI, ie.: "New Post"</span></span>
+<span class="line"><span>    folder: "site/content/post" # The path to the folder where the documents are stored</span></span>
+<span class="line"><span>    create: true # Allow users to create new documents in this collection</span></span>
+<span class="line"><span>    fields: # The fields each document in this collection have</span></span>
+<span class="line"><span>      - {label: "Title", name: "title", widget: "string"}</span></span>
+<span class="line"><span>      - {label: "Publish Date", name: "date", widget: "datetime"}</span></span>
+<span class="line"><span>      - label: "Author"</span></span>
+<span class="line"><span>        name: "author"</span></span>
+<span class="line"><span>        widget: "relation"</span></span>
+<span class="line"><span>        collection: "authors"</span></span>
+<span class="line"><span>        ...</span></span></code></pre>
+<p>So now all everything is connected and Hugo can render the author widget with all the user data right?</p>
+<h2 id="how-to-find-the-actual-user-data">How to find the actual user data</h2>
+<p>No, of course not. You see, Netlify only saves a string to the markdown for the “relation” field. Hugo doesn’t know what a relation type field is - all it sees is a string.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#E1E4E8">title: Multi-app React code sharing in a monorepo</span></span>
+<span class="line"><span style="color:#E1E4E8">date: 2017-06-16T12:12:00.000Z</span></span>
+<span class="line"><span style="color:#E1E4E8">author: João Lopes</span></span>
+<span class="line"><span style="color:#E1E4E8">...</span></span></code></pre>
+<p>In Hugo and Netlify everything is a page - the Post is a page and the User is a page. I want to find the user page and render it inside the post page after its content.</p>
+<h2 id="why-not-hugo-taxonomy">Why not Hugo taxonomy?</h2>
+<p>I found an post in the oficial Netflify blog on <a href="https://www.netlify.com/blog/2018/07/24/hugo-tips-how-to-create-author-pages/">how to create author pages in Hugo</a>. This seemed like just what I needed. Unfortunately it makes use of a very useful Hugo feature called <strong>taxonomy</strong>. Taxonomy lets you group pages from different collections by common field names, for instance by “author”. It even allows you to add extra meta data to each author like their full name, biography, etc. Unfortunately the taxonomy data storage is kind of incompatible with Netlify.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Hugo directory structure for taxonomy</span></span>
+<span class="line"><span>├─ content/</span></span>
+<span class="line"><span>│  └─ author</span></span>
+<span class="line"><span>│     ├─ john-smith</span></span>
+<span class="line"><span>│     │  └─ _index.md</span></span>
+<span class="line"><span>│     └─ mr-foo-bar</span></span>
+<span class="line"><span>│        └─ _index.md</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Hugo directory for pages of a collection</span></span>
+<span class="line"><span>├─ content/</span></span>
+<span class="line"><span>│  └─ author</span></span>
+<span class="line"><span>│     └─ john-smith.md</span></span>
+<span class="line"><span>│     └─ mr-foo-bar.md</span></span></code></pre>
+<p>And as far as I could tell, it it couldn’t be changed. So I was going to have to hack it together.</p>
+<h2 id="the-solution">The solution</h2>
+<p>The author field of a post might have been reduced to a plain string, but that doesn’t mean Hugo can’t find the actual author data. During rendering Hugo templates have access to the variable <code>.Site.Pages</code> which includes every page, section or taxonomy that you want - all the Hugo objects are there. To find our author, we’ll need to filter these pages by type “author” and match it to the post author. I created a new field called “username” which will act as my “foreign key”.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;div class="author"></span></span>
+<span class="line"><span>  &#x3C;!-- Gotta find that user page and render it here --></span></span>
+<span class="line"><span>  {{ $users    := where .Site.Pages "Type" "author" }}</span></span>
+<span class="line"><span>  {{ $username := where .Site.Pages "Params.user" .Params.user }}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  {{ range $users | intersect $username }}</span></span>
+<span class="line"><span>      {{ .Render "profile" }}</span></span>
+<span class="line"><span>  {{ end }}</span></span>
+<span class="line"><span>&#x3C;/div></span></span></code></pre>
+<p><code>range</code> is basically Hugo’s way to do cycles. <code>intersect</code> is how you intersect two filtered groups. It was confusing to reach this construct because the scope inside the <code>range</code> is not the same as outside. Inside <code>range</code> you don’t have access to <code>.Params.user</code> of the post anymore - that variable is now scoped to the Author! However for any kind of more static data I would still prefer Hugo’s taxonomy.</p> </main>  </body></html> 

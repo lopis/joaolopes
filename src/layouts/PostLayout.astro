@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "./MainLayout.astro";
+
+const { frontmatter } = Astro.props;
+const { title, original_link, website, cover_image, date } = frontmatter;
+
+const displayDate = new Date(date).toLocaleDateString();
+---
+
+<MainLayout title={title}>
+  <h1>
+    <a class="goback" href="/">&#60;</a>
+    {title}
+  </h1>
+  <nav>
+    {displayDate}
+    {
+      original_link && (
+        <>
+          | <a href={original_link}>Original post</a>
+        </>
+      )
+    }
+    {
+      website && (
+        <>
+          | <a href={website}>Website</a>
+        </>
+      )
+    }
+  </nav>
+  {
+    cover_image ? (
+      <Image inferSize={true} class="cover" src={cover_image} alt="" />
+    ) : (
+      <div class="cover default" />
+    )
+  }
+  <main>
+    <slot />
+  </main>
+</MainLayout>
+
+<style>
+  .cover {
+    width: calc(100% + 10vw);
+    height: 25vw;
+    object-fit: cover;
+    margin: 2vw -5vw;
+    border-bottom: 3px solid var(--highlight);
+  }
+
+  .cover.default {
+    border: none;
+    background-color: var(--white);
+    opacity: 0.6;
+    background-image: linear-gradient(
+        30deg,
+        #e44800 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #e44800 87.5%,
+        #e44800
+      ),
+      linear-gradient(
+        150deg,
+        #e44800 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #e44800 87.5%,
+        #e44800
+      ),
+      linear-gradient(
+        30deg,
+        #e44800 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #e44800 87.5%,
+        #e44800
+      ),
+      linear-gradient(
+        150deg,
+        #e44800 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #e44800 87.5%,
+        #e44800
+      ),
+      linear-gradient(
+        60deg,
+        #e4480077 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #e4480077 75%,
+        #e4480077
+      ),
+      linear-gradient(
+        60deg,
+        #e4480077 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #e4480077 75%,
+        #e4480077
+      );
+    background-size: 80px 140px;
+    background-position:
+      0 0,
+      0 0,
+      40px 70px,
+      40px 70px,
+      0 0,
+      40px 70px;
+  }
+
+  h1 {
+    position: relative;
+  }
+
+  .goback {
+    text-decoration: none;
+    position: absolute;
+    left: -60px;
+    font-weight: bold;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1em;
+    border-radius: 5px;
+
+    &:hover {
+      background: var(--highlight);
+      color: white;
+    }
+  }
+</style>

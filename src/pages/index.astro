@@ -1,0 +1,107 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+
+Array.prototype.sortByDate = function () {
+  return this.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+  );
+};
+
+const posts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+).sortByDate();
+const projects = Object.values(
+  import.meta.glob("./projects/*.md", { eager: true }),
+).sortByDate();
+const games = Object.values(
+  import.meta.glob("./games/*.md", { eager: true }),
+).sortByDate();
+
+const formatDate = (date: Date) => new Date(date).toLocaleDateString();
+---
+
+<MainLayout>
+  <h1>jlopes.dev</h1>
+  <section>
+    <h2>Posts</h2>
+    <ul class="list">
+      {
+        posts.map((post) => (
+          <li>
+            {formatDate(post.frontmatter.date)} ·
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <section>
+    <h2>Projects</h2>
+    <ul class="list">
+      {
+        projects.map((project) => (
+          <li>
+            <a href={project.url}>{project.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <section>
+    <h2>Games</h2>
+    <ul class="games">
+      {
+        games.map((game) => (
+          <a href={game.url}>
+            <li>
+              <Image
+                src={game.frontmatter.thumbnail}
+                alt=""
+                height="80"
+                width="140"
+              />
+              <span>{game.frontmatter.title}</span>
+            </li>
+          </a>
+        ))
+      }
+    </ul>
+  </section>
+</MainLayout>
+
+<style>
+  .list {
+    list-style: none;
+    padding-left: 1em;
+    border-left: 5px solid var(--highlight);
+    line-height: 2;
+  }
+
+  .games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      width: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--black);
+      border-radius: 5px;
+      overflow: hidden;
+      color: var(--white);
+    }
+
+    a,
+    a span {
+      color: var(--white);
+      text-decoration: none;
+      padding: 5px;
+      text-align: center;
+    }
+  }
+</style>

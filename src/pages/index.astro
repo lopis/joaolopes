@@ -53,8 +53,8 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
     <ul class="games">
       {
         games.map((game) => (
-          <a href={game.url}>
-            <li>
+          <li>
+            <a class="game" href={game.url}>
               <Image
                 src={game.frontmatter.thumbnail}
                 alt=""
@@ -62,8 +62,8 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
                 width="140"
               />
               <span>{game.frontmatter.title}</span>
-            </li>
-          </a>
+            </a>
+          </li>
         ))
       }
     </ul>
@@ -85,8 +85,10 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
     list-style: none;
     padding-left: 0;
 
-    li {
+    .game {
+      padding: 0;
       width: 140px;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -94,6 +96,8 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
       border-radius: 5px;
       overflow: hidden;
       color: var(--white);
+      justify-content: stretch;
+      box-shadow: 0 0 0px 1px var(--black);
     }
 
     a,

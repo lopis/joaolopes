@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Who&#39;s responsible for accessibility in software development?</title><style>:root{--black: #1a000a;--white: #ffe4d8;--light: #a34a59;--highlight: #660429;--medium: #99073f}html,body{margin:0}html{--background1: #100006;--background2: #10000677;background-color:#3b0017;background-image:linear-gradient(30deg,var(--background1) 12%,transparent 12.5%,transparent 87%,var(--background1) 87.5%,var(--background1)),linear-gradient(150deg,var(--background1) 12%,transparent 12.5%,transparent 87%,var(--background1) 87.5%,var(--background1)),linear-gradient(30deg,var(--background1) 12%,transparent 12.5%,transparent 87%,var(--background1) 87.5%,var(--background1)),linear-gradient(150deg,var(--background1) 12%,transparent 12.5%,transparent 87%,var(--background1) 87.5%,var(--background1)),linear-gradient(60deg,var(--background2) 25%,transparent 25.5%,transparent 75%,var(--background2) 75%,var(--background2)),linear-gradient(60deg,var(--background2) 25%,transparent 25.5%,transparent 75%,var(--background2) 75%,var(--background2));background-size:20px 35px;background-position:0 0,0 0,10px 18px,10px 18px,0 0,10px 18px;color:var(--black)}body{min-height:100vh;max-width:1100px;box-sizing:border-box;background-color:var(--white);font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;padding:1em 5vw;margin:auto;font-size:18px}h1{font-weight:400;font-family:serif}a,a:visited{color:var(--medium)}p{max-width:80ch;img{max-width:100%}}pre{padding:2em;border-radius:5px;white-space:break-spaces;background:var(--black)!important}
+.cover[data-astro-cid-gjtny2mx]{width:calc(100% + 10vw);height:25vw;object-fit:cover;margin:2vw -5vw;border-bottom:3px solid var(--highlight)}.cover[data-astro-cid-gjtny2mx].default{border:none;background-color:var(--white);opacity:.6;background-image:linear-gradient(30deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(150deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(30deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(150deg,#e44800 12%,transparent 12.5%,transparent 87%,#e44800 87.5%,#e44800),linear-gradient(60deg,#e4480077 25%,transparent 25.5%,transparent 75%,#e4480077 75%,#e4480077),linear-gradient(60deg,#e4480077 25%,transparent 25.5%,transparent 75%,#e4480077 75%,#e4480077);background-size:80px 140px;background-position:0 0,0 0,40px 70px,40px 70px,0 0,40px 70px}h1[data-astro-cid-gjtny2mx]{position:relative}.goback[data-astro-cid-gjtny2mx]{text-decoration:none;position:absolute;left:-60px;font-weight:700;display:inline-block;height:48px;width:48px;text-align:center;font-size:1.3em;line-height:1em;border-radius:5px;&:hover{background:var(--highlight);color:#fff}}
+</style></head> <body>  <h1 data-astro-cid-gjtny2mx> <a class="goback" href="/" data-astro-cid-gjtny2mx>&#60;</a> Who&#39;s responsible for accessibility in software development? </h1> <nav data-astro-cid-gjtny2mx> 5/17/2023 
+| <a href="https://dev.to/lopis/whos-responsible-for-accessibility-in-software-development-1b0c" data-astro-cid-gjtny2mx>Original post</a>   </nav> <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r8unba6uqrq9g1ctab8m.png" alt data-astro-cid-gjtny2mx="true" width="912" height="387" loading="lazy" decoding="async" class="cover"><main data-astro-cid-gjtny2mx> <p>It’s <a href="https://a11y.day/">Global Accessibility Awareness Day</a>! So in the spirit of a11y day, I have a question for you:</p>
+<p>In software development projects, namely those with UIs, <em>who’s responsible for paying attention to the accessibility</em> of said UIs? Is it the project manager? Or is it the designer? The software developer? Perhaps the QA engineer? As you can probably guess, everyone has their own responsibilities.</p>
+<p>I asked my colleagues to answer two questions: what is your role, and how does it contribute to developing an accessible product?</p>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#product-manager">Product Manager</a></li>
+<li><a href="#product-designer">Product Designer</a></li>
+<li><a href="#content-designer">Content Designer</a></li>
+<li><a href="#frontend-engineer">Frontend Engineer</a></li>
+<li><a href="#mobile-engineer">Mobile Engineer</a></li>
+<li><a href="#qa-engineer">QA Engineer</a></li>
+<li><a href="#accessibility-champion">A11y Champion</a></li>
+<li><a href="#final-notes">Final Notes</a>
+<ul>
+<li><a href="#backend-engineer">Backend Engineer</a></li>
+<li><a href="#it-admin">IT Admin</a></li>
+<li><a href="#user-support">User support</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/265y7yl5robnp9xhi925.png" alt="Team planning around a table"></p>
+<h2 id="product-manager">Product manager</h2>
+<p>As a product manager, I define a vision, strategy and roadmap for our products, based on the overall company direction.</p>
+<p>My daily tasks include prioritising features and requirements,
+coordinating collaboration with other teams when needed, writing acceptance criteria (AC), analysing trends and patterns in the industry and analysing customer feedback and analytics data.</p>
+<p><strong>I ensure that accessibility is part of the “definition of done”</strong> of a project or feature by planning for the necessary capacity for implementing accessible features. I review projects regularly to stay up-to-date with the latest accessibility principles. I work with the company’s accessibility experts - mostly developers - to establish a baseline of accessibility requirements.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/43r2ig89r2i9w9e4t088.png" alt="Abstract design popping out of a computer"></p>
+<h2 id="product-designer">Product Designer</h2>
+<p>As a product designer, I help keep our design system alive and up-to-date. This includes not only creating new components, composing layouts and design interactions and animations, but also establishing and following design principles across the organization.</p>
+<p>These design principles include a set of accessibility guidelines that must be followed when creating design system (DS) components, as well as when developing feature work. I routinely review these components in terms of color contrast, font size, spacing, copy, and navigability, to make sure they follow the established guidelines.</p>
+<p>I also lead user surveys and user tests that allow me to see how real users use our products, and how they perceive different prototypes.</p>
+<h2 id="content-designer">Content Designer</h2>
+<p>I strive to understand how content (i.e. text, image or otherwise) influences user behaviour. I’m responsible for creating and shaping the content strategy and user experience in the different mediums (web, mobile, socials). My role blends creativity, storytelling, and data-driven insights to create cohesive and persuasive digital experiences.</p>
+<p>By considering accessibility guidelines and incorporating practices such as alt text for images, proper heading structure, descriptive text in links and buttons, succinct and clear copy, I help make information accessible to a broader audience, enhancing the overall user experience for people with diverse needs.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/io47vj4ujxgbvums4n2y.png" alt="Engineering coding on a computer"></p>
+<h2 id="frontend-engineer">Frontend Engineer</h2>
+<p>As a developer, I bring designs to life through code following the acceptance criteria. I write automated tests to validate my implementation, but also manually test it before a release. I also review my colleague’s code, and participate in design reviews and project planning.</p>
+<p>I’m responsible for staying up-to-date with web accessibility standards. I use semantic HTML and ARIA labels, paying special attention to the interactive elements of our pages, like forms or dynamic content. Sometimes, special labels need to be added specifically for screen reader users.</p>
+<p>Finally, I set up a11y automation tools like Lighthouse to assure high code quality throughout the team, which flag various accessibility issues like color contrast and HTML problems.</p>
+<h2 id="qa-engineer">QA Engineer</h2>
+<p>My main role is being the quality coach of the team. I establish cross-project QA guidelines, create templates for QA mind maps, create testing plans for developers, and establish cross-project acceptance criteria, like target browser versions.</p>
+<p>I also write automated tests, namely end-to-end acceptance tests, e.g. using tools like browserstack. Manual QA of whole projects is also often my responsibility.</p>
+<p>I ensure that accessibility requirements are included in the product ACs as well as in the technical ACs. I also use tools that report several a11y issues in the browser like WAVE while testing products.</p>
+<h1 id="mobile-engineer">Mobile Engineer</h1>
+<p>As a mobile engineer, I create and maintain our company’s mobile apps. I create new features based on a design, and fix bugs reported to us. It’s my responsibility to understand mobile UX patterns. I communicate effectively with PM, Leads and Team Member regarding expectations, and participate in project planning.</p>
+<p>I must ensure that elements are easily discernible by color and contrast regardless of the users’ theme. I identify where alt texts are needed for elements which are either directly relevant (e.g. buttons) or which is only represented graphically. A big part of this is knowing the semantics of each type of element.</p>
+<p>I also perform manual accessibility QA using the native screen reader, using alternative navigation methods, using apps without looking at the screen, or with a single hand.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6evke9dd4u13u5688hk.png" alt="Person on a stage giving a talk while others listen and ask questions"></p>
+<h2 id="accessibility-champion">Accessibility Champion</h2>
+<p>The “Accessibility Champion” can be anyone in the company, really.</p>
+<p>As the Accessibility Champion, I campaign for inclusive design at every step of product development, as well as in other company functions. To do that, I keep up-to-date with the community standards and strive to learn as much as possible about the topic. The Accessibility Champion can be an abled person.</p>
+<p>I organize cross-team and cross-discipline workshops. For example, I invite experts to increase company knowledge on a11y, and to show us how accessibility features are used both on computers and smartphones. I also write cross-team documentation and guidelines, and try to mentor new champions from different teams.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2f4n4ebhptbzk2gnk9oj.png" alt="Two people planting a tree"></p>
+<h2 id="final-notes">Final Notes</h2>
+<p>Without trying to be exhaustive, this is should give you an idea of who’s responsible for accessibility in a company: everyone. I’ll leave you with a few other examples:</p>
+<h3 id="backend-engineer">Backend Engineer</h3>
+<p>I try to think about how different users will use the products I develop, e.g. accessing content in different languages and locations. I try to involve users early on to ensure proper terminology is used during project definition. I also believe good code documentation is important for the accessibility of my own colleagues.</p>
+<h3 id="it-admin">IT Admin</h3>
+<p>My responsibility is to provide my colleagues with the hardware, software, user accounts and other technical faculties they need to perform their work. Because I don’t interact directly with our users, my main concern when it comes to accessibility is to fullfil the requirements of those with a11y needs. This could be making sure our video calls software transcripts are correctly set up, or provisioning special hardware.</p>
+<h3 id="user-support">User support</h3>
+<p>My daily tasks include answering user requests, building up our help center, and facilitating feedback. I strive to use inclusive and easy language, and to make the help center more intuitive and accessible. It’s important to establish guidelines on how to respond to user feedback in an inclusive manner.</p> </main>  <script defer data-domain="jlopes.dev" src="https://p.jlopes.dev/js/script.outbound-links.js"></script> </body> </html> 

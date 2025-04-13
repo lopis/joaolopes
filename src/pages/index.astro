@@ -24,13 +24,20 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
 <MainLayout>
   <h1>jlopes.dev</h1>
   <section>
-    <h2>Posts</h2>
-    <ul class="list">
+    <h2>Games</h2>
+    <ul class="games">
       {
-        posts.map((post) => (
+        games.map((game) => (
           <li>
-            {formatDate(post.frontmatter.date)} ·
-            <a href={post.url}>{post.frontmatter.title}</a>
+            <a class="game" href={game.url}>
+              <Image
+                src={game.frontmatter.thumbnail}
+                alt=""
+                height="88"
+                width="140"
+              />
+              <span>{game.frontmatter.title}</span>
+            </a>
           </li>
         ))
       }
@@ -49,20 +56,13 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
     </ul>
   </section>
   <section>
-    <h2>Games</h2>
-    <ul class="games">
+    <h2>Posts</h2>
+    <ul class="list">
       {
-        games.map((game) => (
+        posts.map((post) => (
           <li>
-            <a class="game" href={game.url}>
-              <Image
-                src={game.frontmatter.thumbnail}
-                alt=""
-                height="88"
-                width="140"
-              />
-              <span>{game.frontmatter.title}</span>
-            </a>
+            {formatDate(post.frontmatter.date)} ·
+            <a href={post.url}>{post.frontmatter.title}</a>
           </li>
         ))
       }

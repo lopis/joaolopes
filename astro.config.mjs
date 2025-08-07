@@ -6,9 +6,11 @@ const setDefaultLayout = () => {
     if (filePath.includes('/games/')) {
       file.data.astro.frontmatter.layout =
         file.data.astro.frontmatter.layout || "@layouts/GameLayout.astro";
-    } else {
+    } else if (filePath.includes('/posts/') || filePath.includes('/projects/')) {
       file.data.astro.frontmatter.layout =
         file.data.astro.frontmatter.layout || "@layouts/PostLayout.astro";
+    } else {
+      file.data.astro.frontmatter.layout = undefined
     }
   };
 };

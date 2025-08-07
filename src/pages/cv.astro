@@ -1,0 +1,177 @@
+---
+import { Image } from 'astro:assets';
+import Me from '../data/about/me.md';
+import Photo from '../assets/profile.png';
+import Gmail from '../assets/gmail.png';
+import Github from '../assets/github.png';
+import MainLayout from "@layouts/MainLayout.astro";
+
+const masters = await Astro.glob('../data/about/masters.md');
+const MastersPage = Object.values(masters)[0];
+const jobs = await Astro.glob('../data/career/*.md');
+const sortedJobs = Object.values(jobs).sort((a, b) => {
+  return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+});
+
+---
+<MainLayout>
+  <div class="about">
+    <div class="details">
+      <Image class="photo" src={Photo} alt="my photo" />
+      <h2><strong>João Lopes</strong></h2>
+      <p class="email">
+        <Image class="icon" src={Gmail} alt="gmail icon" />
+        joaopclopes
+      </p>
+      <p>
+        <span class="icon">💼</span>
+        Software Engineer
+      </p>
+      <p>
+        <span class="icon">📌</span>
+        Berlin, Germany
+      </p>
+      <p>
+        <Image class="icon" src={Github} alt="gmail icon" />
+        <a href="https://github.com/jlopes" target="_blank">Github</a>
+      </p>
+      <p>
+        <span class="icon">📝</span>
+        <a href="https://dev.to/mrlopis" target="_blank">Dev.to</a>
+      </p>
+      <p>
+        <span class="icon">👾</span>
+        <a href="https://jlopes.dev/" target="_blank">My Games</a>
+      </p>
+      <p>
+        <span class="icon">🌐</span>
+        <span>Portuguese</span> (native), <br>
+        <span>English</span> (fluent), <br>
+        <span>Spanish</span> (basic), <br>
+        <span>German</span> (basic)
+      </p>
+    </div>
+    <div class="me">
+      <Me/>
+    </div>
+  </div>
+
+  <h2>Career</h2>
+
+  {sortedJobs.map((job) => (
+    <div class="job">
+      <p class="period">{job.frontmatter.period}</p>
+      <h3>{job.frontmatter.title}</h3>
+      <p>
+        <a href={job.frontmatter.website} target="_blank">{job.frontmatter.org}</a>
+        &mdash;
+        {job.frontmatter.location}
+      </p>
+      <div class="tags">{job.frontmatter.tags.map((tag: string) => (
+        <span class="tag">{tag}</span>
+      ))}</div>
+
+      <job.Content />
+    </div>
+  ))}
+
+  <h2>Education</h2>
+
+  <div class="job">
+    <h3>{MastersPage.frontmatter.title} &mdash; <a href={MastersPage.frontmatter.website} target="_blank">{MastersPage.frontmatter.org}</a> &mdash; {MastersPage.frontmatter.location}</h3>
+    <p class="period">{MastersPage.frontmatter.period}</p>
+
+    <MastersPage.Content />
+  </div>
+</MainLayout>
+
+<style is:global>
+  h3, p, .tags {
+    margin: 0.2em;
+    font-size: 1em;
+  }
+
+  .me {
+    text-align: justify;
+    text-indent: 3em;
+  }
+
+  ul {
+    padding-left: 1em;
+    margin: 0;
+    max-width: 80ch;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--light);
+    color: var(--white);
+    padding: 0.1em 0.4em;
+    margin-right: 0.4em;
+    border-radius: 0.25em;
+    font-size: 0.7em;
+  }
+
+  @media print {
+    body {
+      font-size: 11pt;
+    }
+
+    .tag {
+      -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+      color-adjust: exact !important;                 /* Firefox 48 – 96 */
+      print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    }
+  }
+
+  .period {
+    color: var(--light);
+    font-size: 0.8em;
+    float: right;
+  }
+
+  .job {
+    border: solid var(--medium);
+    border-width: 1px 0 0 0;
+    padding: 1em 0.2em;
+    page-break-inside: avoid;
+  }
+
+  .about {
+    display: flex;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    margin: 0 1em;
+  }
+
+  .icon {
+    display: inline-flex;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+    font-size: 0.9em;
+    background: white;
+    border-radius: 20%;
+    padding: 1px;
+    position: absolute;
+    align-items: center;
+    left: -20px;
+  }
+
+  .details {
+    position: relative;
+    font-size: 0.8rem;
+    border: solid var(--light);
+    border-width: 0 1px 0 0;
+    margin-right: 0.5rem;
+  }
+
+  .details h2 {
+    text-align: center;
+    margin: 0;
+  }
+</style>

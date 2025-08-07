@@ -14,7 +14,7 @@ bio: >-
 image: ../../assets/img/train_station.jpg
 ---
 
-## About me
+## Hey 👋
 
 I'm a **software developer** with a focus on **frontend development**.
 

@@ -18,7 +18,7 @@ const setDefaultLayout = () => {
 export default defineConfig({
   site: 'https://www.jlopes.dev',
   base: '/',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   markdown: {
     remarkPlugins: [setDefaultLayout],
   },

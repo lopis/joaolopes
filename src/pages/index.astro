@@ -1,44 +1,72 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import { Image } from "astro:assets";
+import Github from '../assets/github.png';
 
-Array.prototype.sortByDate = function () {
-  return this.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+interface Post {
+  frontmatter: {
+    date: string,
+    title: string,
+    thumbnail: string,
+  },
+  url: string,
+}
+
+function sortByDate(arr: Post[]) {
+  return arr.sort(
+  (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
   );
-};
+}
 
-const posts = Object.values(
-  import.meta.glob("./posts/*.md", { eager: true }),
-).sortByDate();
-const projects = Object.values(
-  import.meta.glob("./projects/*.md", { eager: true }),
-).sortByDate();
-const games = Object.values(
-  import.meta.glob("./games/*.md", { eager: true }),
-).sortByDate();
+const posts = sortByDate(Object.values(
+import.meta.glob("./posts/*.md", { eager: true }),
+));
+const projects = sortByDate(Object.values(
+import.meta.glob("./projects/*.md", { eager: true }),
+));
+const games = sortByDate(Object.values(
+import.meta.glob("./games/*.md", { eager: true }),
+));
 
-const formatDate = (date: Date) => new Date(date).toLocaleDateString();
+const formatDate = (date: string) => new Date(date).toLocaleDateString();
 ---
 
 <MainLayout>
   <h1>jlopes.dev</h1>
+  <section class="links">
+    <p>
+      <span class="icon">💼</span>
+      Software Engineer
+    </p>
+    <p>
+      <span class="icon">📌</span>
+      Berlin, Germany
+    </p>
+    <p>
+      <Image class="icon" src={Github} alt="gmail icon" />
+      <a href="https://github.com/jlopes" target="_blank">Github</a>
+    </p>
+    <p>
+      <span class="icon">📝</span>
+      <a href="cv" target="_blank">Resume</a>
+    </p>
+  </section>
   <section>
     <h2>Games</h2>
     <ul class="games">
       {
         games.map((game) => (
-          <li>
-            <a class="game" href={game.url}>
-              <Image
-                src={game.frontmatter.thumbnail}
-                alt=""
-                height="88"
-                width="140"
-              />
-              <span>{game.frontmatter.title}</span>
-            </a>
-          </li>
+        <li>
+          <a class="game" href={game.url}>
+            <Image
+            src={game.frontmatter.thumbnail}
+            alt=""
+            height="88"
+            width="140"
+            />
+            <span>{game.frontmatter.title}</span>
+          </a>
+        </li>
         ))
       }
     </ul>
@@ -48,9 +76,9 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
     <ul class="list">
       {
         projects.map((project) => (
-          <li>
-            <a href={project.url}>{project.frontmatter.title}</a>
-          </li>
+        <li>
+          <a href={project.url}>{project.frontmatter.title}</a>
+        </li>
         ))
       }
     </ul>
@@ -60,10 +88,10 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
     <ul class="list">
       {
         posts.map((post) => (
-          <li>
-            {formatDate(post.frontmatter.date)} ·
-            <a href={post.url}>{post.frontmatter.title}</a>
-          </li>
+        <li>
+          {formatDate(post.frontmatter.date)} ·
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
         ))
       }
     </ul>
@@ -78,13 +106,37 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
     line-height: 2;
   }
 
+  .links {
+    display: flex;
+    gap: 1em;
+    font-size: 80%;
+  }
+
+  .links img {
+    width: 1.2em;
+    height: 1.2em;
+    margin: auto;
+  }
+
+  @media (max-width: 600px) {
+    .links .icon {
+      display: block;
+    }
+
+    .links p {
+      text-align: center;
+      flex-grow: 1;
+      flex-basis: 25%;
+    }
+  }
+  
   .games {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     list-style: none;
     padding-left: 0;
-
+    
     .game {
       padding: 0;
       width: 140px;
@@ -99,7 +151,7 @@ const formatDate = (date: Date) => new Date(date).toLocaleDateString();
       justify-content: stretch;
       box-shadow: 0 0 0px 1px var(--black);
     }
-
+    
     a,
     a span {
       color: var(--white);

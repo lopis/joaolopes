@@ -17,39 +17,43 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
 <MainLayout>
   <div class="about">
     <div class="details">
-      <Image class="photo" src={Photo} alt="my photo" />
-      <h2><strong>João Lopes</strong></h2>
-      <p class="email">
-        <Image class="icon" src={Gmail} alt="gmail icon" />
-        joaopclopes
-      </p>
-      <p>
-        <span class="icon">💼</span>
-        Software Engineer
-      </p>
-      <p>
-        <span class="icon">📌</span>
-        Berlin, Germany
-      </p>
-      <p>
-        <Image class="icon" src={Github} alt="gmail icon" />
-        <a href="https://github.com/jlopes" target="_blank">Github</a>
-      </p>
-      <p>
-        <span class="icon">📝</span>
-        <a href="https://dev.to/mrlopis" target="_blank">Dev.to</a>
-      </p>
-      <p>
-        <span class="icon">👾</span>
-        <a href="https://jlopes.dev/" target="_blank">My Games</a>
-      </p>
-      <p>
-        <span class="icon">🌐</span>
-        <span>Portuguese</span> (native), <br>
-        <span>English</span> (fluent), <br>
-        <span>Spanish</span> (basic), <br>
-        <span>German</span> (basic)
-      </p>
+      <div class="name">
+        <Image class="photo" src={Photo} alt="my photo" />
+        <h2><strong>João Lopes</strong></h2>
+      </div>
+      <div class="other-details">
+        <p class="email">
+          <Image class="icon" src={Gmail} alt="gmail icon" />
+          joaopclopes
+        </p>
+        <p>
+          <span class="icon">💼</span>
+          Software Engineer
+        </p>
+        <p>
+          <span class="icon">📌</span>
+          Berlin, Germany
+        </p>
+        <p>
+          <Image class="icon" src={Github} alt="gmail icon" />
+          <a href="https://github.com/jlopes" target="_blank">Github</a>
+        </p>
+        <p>
+          <span class="icon">📝</span>
+          <a href="https://dev.to/mrlopis" target="_blank">Dev.to</a>
+        </p>
+        <p>
+          <span class="icon">👾</span>
+          <a href="https://jlopes.dev/" target="_blank">My Games</a>
+        </p>
+        <p>
+          <span class="icon">🌐</span>
+          <span>Portuguese</span> (native), <br>
+          <span>English</span> (fluent), <br>
+          <span>Spanish</span> (basic), <br>
+          <span>German</span> (basic)
+        </p>
+      </div>
     </div>
     <div class="me">
       <Me/>
@@ -78,11 +82,19 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
   <h2>Education</h2>
 
   <div class="job">
-    <h3>{MastersPage.frontmatter.title} &mdash; <a href={MastersPage.frontmatter.website} target="_blank">{MastersPage.frontmatter.org}</a> &mdash; {MastersPage.frontmatter.location}</h3>
     <p class="period">{MastersPage.frontmatter.period}</p>
-
+      <h3>{MastersPage.frontmatter.title}</h3>
+      <p>
+        <a href={MastersPage.frontmatter.website} target="_blank">{MastersPage.frontmatter.org}</a>
+        &mdash;
+        {MastersPage.frontmatter.location}
+      </p>
     <MastersPage.Content />
   </div>
+
+  <p>
+    <button style="display: block; margin: auto" onclick="window.print()">Get print version</button>
+  </p>
 </MainLayout>
 
 <style is:global>
@@ -163,15 +175,45 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
   }
 
   .details {
-    position: relative;
     font-size: 0.8rem;
     border: solid var(--light);
     border-width: 0 1px 0 0;
     margin-right: 0.5rem;
   }
 
+  .details p {
+    margin-bottom: 0.5em;
+  }
+
   .details h2 {
     text-align: center;
     margin: 0;
+  }
+
+  .other-details {
+    position: relative;
+  }
+
+  @media screen and (max-width: 600px) {
+    .about {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .details {
+      border: none;
+      border-width: 0 1px 0 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .other-details {
+      flex-grow: 1;
+      margin-left: 1em;
+    }
+
+    .me {
+      text-indent: 1.5em;
+    }
   }
 </style>

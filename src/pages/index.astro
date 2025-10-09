@@ -53,20 +53,20 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
   </section>
   <section>
     <h2>Games</h2>
-    <ul class="games">
+    <ul class="games list">
       {
         games.map((game) => (
-        <li>
-          <a class="game" href={game.url}>
-            <Image
-            src={game.frontmatter.thumbnail}
-            alt=""
-            height="88"
-            width="140"
-            />
-            <span>{game.frontmatter.title}</span>
-          </a>
-        </li>
+          <li>
+            <a class="game card" href={game.url}>
+              <Image
+              src={game.frontmatter.thumbnail}
+              alt=""
+              height="88"
+              width="140"
+              />
+              <span class="label">{game.frontmatter.title}</span>
+            </a>
+          </li>
         ))
       }
     </ul>
@@ -88,10 +88,16 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
     <ul class="list">
       {
         posts.map((post) => (
-        <li>
-          {formatDate(post.frontmatter.date)} ·
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+          <a class="post card" href={post.url}>
+            <li>
+                <div class="post-date">
+                  {formatDate(post.frontmatter.date)}
+                </div>
+                <div>
+                  {post.frontmatter.title}
+                </div>
+            </li>
+          </a>
         ))
       }
     </ul>
@@ -101,9 +107,33 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
 <style>
   .list {
     list-style: none;
-    padding-left: 1em;
-    border-left: 5px solid var(--highlight);
+    padding: 0;
     line-height: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+  }
+
+  .card {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffe4d8aa;
+    border-radius: 8px;
+    overflow: hidden;
+    color: var(--black);
+    justify-content: stretch;
+    box-shadow:
+      0px 2px 10px 0px #a1134933,
+      0px -2px 10px 0px rgba(255,255,255, 0.5),
+      0px 10px 15px -15px rgba(255,255,255, 1) inset;
+
+  }
+
+  a.card:hover {
+    background-color: #ffffff55;
   }
 
   .links {
@@ -117,6 +147,36 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
     height: 1.2em;
     margin: auto;
   }
+  
+  .game {
+    width: 140px;
+    height: 100%;
+    text-align: center;
+
+    img {
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .label {
+      flex-grow: 1;
+      align-content: center;
+      text-align: center;
+    }
+  }
+
+  .post {
+    flex-basis: 40%;
+    align-items: start;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .post-date {
+    font-size: 80%;
+    color: var(--light);
+  }
+
 
   @media (max-width: 600px) {
     .links .icon {
@@ -128,36 +188,9 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
       flex-grow: 1;
       flex-basis: 25%;
     }
-  }
-  
-  .games {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    list-style: none;
-    padding-left: 0;
-    
-    .game {
-      padding: 0;
-      width: 140px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: var(--black);
-      border-radius: 5px;
-      overflow: hidden;
-      color: var(--white);
-      justify-content: stretch;
-      box-shadow: 0 0 0px 1px var(--black);
-    }
-    
-    a,
-    a span {
-      color: var(--white);
-      text-decoration: none;
-      padding: 5px;
-      text-align: center;
+
+    .post {
+      flex-basis: 100%;
     }
   }
 </style>

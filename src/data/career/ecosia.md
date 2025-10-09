@@ -13,17 +13,19 @@ tags:
  - Astro
  - SASS
  - Go
+ - Postgres
  - Docker
  - CircleCI
  - Grafana
+ - Prometheus
  - Storybook
 ---
 
-* Delivered high-quality, well-tested code following best practices, namely responsive design, accessibilty;
+* Delivered high-quality code following best practices, namely responsive design, accessibilty, high test coverage and maintainability;
 * Implemented rich content features used by millions of search page users;
 * Established analytics, success metrics, and user feedback systems for implemented features to measure impact and guide iterative improvements;
 * Set up and used monitoring systems to observe system health and performance;
 * Developed full-stack features that included databases, backend Go services, server-side- and client-side-rendered components, and Cloudflare workers;
-* Collaborated with designer to create a comprehensive new design system;
+* Collaborated with lead designer to create a comprehensive new design system;
 * Led the successful migration of our main application used by millions of users to a new technology stack, including establishing test plans, success criteria, and coordinating communication between various dependent teams;
-* Contributed to establishing a new modular and flexible Astro.js-based framework and led migration efforts for current applications.
+* Contributed to establishing and migrating to a new modular and flexible framework based on Astro.js and Typescript.

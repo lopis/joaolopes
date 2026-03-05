@@ -5,6 +5,8 @@ repository: https://github.com/lopis/thirteen-terrible-stunts
 website: https://js13kgames.com/2024/games/thirteen-terrible-stunts
 thumbnail: https://github.com/lopis/lopis/raw/master/thirteen-terrible-stunts.png
 embed: https://lopis.github.io/thirteen-terrible-stunts/
+platform:
+ - pc
 ---
 
 It's 1924 and you're trying to make in big in Hollywood as a movie star. But you have to start somewhere, so you work as a director's assistant's assistant and move up the ladder.

@@ -5,6 +5,8 @@ repository: https://github.com/lopis/meow-mountain
 website: https://lopis.github.io/meow-mountain/
 thumbnail: https://github.com/lopis/lopis/raw/master/meow.png
 embed: https://lopis.github.io/meow-mountain/index.html
+platform:
+ - pc
 ---
 
 The spirit cat, protector of the valley and guardian of Meow Mountain, took a slightly too long nap. In that time, the valley fell into disarray - the protective barrier keeping evil spirits at bay has collapsed, and the weary villagers have stopped worshiping their feline protector. Can you restore peace to Whisker’s Valley?

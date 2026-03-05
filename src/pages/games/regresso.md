@@ -9,6 +9,8 @@ description: >-
 status: Released
 thumbnail: https://github.com/lopis/lopis/raw/master/regresso.png
 embed: https://lopis.github.io/regresso/build/
+platform:
+ - pc
 ---
 Regresso is a clicker game where you have a series of actions and tasks. Gameplay is about 5-10 minutes if you don't screw up.
 

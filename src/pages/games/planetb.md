@@ -8,6 +8,8 @@ description: >-
 status: Released
 thumbnail: https://github.com/lopis/lopis/raw/master/mars.png
 embed: https://mars-tn1n.onrender.com/
+platform:
+ - pc
 ---
 
 We fucked up. Earth is dead. Time for planet B.

@@ -9,6 +9,9 @@ description: >-
   of flies and the flies feed off of wifi. The whole game is 13KB.
 status: Released
 thumbnail: https://github.com/lopis/lopis/raw/master/signalmon.png
+platform:
+ - pc
+ - mobile
 ---
 
 Signalmon was my entry for the 2018 edition of 13kjs Game competition.

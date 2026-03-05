@@ -5,6 +5,9 @@ repository: https://github.com/lopis/synaptic-harmonics
 website: https://mrlopis.itch.io/synaptic-harmonics
 thumbnail: https://github.com/lopis/lopis/raw/master/synaptic.png
 embed: https://lopis.github.io/synaptic-harmonics/dist/index.html
+platform:
+ - pc
+ - mobile
 ---
 
 In Synaptic Harmonics, an undisclosed entity is accessing your prowess in solving visual tasks with the goal of optimizing harmony and order. These puzzles are actually a low fidelity representation of higher order devices that this entity needs you to improve for optimal energy output.

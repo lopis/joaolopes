@@ -5,6 +5,8 @@ website: https://js13kgames.com/2023/games/market-street-tycoon
 date: 2023-09-13T1:00:00.253Z
 repository: https://github.com/lopis/market-street-tycoon
 embed: https://lopis.github.io/market-street-tycoon/dist/
+platform:
+ - pc
 ---
 You are a merchant in the village market, trying to succeed. To do so, buy from the local suppliers and resell them in the weekend market.
 

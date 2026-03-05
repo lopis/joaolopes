@@ -29,4 +29,4 @@ tags:
 * Developed full-stack features that included databases, backend Go services, server-side- and client-side-rendered components, and Cloudflare workers;
 * Collaborated with lead designer to create a comprehensive new design system;
 * Led the successful migration of our main application used by millions of users to a new technology stack, including establishing test plans, success criteria, and coordinating communication between various dependent teams;
-* Built and helped migrate to a new modular and flexible in-house framework based on Astro.js, Typescript and Vue.
+* Built and helped migrate to a new modular and flexible in-house framework based on Astro.js, Typescript, Vue and Web Components.

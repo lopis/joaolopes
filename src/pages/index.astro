@@ -2,6 +2,8 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import Github from '../assets/github.png';
+import IconPC from '../assets/pc.svg';
+import IconMobile from '../assets/phone.svg';
 
 interface Post {
   frontmatter: {
@@ -10,6 +12,12 @@ interface Post {
     thumbnail: string,
   },
   url: string,
+}
+
+interface Game extends Post {
+  frontmatter: Post['frontmatter'] & {
+    platform: ('pc' | 'mobile')[],
+  }
 }
 
 function sortByDate(arr: Post[]) {
@@ -26,7 +34,7 @@ import.meta.glob("./projects/*.md", { eager: true }),
 ));
 const games = sortByDate(Object.values(
 import.meta.glob("./games/*.md", { eager: true }),
-));
+)) as Game[];
 
 const formatDate = (date: string) => new Date(date).toLocaleDateString();
 ---
@@ -59,7 +67,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
     <h2>Games</h2>
     <ul class="games list">
       {
-        games.map((game) => (
+        games.map((game: Game) => (
           <li>
             <a class="game card" href={game.url}>
               <Image
@@ -69,6 +77,20 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
               width="140"
               />
               <span class="label">{game.frontmatter.title}</span>
+              <div class="platforms" aria-label="supported platforms">
+                { game.frontmatter.platform && game.frontmatter.platform.map(platform => {
+                  switch (platform) {
+                    case 'pc':
+                      return <IconPC class="platformLabel" aria-label="PC"/>
+                      break;
+                    case 'mobile':
+                      return <IconMobile class="platformLabel" aria-label="Mobile"/>
+                      break;
+                    default:
+                        break;
+                  }
+                }) }
+              </div>
             </a>
           </li>
         ))
@@ -155,6 +177,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
     width: 140px;
     height: 100%;
     text-align: center;
+    text-decoration: none;
 
     img {
       border-radius: 6px;
@@ -165,6 +188,16 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
       flex-grow: 1;
       align-content: center;
       text-align: center;
+      line-height: 1.1;
+      font-size: 80%;
+      margin: 0.2em 0;
+    }
+
+    .platformLabel {
+      height: 20px;
+      width: 20px;
+      display: inline;
+      color: var(--light);
     }
   }
 

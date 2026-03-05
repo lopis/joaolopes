@@ -5,6 +5,8 @@ website: https://js13kgames.com/2020/games/for-ofoughr
 date: 2020-09-13T1:00:00.253Z
 repository: https://github.com/lopis/for-o-fourgh/#readme
 embed: https://for-o-fourgh.onrender.com/
+platform:
+ - pc
 ---
 In this world, you either follow god O'Foughr or you're against him.
 

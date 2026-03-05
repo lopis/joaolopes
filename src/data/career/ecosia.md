@@ -3,16 +3,17 @@ title: Software Engineer
 path: /ecosia
 org: Ecosia
 website: 'https://www.ecosia.org/'
-location: Berlin
+location: Berlin/Remote
 date: '2019-09-01T00:00:00.000Z'
 period: November 2019 - Present
 tags:
  - Javascript
+ - Typescript
  - Vue
- - React
  - Astro
  - SASS
  - Go
+ - React
  - Postgres
  - Docker
  - CircleCI
@@ -28,4 +29,4 @@ tags:
 * Developed full-stack features that included databases, backend Go services, server-side- and client-side-rendered components, and Cloudflare workers;
 * Collaborated with lead designer to create a comprehensive new design system;
 * Led the successful migration of our main application used by millions of users to a new technology stack, including establishing test plans, success criteria, and coordinating communication between various dependent teams;
-* Contributed to establishing and migrating to a new modular and flexible framework based on Astro.js and Typescript.
+* Built and helped migrate to a new modular and flexible in-house framework based on Astro.js, Typescript and Vue.

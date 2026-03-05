@@ -1,10 +1,8 @@
 ---
 title: Hello
 path: /about_me
-github: http://github.com/lopis/
-websites:
- - Stack Overflow | https://stackoverflow.com/users/1125171/ecc
- - Dev.to | https://dev.to/mrlopis
+github: http://github.com/lopis
+devTo: https://dev.to/mrlopis
 location: Funchal, Portugal / Berlin, Germany
 date: "2021-02-25T17:22:00.000Z"
 bio: >-
@@ -22,4 +20,4 @@ After dedicating several years to different projects, I decided I should be dedi
 
 I enjoy working on **user-facing features** and building things that people actually use. There's something satisfying about creating interfaces that feel intuitive and **work well for everyone**, regardless of their technical background or abilities.
 
-When I'm not coding, I care about game development, free software, internet privacy, accessibility, and human and animal rights. I believe technology should empower people, not exploit them.
+When I'm not working, I dabble in game development. I also care about free software, internet privacy, accessibility, and human and animal rights. I believe technology should empower people, not exploit them.

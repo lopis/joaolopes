@@ -134,6 +134,10 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
       color-adjust: exact !important;                 /* Firefox 48 – 96 */
       print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
     }
+
+    button {
+      visibility: hidden;
+    }
   }
 
   .period {
@@ -214,10 +218,6 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
 
     .me {
       text-indent: 1.5em;
-    }
-
-    button {
-      display: none;
     }
   }
 </style>

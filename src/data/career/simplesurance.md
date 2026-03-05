@@ -20,3 +20,6 @@ tags:
   - Babel
   - Symfony
 ---
+
+* Developed single page application for customer care dashboard for managing claim status and documents.
+* Worked with a designer implementing a company-wide design system.

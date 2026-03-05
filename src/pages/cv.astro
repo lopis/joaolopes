@@ -15,7 +15,7 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
 
 ---
 <MainLayout>
-  <div class="about">
+  <aside class="about">
     <div class="details">
       <div class="name">
         <Image class="photo" src={Photo} alt="my photo" />
@@ -24,7 +24,7 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
       <div class="other-details">
         <p class="email">
           <Image class="icon" src={Gmail} alt="gmail icon" />
-          joaopclopes
+          joaopclopes@
         </p>
         <p>
           <span class="icon">💼</span>
@@ -58,41 +58,47 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
     <div class="me">
       <Me/>
     </div>
-  </div>
+  </aside>
 
-  <h2>Career</h2>
+  <main>
+    <section>
+      <h2>Career</h2>
 
-  {sortedJobs.map((job) => (
-    <div class="job">
-      <p class="period">{job.frontmatter.period}</p>
-      <h3>{job.frontmatter.title}</h3>
-      <p>
-        <a href={job.frontmatter.website} target="_blank">{job.frontmatter.org}</a>
-        &mdash;
-        {job.frontmatter.location}
-      </p>
-      <div class="tags">{job.frontmatter.tags.map((tag: string) => (
-        <span class="tag">{tag}</span>
-      ))}</div>
+      {sortedJobs.map((job) => (
+        <div class="job">
+          <p class="period">{job.frontmatter.period}</p>
+          <h3>{job.frontmatter.title}</h3>
+          <p>
+            <a href={job.frontmatter.website} target="_blank">{job.frontmatter.org}</a>
+            &mdash;
+            {job.frontmatter.location}
+          </p>
+          <div class="tags">{job.frontmatter.tags.map((tag: string) => (
+            <span class="tag">{tag}</span>
+          ))}</div>
 
-      <job.Content />
-    </div>
-  ))}
+          <job.Content />
+        </div>
+      ))}
+    </section>
 
-  <h2>Education</h2>
+    <section>
+      <h2>Education</h2>
 
-  <div class="job">
-    <p class="period">{MastersPage.frontmatter.period}</p>
-      <h3>{MastersPage.frontmatter.title}</h3>
-      <p>
-        <a href={MastersPage.frontmatter.website} target="_blank">{MastersPage.frontmatter.org}</a>
-        &mdash;
-        {MastersPage.frontmatter.location}
-      </p>
-    <MastersPage.Content />
-  </div>
+      <div class="job">
+        <p class="period">{MastersPage.frontmatter.period}</p>
+          <h3>{MastersPage.frontmatter.title}</h3>
+          <p>
+            <a href={MastersPage.frontmatter.website} target="_blank">{MastersPage.frontmatter.org}</a>
+            &mdash;
+            {MastersPage.frontmatter.location}
+          </p>
+        <MastersPage.Content />
+      </div>
+    </section>
+  </main>
 
-  <p>
+  <p class="print-action">
     <button style="display: block; margin: auto" onclick="window.print()">Get print version</button>
   </p>
 </MainLayout>
@@ -122,22 +128,6 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
     margin-right: 0.4em;
     border-radius: 0.25em;
     font-size: 0.7em;
-  }
-
-  @media print {
-    body {
-      font-size: 11pt;
-    }
-
-    .tag {
-      -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
-      color-adjust: exact !important;                 /* Firefox 48 – 96 */
-      print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
-    }
-
-    button {
-      visibility: hidden;
-    }
   }
 
   .period {
@@ -218,6 +208,54 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
 
     .me {
       text-indent: 1.5em;
+    }
+  }
+
+
+
+  @media print {
+    body {
+      font-size: 8pt;
+      display: flex;
+      gap: 20px;
+    }
+
+    aside {
+      flex-basis: 30%;
+      flex-shrink: 0;
+    }
+
+    .details {
+      border: none;
+    }
+
+    .other-details {
+      position: relative;
+      left: 20px;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo {
+      height: 50px;
+      width: 50px;
+    }
+
+    .name {
+      text-align: center;
+    }
+
+    .tag {
+      -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+      color-adjust: exact !important;                 /* Firefox 48 – 96 */
+      print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    }
+
+    .print-action {
+      display: none;
     }
   }
 </style>

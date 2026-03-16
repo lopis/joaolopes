@@ -77,7 +77,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
               width="140"
               />
               <span class="label">{game.frontmatter.title}</span>
-              <div class="platforms" aria-label="supported platforms">
+              {/* <div class="platforms" aria-label="supported platforms">
                 { game.frontmatter.platform && game.frontmatter.platform.map(platform => {
                   switch (platform) {
                     case 'pc':
@@ -90,7 +90,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
                         break;
                   }
                 }) }
-              </div>
+              </div> */}
             </a>
           </li>
         ))
@@ -174,30 +174,38 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
   }
   
   .game {
+    position: relative;
     width: 140px;
     height: 100%;
     text-align: center;
     text-decoration: none;
+    padding: 0;
+    overflow: hidden;
 
     img {
       border-radius: 6px;
       overflow: hidden;
     }
 
-    .label {
-      flex-grow: 1;
-      align-content: center;
-      text-align: center;
-      line-height: 1.1;
+    & .label {
+      position: absolute;
+      bottom: 0;
       font-size: 80%;
-      margin: 0.2em 0;
+      background: var(--black);
+      width: 100%;
+      height: 50%;
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      transform: translateY(100%);
+      transition: transform 150ms ease-in-out 150ms;
     }
 
-    .platformLabel {
-      height: 20px;
-      width: 20px;
-      display: inline;
-      color: var(--light);
+    &:hover .label {
+      transform: translateY(0%);
+      transition: transform 150ms ease-in-out 0s;
     }
   }
 

@@ -20,105 +20,72 @@ const title = Astro.props.title || "jlopes.dev";
 
 <style is:global>
   :root {
-    --black: #1a000a;
-    --white: #ffe4d8;
-    --light: hsl(350, 50%, 50%);
-    --medium: hsl(350, 75%, 34%);
-    --highlight: hsl(350, 100%, 18%);
+    --color-bg: #f7f3ec;
+    --color-text: #1C1710;
+    --color-text-secondary: #78705E;
+    --color-border: #E0D8CC;
+    --color-accent: #9B3E2A;
+    --color-accent-hover: #7A2E1A;
+    --color-accent-underline: #C05A3A;
   }
 
   *:focus-visible {
     outline: 2px solid var(--light);
   }
 
+  html {
+    background: var(--color-bg);
+  }
+
   html,
   body {
     margin: 0;
-  }
-
-  html {
-    --background1: hsl(18, 100%, 93.5%);
-    --background2: hsl(18, 100%, 91.5%);
-    background-attachment: fixed;
-    background-color: #ffe4d8;
-    background-image: linear-gradient(
-        30deg,
-        var(--background1) 12%,
-        transparent 12.5%,
-        transparent 87%,
-        var(--background1) 87.5%,
-        var(--background1)
-      ),
-      linear-gradient(
-        150deg,
-        var(--background1) 12%,
-        transparent 12.5%,
-        transparent 87%,
-        var(--background1) 87.5%,
-        var(--background1)
-      ),
-      linear-gradient(
-        30deg,
-        var(--background1) 12%,
-        transparent 12.5%,
-        transparent 87%,
-        var(--background1) 87.5%,
-        var(--background1)
-      ),
-      linear-gradient(
-        150deg,
-        var(--background1) 12%,
-        transparent 12.5%,
-        transparent 87%,
-        var(--background1) 87.5%,
-        var(--background1)
-      ),
-      linear-gradient(
-        60deg,
-        var(--background2) 25%,
-        transparent 25.5%,
-        transparent 75%,
-        var(--background2) 75%,
-        var(--background2)
-      ),
-      linear-gradient(
-        60deg,
-        var(--background2) 25%,
-        transparent 25.5%,
-        transparent 75%,
-        var(--background2) 75%,
-        var(--background2)
-      );
-    background-size: 20px 35px;
-    background-position:
-      0 0,
-      0 0,
-      10px 18px,
-      10px 18px,
-      0 0,
-      10px 18px;
-    color: var(--black);
+    padding-bottom: 5em;
   }
 
   body {
     min-height: 100vh;
-    max-width: 1100px;
+    max-width: 720px;
     box-sizing: border-box;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    padding: 1em 5vw;
+    padding: 1em 3em;
     margin: auto;
-    font-size: 18px;
+    font-size: 16px;
+    color: var(--color-text);
+
+    @media screen and (max-width: 720px) {
+      padding: 5px;
+    }
   }
 
   h1 {
+    font-size: 1em;
     font-weight: normal;
-    font-family: serif;
+    margin-bottom: 0;
+    margin-top: 2em;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 0.9em;
+    margin: 2em auto 1em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+
+    &::before {
+      content: "⏺︎ ";
+      color: var(--color-accent);
+    }
   }
 
   a,
   a:visited {
-    color: var(--medium);
+    color: var(--color-accent);
+
+    &:hover {
+      color: var(--color-accent-hover);
+    }
   }
 
   p {
@@ -130,26 +97,26 @@ const title = Astro.props.title || "jlopes.dev";
 
   pre {
     padding: 2em;
-    border-radius: 5px;
+    border-radius: 2px;
     white-space: break-spaces;
-    background: var(--black) !important;
+    background: var(--color-text) !important;
   }
 
   button {
-    background: var(--medium);
-    color: var(--white);
+    background: var(--color-accent);
+    color: var(--color-text);
     border: none;
     padding: 0.5em 1em;
-    border-radius: 5px;
+    border-radius: 2px;
     font-size: 1rem;
   }
 
   button:hover {
-    background: var(--highlight);
+    background: var(--color-accent-hover);
   }
 
   button:active {
-    background: var(--black);
+    background: var(--color-accent-underline);
   }
 
   button:focus {

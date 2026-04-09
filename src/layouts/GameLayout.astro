@@ -9,7 +9,6 @@ const displayDate = new Date(date).toLocaleDateString();
 
 <MainLayout title={title}>
   <h1>
-    <a class="goback" href="/">&#60;</a>
     {title}
   </h1>
   <nav>
@@ -34,7 +33,7 @@ const displayDate = new Date(date).toLocaleDateString();
   iframe {
     width: 100%;
     aspect-ratio: 4/3;
-    border: 1px solid var(--black);
+    border: 1px solid var(--color-text);
     border-radius: 2px;
   }
 
@@ -50,34 +49,15 @@ const displayDate = new Date(date).toLocaleDateString();
   .fullscreen {
     display: inline-block;
     padding: 5px 10px;
-    background: var(--light);
-    color: var(--white);
+    background: var(--color-accent);
+    color: var(--color-bg);
     border-radius: 2px;
     font-weight: bold;
     cursor: pointer;
     float: right;
 
     &:hover {
-      background: var(--highlight);
-    }
-  }
-
-  .goback {
-    text-decoration: none;
-    position: absolute;
-    left: -60px;
-    font-weight: bold;
-    display: inline-block;
-    height: 48px;
-    width: 48px;
-    text-align: center;
-    font-size: 1.3em;
-    line-height: 1em;
-    border-radius: 2px;
-
-    &:hover {
-      background: var(--highlight);
-      color: white;
+      background: var(--color-accent-hover);
     }
   }
 </style>

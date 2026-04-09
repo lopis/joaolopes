@@ -3,6 +3,7 @@ title: A tiny pixel art game using no images
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1bzecexwqskohktgy9cl.png
 original_link: https://dev.to/lopis/a-tiny-pixel-art-game-using-no-images-49df
 date: 2023-09-13
+tags: js13k, webdev, javascript, pixelart
 ---
 
 As is usual this time of the year, I participated in the [Js13Games](js13kgames.github.io) game jam where we have 1 month to create a game that fits under 13KB.

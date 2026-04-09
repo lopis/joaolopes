@@ -10,6 +10,7 @@ interface Post {
     date: string,
     title: string,
     thumbnail: string,
+    tags?: string[] | string,
   },
   url: string,
 }
@@ -26,9 +27,30 @@ function sortByDate(arr: Post[]) {
   );
 }
 
+function tokenizeTags(post: unknown): Post {
+  if (
+    typeof post === 'object' &&
+    post !== null &&
+    'frontmatter' in post &&
+    typeof (post as any).frontmatter === 'object' &&
+    (post as any).frontmatter !== null &&
+    'tags' in (post as any).frontmatter &&
+    typeof (post as any).frontmatter.tags === 'string'
+  ) {
+    return {
+      ...(post as any),
+      frontmatter: {
+        ...(post as any).frontmatter,
+        tags: (post as any).frontmatter.tags.split(', '),
+      }
+    };
+  }
+  return post as Post;
+}
+
 const posts = sortByDate(Object.values(
 import.meta.glob("./posts/*.md", { eager: true }),
-));
+).map(tokenizeTags));
 const projects = sortByDate(Object.values(
 import.meta.glob("./projects/*.md", { eager: true }),
 ));
@@ -89,6 +111,11 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
             <li class="post">
                 <div>
                   {post.frontmatter.title}
+                  { post.frontmatter.tags && (
+                    <span class="tag">
+                      { post.frontmatter.tags[0] }
+                    </span>
+                  )}
                 </div>
                 <div class="post-date">
                   {formatDate(post.frontmatter.date)}
@@ -190,7 +217,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
 
   .post, .project {
     align-items: start;
-    padding: 0.4em 0;
+    padding: 0.6em 0;
     border-bottom: 1px solid var(--color-border);
   }
 
@@ -199,6 +226,13 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
     color: var(--color-text-secondary);
   }
 
+  .tag {
+    font-size: 80%;
+    color: var(--color-accent);
+    background-color: var(--color-border);
+    padding: 1px 3px;
+    border-radius: 2px;
+  }
 
   @media (max-width: 600px) {
     .links .icon {

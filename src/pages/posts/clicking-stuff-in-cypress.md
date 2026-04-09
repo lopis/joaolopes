@@ -2,7 +2,7 @@
 title: Clicking Stuff in E2E tests - smooth scrolling, Electron flags, and Cypress
 published: true
 description: How I spent 3 days trying to click a button on Cypress
-tags: cypress, e2e, javascript, frontend
+tags: frontend, cypress, e2e, javascript
 cover_image: https://dev-to-uploads.s3.amazonaws.com/i/r24hpcv6m1tskk5shbjd.jpg
 original_link: https://dev.to/lopis/clicking-stuff-in-e2e-tests-smooth-scrolling-electron-flags-and-cypress-2a1c
 date: 2021-19-03

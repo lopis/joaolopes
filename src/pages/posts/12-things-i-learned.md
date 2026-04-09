@@ -2,7 +2,7 @@
 title: 12 things I learned as a volunteer programming teacher
 published: true
 description: I taught programming in python for a semester to a very diverse class of adults; these are some of the things I learned.
-tags: programming, teaching, python, volunteering
+tags: teaching, programming, python, volunteering
 original_link: https://dev.to/lopis/12-things-i-learned-as-a-volunteer-programming-teacher-2pd6
 date: 2021-07-06
 ---

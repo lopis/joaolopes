@@ -7,14 +7,16 @@ original_link: https://simplesurance.tech/post/hugo-netlify-and-dynamic-author-l
 description: >-
   I explored ways to maintain a list of blog authors in an Hugo+NetlifyCMS blog.
 image: ../../assets/img/blocks.jpg
+tags: hugo, netlify
 ---
-### TOC
- * [Creating a new Author template](#creating-a-new-author-template)
- * [Creating a new collection of Authors](#creating-a-new-collection-of-authors)
- * [How to find the actual user data](#how-to-find-the-actual-user-data)
- * [Why not Hugo taxonomy?](#why-not-hugo-taxonomy)
- * [The solution](#the-solution)
 
+## TOC
+
+* [Creating a new Author template](#creating-a-new-author-template)
+* [Creating a new collection of Authors](#creating-a-new-collection-of-authors)
+* [How to find the actual user data](#how-to-find-the-actual-user-data)
+* [Why not Hugo taxonomy?](#why-not-hugo-taxonomy)
+* [The solution](#the-solution)
 
 [Hugo](https://gohugo.io/) is an efficient static site generator written in Go. It's currently powering this same blog you're reading. [Netlify](https://www.netlify.com) is the serverless host of this website. They are both great tools and pair nicely together.
 
@@ -66,11 +68,11 @@ Hugo would now render these mardkdown files. I initially setup a list of authors
 <h2 class="f2 b lh-title mb3">Authors</h1>
 
 <div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-	{{ range first 4 (where .Data.Pages "Type" "author") }}
-		<div class="ph1-ns w-50-ns flex">
-			{{ .Render "profile" }}
-		</div>
-	{{ end }}
+ {{ range first 4 (where .Data.Pages "Type" "author") }}
+  <div class="ph1-ns w-50-ns flex">
+   {{ .Render "profile" }}
+  </div>
+ {{ end }}
 </div>
 ```
 

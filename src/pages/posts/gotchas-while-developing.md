@@ -3,6 +3,7 @@ title: Gotchas while developing a tiny web game
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/61uhtv6ovwuzulyucqyk.png
 original_link: https://dev.to/lopis/gotchas-while-developing-a-tiny-web-game-4528
 date: 2024-09-26
+tags: js13k, webdev, javascript
 ---
 
 Another year, another [JS13K Games](https://js13kgames.com/) edition is over, the game jam where you have to develop a game under 13KB ([here's mine 🙌](https://js13kgames.com/2024/games/thirteen-terrible-stunts)). This strict size limitation means that we often have to implement most things from scratch, as most game engines are prohibitively large. This means that we're constantly reimplementing the metaphorical wheel, which leads to fresh new bugs.

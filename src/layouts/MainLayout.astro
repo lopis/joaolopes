@@ -33,6 +33,22 @@ const title = Astro.props.title || "jlopes.dev";
     outline: 2px solid var(--color-accent);
   }
 
+  @font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/Fraunces_72pt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url('../assets/fonts/Inconsolata-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
   html {
     background: var(--color-bg);
   }
@@ -47,8 +63,7 @@ const title = Astro.props.title || "jlopes.dev";
     min-height: 100vh;
     max-width: 720px;
     box-sizing: border-box;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Inconsolata', monospace;
     padding: 1em 3em;
     margin: auto;
     font-size: 16px;
@@ -64,6 +79,7 @@ const title = Astro.props.title || "jlopes.dev";
     font-weight: 700;
     margin-bottom: 0;
     margin-top: 2em;
+    font-family: 'Fraunces', serif;
   }
 
   h2 {
@@ -72,11 +88,6 @@ const title = Astro.props.title || "jlopes.dev";
     margin: 2em auto 1em;
     color: var(--color-text-secondary);
     text-transform: uppercase;
-
-    &::before {
-      content: "⏺︎ ";
-      color: var(--color-accent);
-    }
   }
 
   a,

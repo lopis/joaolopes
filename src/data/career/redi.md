@@ -11,5 +11,5 @@ tags:
 - volunteering
 ---
 
-* Volunteered teaching programming using python to people from diverse backgrounds, namely immigrants and refugees.
-* Prepared classes, exercises and assignments.
+* Volunteered as a Python programming instructor for individuals from diverse backgrounds, including migrants and refugees.
+* Designed and prepared lessons, exercises, and assignments to facilitate learning.

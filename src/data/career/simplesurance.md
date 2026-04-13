@@ -21,5 +21,7 @@ tags:
   - Symfony
 ---
 
-* Developed single page application for customer care dashboard for managing claim status and documents.
-* Worked with a designer implementing a company-wide design system.
+* Developed a single-page application for the customer care dashboard, enabling efficient management of claim statuses and documents.
+* Collaborated with a designer to implement a company-wide design system.
+* Contributed to the development of a back-office platform for internal use.
+* Enhanced the main website and integrated widgets into third-party websites.

@@ -22,11 +22,11 @@ tags:
  - Storybook
 ---
 
-* Delivered high-quality code following best practices, namely responsive design, accessibilty, high test coverage and maintainability;
+* Built and migrated to a new modular and flexible in-house framework based on Astro.js, Typescript, Vue and Web Components, which reduced server memory usage by 60% and latency by 80%, while eliminating whole classes of critical bugs.
+* Led the successful migration of our main application used by millions of users to a new technology stack, including establishing test plans, success criteria, and coordinating communication between various dependent teams;
 * Implemented rich content features used by millions of search page users, leading to a significant user retention increase in 5%;
+* Delivered high-quality code following best practices, namely responsive design, accessibilty, high test coverage and maintainability;
 * Established analytics, success metrics, and user feedback systems for implemented features to measure impact and guide iterative improvements;
 * Set up and used monitoring systems to observe system health and performance;
 * Developed full-stack features, including databases, backend Go services, server-side- and client-side-rendered components, and Cloudflare workers;
-* Collaborated with lead designer to create a comprehensive new design system;
-* Led the successful migration of our main application used by millions of users to a new technology stack, including establishing test plans, success criteria, and coordinating communication between various dependent teams;
-* Built and helped migrate to a new modular and flexible in-house framework based on Astro.js, Typescript, Vue and Web Components, which reduced server memory usage by 60% and latency by 80%, while eliminating whole classes of critical bugs.
+* Collaborated with lead designer to establish a unified design system and brand identity, replacing a fragmented, undocumented component landscape.

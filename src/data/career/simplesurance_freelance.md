@@ -19,6 +19,6 @@ tags:
   - GraphQL
 ---
 
-* Responsible for maintaining and extending a legacy single-page application using Angular 1.7 and jQuery
-* Implemented and tested a new REST API for the partner relationship portal
-* Assisted in the development and integration of JavaScript widgets
+* Implemented and tested a new REST API for the partner relationship portal;
+* Maintained and extended a legacy Angular 1.7 / jQuery SPA under significant technical constraints;
+* Built and integrated JavaScript widgets into third-party client websites.

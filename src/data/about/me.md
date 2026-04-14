@@ -14,9 +14,8 @@ image: ../../assets/img/train_station.jpg
 
 ## Hey 👋
 
-I'm a **software developer** with a focus on **frontend development**.
+I've spent 10+ years building frontend systems with a focus on accessibility, performance, and user experience. I care about free software, internet privacy, and technology that empowers people.
 
-After dedicating several years to different projects, I decided I should be dedicating my time and energy to **companies doing something that really matters** to me, instead of just trying to be the next unicorn with pizza Fridays. I realize that the world's problems cannot be solved with more tech alone, but I would like to help out however I can.
+Outside work I build web games, which kept my curiosity for creative, cross-disciplinary problems alive.
 
-I enjoy building **user-facing features** that delight users. I find it rewarding to create interfaces that feel intuitive and **work well for everyone**, regardless of their technical background or abilities. I care about free software, internet privacy, accessibility, and human and animal rights. I believe technology should empower people, not exploit them.
-
+I've also volunteered as a programming teacher at Redi School and currently help out at a vegan community kitchen 🌱.

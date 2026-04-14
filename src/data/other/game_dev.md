@@ -17,7 +17,6 @@ tags:
 - event-driven programming
 ---
 
-- Explored web game development as a hobby for several years.
-- Gained hands-on experience with complex systems.
-- Developed a wide range of technical skills through various projects.
-- Learned to design interactive applications from the ground up.
+- Landed 3 times in the top 20 games of the [JS13K game jam](https://js13kgames.com/);
+- Gained hands-on experience with complex systems, audio, WebGL, and state management;
+- Organized the community game soundtrack for JS13K game jam.

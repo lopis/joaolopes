@@ -21,7 +21,6 @@ tags:
   - Symfony
 ---
 
-* Developed a single-page application for the customer care dashboard, enabling efficient management of claim statuses and documents.
+* Built the customer care dashboard SPA from scratch, automating and centralising claim status and document management for internal operations.
 * Collaborated with a designer to implement a company-wide design system.
-* Contributed to the development of a back-office platform for internal use.
-* Enhanced the main website and integrated widgets into third-party websites.
+* Enhanced the main website and integrated dozens of whitelabel widgets into third-party websites.

@@ -16,3 +16,5 @@ tags:
   - PHP/Symfony
   - MongoDB
 ---
+
+* Developed fullstack backoffice web applications.

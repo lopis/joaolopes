@@ -23,35 +23,27 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
       </div>
       <div class="other-details">
         <p class="email">
-          <Image class="icon" src={Gmail} alt="gmail icon" />
-          joaopclopes
+          <span>joaopclopes</span>
         </p>
         <p>
-          <span class="icon">💼</span>
           Software Engineer
         </p>
         <p>
-          <span class="icon">📌</span>
-          Berlin, Germany
+          Copenhagen, Denmark
         </p>
         <p>
-          <Image class="icon" src={Github} alt="gmail icon" />
           <a href="https://github.com/lopis" target="_blank">Github</a>
-        </p>
-        <p>
-          <span class="icon">📝</span>
           <a href="https://dev.to/mrlopis" target="_blank">Dev.to</a>
-        </p>
-        <p>
-          <span class="icon">👾</span>
           <a href="https://jlopes.dev/" target="_blank">My Games</a>
         </p>
         <p>
-          <span class="icon">🌐</span>
-          <span>Portuguese</span> (native), <br>
-          <span>English</span> (fluent), <br>
-          <span>Spanish</span> (basic), <br>
-          <span>German</span> (basic)
+          Languages
+          <ul>
+            <li>Portuguese (native)</li>
+            <li>English (fluent)</li>
+            <li>Spanish (basic)</li>
+            <li>German (basic)</li>
+          </ul>
         </p>
       </div>
     </div>
@@ -104,6 +96,12 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
 </MainLayout>
 
 <style is:global>
+  h1 {
+    margin-top: 1em;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
   h3, p, .tags {
     margin: 0.2em;
     font-size: 1em;
@@ -112,6 +110,11 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
   .me {
     text-align: justify;
     text-indent: 3em;
+
+  }
+
+  .me p {
+    margin-bottom: 0.5em;
   }
 
   ul {
@@ -128,6 +131,7 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
     margin-right: 0.4em;
     border-radius: 0.25em;
     font-size: 0.7em;
+    font-weight: 600;
   }
 
   .period {
@@ -188,6 +192,10 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
     position: relative;
   }
 
+  .email {
+    display: none;
+  }
+
   @media screen and (max-width: 600px) {
     .about {
       display: flex;
@@ -235,11 +243,6 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
       border: none;
     }
 
-    .other-details {
-      position: relative;
-      left: 20px;
-    }
-
     .about {
       order: 1;
       display: flex;
@@ -247,8 +250,8 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
     }
 
     .photo {
-      height: 50px;
-      width: 50px;
+      height: 80px;
+      width: 80px;
     }
 
     .name {
@@ -264,6 +267,10 @@ const sortedJobs = Object.values(jobs).sort((a, b) => {
     .job {
       border-color: var(--color-border);
       padding: 0.5em 0;
+    }
+
+    .email {
+      display: flex;
     }
 
     .email::after {

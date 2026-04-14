@@ -21,7 +21,7 @@ const title = Astro.props.title || "jlopes.dev";
 <style is:global>
   :root {
     --color-bg: #f7f3ec;
-    --color-text: #1C1710;
+    --color-text: #272016;
     --color-text-secondary: #78705E;
     --color-border: #E0D8CC;
     --color-accent: #9B3E2A;
@@ -43,8 +43,7 @@ const title = Astro.props.title || "jlopes.dev";
 
   @font-face {
     font-family: 'Inconsolata';
-    src: url('../assets/fonts/Inconsolata-Regular.ttf') format('truetype');
-    font-weight: normal;
+    src: url('../assets/fonts/Inconsolata-VariableFont.ttf') format('truetype');
     font-style: normal;
     font-display: swap;
   }
@@ -68,10 +67,15 @@ const title = Astro.props.title || "jlopes.dev";
     margin: auto;
     font-size: 16px;
     color: var(--color-text);
+    font-weight: 350;
 
     @media screen and (max-width: 720px) {
       padding: 5px;
     }
+  }
+
+  strong {
+    font-weight: 750;
   }
 
   h1 {

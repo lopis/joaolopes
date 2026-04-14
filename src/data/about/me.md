@@ -18,6 +18,6 @@ I'm a **software developer** with a focus on **frontend development**.
 
 After dedicating several years to different projects, I decided I should be dedicating my time and energy to **companies doing something that really matters** to me, instead of just trying to be the next unicorn with pizza Fridays. I realize that the world's problems cannot be solved with more tech alone, but I would like to help out however I can.
 
-I enjoy working on **user-facing features** and building things that people actually use. There's something satisfying about creating interfaces that feel intuitive and **work well for everyone**, regardless of their technical background or abilities.
+I enjoy building **user-facing features** that delight users. I find it rewarding to create interfaces that feel intuitive and **work well for everyone**, regardless of their technical background or abilities. I care about free software, internet privacy, accessibility, and human and animal rights. I believe technology should empower people, not exploit them.
 
-When I'm not working, I dabble in game development. I also care about free software, internet privacy, accessibility, and human and animal rights. I believe technology should empower people, not exploit them.
+I've also dabbled into web **game development** for several years. It is a hobby that has allowed me to explore a wide range of technical skills, including working with **canvas**, **web audio**, **state management**, and **event-driven programming**. Through these projects, I've gained hands-on experience with complex systems and learned how to design interactive applications from the ground up.

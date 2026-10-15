@@ -8,7 +8,7 @@ description: >-
   It's a javascript web game where you have a little pet that feeds off
   of flies and the flies feed off of wifi. The whole game is 13KB.
 status: Released
-thumbnail: https://github.com/lopis/lopis/raw/master/signalmon.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/signalmon.png
 platform:
  - pc
  - mobile

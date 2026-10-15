@@ -3,7 +3,7 @@ title: Synaptic Harmonics
 date: 2024-04-26T1:00:00.253Z
 repository: https://github.com/lopis/synaptic-harmonics
 website: https://mrlopis.itch.io/synaptic-harmonics
-thumbnail: https://github.com/lopis/lopis/raw/master/synaptic.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/synaptic.png
 embed: https://lopis.github.io/synaptic-harmonics/dist/index.html
 platform:
  - pc

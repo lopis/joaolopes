@@ -19,6 +19,13 @@ export default defineConfig({
   site: 'https://www.jlopes.dev',
   base: '/',
   trailingSlash: 'ignore',
+  image: {
+    domains: [
+      'dev-to-uploads.s3.amazonaws.com',
+      'thepracticaldev.s3.amazonaws.com',
+      'raw.githubusercontent.com',
+    ],
+  },
   markdown: {
     remarkPlugins: [setDefaultLayout],
   },

@@ -3,7 +3,7 @@ title: Meow Mountain
 date: 2025-09-13T13:00:00.253Z
 repository: https://github.com/lopis/meow-mountain
 website: https://lopis.github.io/meow-mountain/
-thumbnail: https://github.com/lopis/lopis/raw/master/meow.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/meow.png
 embed: https://lopis.github.io/meow-mountain/index.html
 platform:
  - pc

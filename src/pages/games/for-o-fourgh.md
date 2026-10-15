@@ -1,6 +1,6 @@
 ---
 title: For O'Fourgh
-thumbnail: https://github.com/lopis/lopis/raw/master/for-o-fourgh.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/for-o-fourgh.png
 website: https://js13kgames.com/2020/games/for-ofoughr
 date: 2020-09-13T1:00:00.253Z
 repository: https://github.com/lopis/for-o-fourgh/#readme

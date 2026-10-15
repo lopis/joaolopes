@@ -1,6 +1,6 @@
 ---
 title: Ant Space
-thumbnail: https://github.com/lopis/lopis/raw/master/ants.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/ants.png
 website: https://js13kgames.com/2021/games/ant-space
 date: 2021-09-13T1:00:00.253Z
 repository: https://github.com/lopis/ants

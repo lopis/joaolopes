@@ -1,6 +1,6 @@
 ---
 title: Market Street Tycoon
-thumbnail: https://github.com/lopis/lopis/raw/master/market.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/market.png
 website: https://js13kgames.com/2023/games/market-street-tycoon
 date: 2023-09-13T1:00:00.253Z
 repository: https://github.com/lopis/market-street-tycoon

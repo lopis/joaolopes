@@ -3,7 +3,7 @@ title: Thirteen Terrible Stunts
 date: 2024-09-13T1:00:00.253Z
 repository: https://github.com/lopis/thirteen-terrible-stunts
 website: https://js13kgames.com/2024/games/thirteen-terrible-stunts
-thumbnail: https://github.com/lopis/lopis/raw/master/thirteen-terrible-stunts.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/thirteen-terrible-stunts.png
 embed: https://lopis.github.io/thirteen-terrible-stunts/
 platform:
  - pc

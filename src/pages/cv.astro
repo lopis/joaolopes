@@ -4,10 +4,10 @@ import Me from '../data/about/me.md';
 import Photo from '../assets/profile.png';
 import MainLayout from "@layouts/MainLayout.astro";
 
-const masters = await Astro.glob('../data/about/masters.md');
+const masters = Object.values(import.meta.glob('../data/about/masters.md', { eager: true }));
 const MastersPage = Object.values(masters)[0];
-const jobs = await Astro.glob('../data/career/*.md');
-const other = await Astro.glob('../data/other/*.md');
+const jobs = Object.values(import.meta.glob('../data/career/*.md', { eager: true }));
+const other = Object.values(import.meta.glob('../data/other/*.md', { eager: true }));
 
 const sortedJobs = Object.values(jobs).sort((a, b) => {
   return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();

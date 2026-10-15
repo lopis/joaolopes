@@ -6,7 +6,7 @@ website: https://js13kgames.com/entries/signalmon
 description: >-
   In this global co-op game you’re one of Mars’ managers. Multiple players join in the same server to help deal with every day tasks. You can also play in solo mode, but your game won't be saved if you leave.
 status: Released
-thumbnail: https://github.com/lopis/lopis/raw/master/mars.png
+thumbnail: https://raw.githubusercontent.com/lopis/lopis/master/mars.png
 embed: https://mars-tn1n.onrender.com/
 platform:
  - pc

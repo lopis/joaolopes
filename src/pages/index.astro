@@ -75,7 +75,7 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString();
       {
         games.map((game: Game) => (
           <li>
-            <a class="game card" href={game.url}>
+            <a class="game card" href={game.url} aria-label={game.frontmatter.title}>
               <Image
               src={game.frontmatter.thumbnail}
               alt=""

@@ -29,4 +29,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [setDefaultLayout],
   },
+  experimental: {
+    parallelPrerender: true,
+  },
 })
